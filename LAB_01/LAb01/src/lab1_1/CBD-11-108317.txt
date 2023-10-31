@@ -1,0 +1,10 @@
+ping ola
+ping 127.0.0.1:6379
+clear
+ping
+clear
+./redis-server
+clear
+ping
+FLUSHALL
+ping

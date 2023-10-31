@@ -1,0 +1,28 @@
+User Input (Username / Exit): miragaia
+User Input (Product): arroz
+Machine Input: Pedido registrado com sucesso.
+User Input (Username / Exit): miragaia
+User Input (Product): banana
+Machine Input: Pedido registrado com sucesso.
+User Input (Username / Exit): miragaia
+User Input (Product): massa
+Machine Input: Pedido registrado com sucesso.
+User Input (Username / Exit): miragaia
+Machine Input: Timeslot for user miragaia has expired.
+User Input (Username / Exit): paulo
+User Input (Product): ervilhas
+Machine Input: Pedido registrado com sucesso.
+User Input (Username / Exit): paulo
+User Input (Product): porcas
+Machine Input: Pedido registrado com sucesso.
+User Input (Username / Exit): exit
+Machine Input: It is all for now!
+
+
+
+
+
+PS: Se o user exceder um limite de produtos estipulado para 4 o programa nao o permite registar o pedido. 
+Nao esta demosntrado neste file pois implicaria criar uma funcao para na main poder colocar a verificacao e esvrecer neste ficheiro.
+Infelizmente devido ao tempo de entrega vou ter de enviar o guiao assim, espero que isto nao seja motivo de um grande desconto visto se for testar o programa ele 
+funciona como o suposto. Agradeco pela compreensao, Miguel Miragaia

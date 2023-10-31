@@ -1,0 +1,20 @@
+Username (or type 'exit' to exit the app): miragaia
+Product: pao
+Quantity: 12
+Pedido registrado com sucesso.
+Username (or type 'exit' to exit the app): miragaia
+Product: agua
+Quantity: 30
+Pedido registrado com sucesso.
+Username (or type 'exit' to exit the app): miragaia
+Product: verduras
+Quantity: 51
+Limit of Products exceeded for user miragaia
+Pedido registrado com sucesso.
+Username (or type 'exit' to exit the app): Joel
+Product: agua
+Quantity: 31
+Limit of Products exceeded for user Joel
+Pedido registrado com sucesso.
+Username (or type 'exit' to exit the app): exit
+It is all for now!

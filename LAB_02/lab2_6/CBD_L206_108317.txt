@@ -1,0 +1,105 @@
+Perguntas a) e b):
+> Criei inicialmente a BD "Biblioteca" atraves do Studio3T e adicionei a coleção "livros" com os seguintes campos:
+```{
+    "titulo": "titulo do livro",
+    "autor": "nome do autor",
+    "editora": "nome da editora",
+    "ano_publicacao": ano de publicação,
+    "numero_paginas": numero de paginas,
+    "genero": " genero do livro",
+    "ISBN": " numero ISBN",
+  }
+``` 
+, atraves do Studio3T importei o ficheiro "biblioteca.json" para a coleção "livros" e criei o indice "titulo" para a coleção "livros" para que a pesquisa por 
+titulo seja mais rapida. ``` db.livros.createIndex({ titulo: 1 }) ```
+
+c)
+> db.livros.find({ genero: "Suspense", numero_paginas: { $gt: 300 }, ano_publicacao: { $gt: 2000 } })
+> db.livros.find({ $or: [{ titulo: /Harry/ }, { genero: "Distopia" }] })
+> db.livros.find({ ano_publicacao: 1954 }, { autor: 1, titulo: 1, _id: 0 })
+> db.livros.find({ ano_publicacao: { $gt: 2000 } }).sort({ numero_paginas: -1 }).limit(3)
+> db.livros.find({
+  genero: { $ne: "Suspense" },
+  numero_paginas: { $gt: 400 },
+  editora: { $ne: "Penguin Classics" }
+})
+> db.livros.find({
+  $and: [
+    { titulo: /Harry|Código/ },
+    { genero: "Fantasia" }
+  ]
+})
+
+d)
+> db.livros.aggregate([
+  { $group: { _id: "$genero", media_paginas: { $avg: "$numero_paginas" } } }
+])
+
+> db.livros.aggregate([
+  { $group: { _id: "$autor", total_livros: { $sum: 1 } } },
+  { $sort: { total_livros: -1 } },
+  { $limit: 2 }
+])
+
+> db.livros.aggregate([
+  { $sort: { numero_paginas: -1 } },
+  {
+    $group: {
+      _id: "$genero",
+      livro_mais_longo: { $first: "$titulo" },
+      paginas: { $first: "$numero_paginas" }
+    }
+  }
+])
+
+> db.livros.aggregate([
+  {
+    $addFields: {
+      decada: {
+        $subtract: [
+          { $subtract: ["$ano_publicacao", 1] },
+          { $mod: [{ $subtract: ["$ano_publicacao", 1] }, 10] }
+        ]
+      }
+    }
+  },
+  { $group: { _id: "$decada", media_paginas: { $avg: "$numero_paginas" } } },
+  { $sort: { _id: 1 } }
+])
+
+> db.livros.aggregate([
+  {
+    $project: {
+      _id: 0,
+      titulo: 1,
+      autor: 1,
+      editora: 1,
+      ano: "$ano_publicacao",
+      genero: 1
+    }
+  },
+  {
+    $match: {
+      genero: "Romance"
+    }
+  }
+])
+
+> db.livros.aggregate([
+  {
+    $group: {
+      _id: "$autor",
+      quantidade_livros: { $sum: 1 }
+    }
+  },
+  {
+    $project: {
+      _id: 0,
+      autor: "$_id",
+      quantidade_livros: 1
+    }
+  },
+  {
+    $sort: { quantidade_livros: -1 }
+  }
+])

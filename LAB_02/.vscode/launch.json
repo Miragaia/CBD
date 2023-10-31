@@ -1,0 +1,71 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "SistemaB",
+            "request": "launch",
+            "mainClass": "cbd.SistemaB",
+            "projectName": "mongo"
+        },
+        {
+            "type": "java",
+            "name": "SistemaA",
+            "request": "launch",
+            "mainClass": "cbd.SistemaA",
+            "projectName": "mongo"
+        },
+        {
+            "type": "java",
+            "name": "AlineaC",
+            "request": "launch",
+            "mainClass": "cbd.AlineaC",
+            "projectName": "mongo"
+        },
+        {
+            "type": "java",
+            "name": "AlineaB",
+            "request": "launch",
+            "mainClass": "cbd.AlineaB",
+            "projectName": "mongo"
+        },
+        {
+            "type": "java",
+            "name": "AlineaD",
+            "request": "launch",
+            "mainClass": "cbd.AlineaD",
+            "projectName": "mongo"
+        },
+        {
+            "type": "java",
+            "name": "AlineaA",
+            "request": "launch",
+            "mainClass": "AlineaA",
+            "projectName": "Java"
+        },
+        {
+            "type": "java",
+            "name": "AlineaA",
+            "request": "launch",
+            "mainClass": "AlineaA",
+            "projectName": "LAB_02_85a08f16"
+        },
+        {
+            "type": "java",
+            "name": "AlineaB",
+            "request": "launch",
+            "mainClass": "AlineaB",
+            "projectName": "LAB_02_85a08f16"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceFolder}"
+        }
+    ]
+}

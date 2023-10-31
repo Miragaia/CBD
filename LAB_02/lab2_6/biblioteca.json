@@ -1,0 +1,227 @@
+[
+  {
+    "titulo": "A Máquina do Tempo",
+    "autor": "H.G. Wells",
+    "editora": "Penguin Classics",
+    "ano_publicacao": 1895,
+    "numero_paginas": 213,
+    "genero": "Ficção Científica",
+    "ISBN": "978-0141439976"
+  },
+  {
+    "titulo": "O Senhor dos Anéis: A Sociedade do Anel",
+    "autor": "J.R.R. Tolkien",
+    "editora": "HarperCollins",
+    "ano_publicacao": 1954,
+    "numero_paginas": 423,
+    "genero": "Fantasia",
+    "ISBN": "978-0261103573"
+  },
+  {
+    "titulo": "1984",
+    "autor": "George Orwell",
+    "editora": "Companhia das Letras",
+    "ano_publicacao": 1949,
+    "numero_paginas": 368,
+    "genero": "Distopia",
+    "ISBN": "978-8535914848"
+  },
+  {
+    "titulo": "O Código Da Vinci",
+    "autor": "Dan Brown",
+    "editora": "Arqueiro",
+    "ano_publicacao": 2003,
+    "numero_paginas": 489,
+    "genero": "Suspense",
+    "ISBN": "978-8599296418"
+  },
+  {
+    "titulo": "Dom Quixote",
+    "autor": "Miguel de Cervantes",
+    "editora": "Editora 34",
+    "ano_publicacao": 1605,
+    "numero_paginas": 1043,
+    "genero": "Romance",
+    "ISBN": "978-8573260076"
+  },
+  {
+    "titulo": "A Revolução dos Bichos",
+    "autor": "George Orwell",
+    "editora": "Companhia das Letras",
+    "ano_publicacao": 1945,
+    "numero_paginas": 160,
+    "genero": "Sátira Política",
+    "ISBN": "978-8573260786"
+  },
+  {
+    "titulo": "O Pequeno Príncipe",
+    "autor": "Antoine de Saint-Exupéry",
+    "editora": "Gallimard",
+    "ano_publicacao": 1943,
+    "numero_paginas": 96,
+    "genero": "Fábula",
+    "ISBN": "978-8578276707"
+  },
+  {
+    "titulo": "Harry Potter e a Pedra Filosofal",
+    "autor": "J.K. Rowling",
+    "editora": "Bloomsbury",
+    "ano_publicacao": 1997,
+    "numero_paginas": 223,
+    "genero": "Fantasia",
+    "ISBN": "978-0747532743"
+  },
+  {
+    "titulo": "Cem Anos de Solidão",
+    "autor": "Gabriel García Márquez",
+    "editora": "Editora Record",
+    "ano_publicacao": 1967,
+    "numero_paginas": 417,
+    "genero": "Realismo Mágico",
+    "ISBN": "978-8501004966"
+  },
+  {
+    "titulo": "Moby-Dick",
+    "autor": "Herman Melville",
+    "editora": "Penguin Classics",
+    "ano_publicacao": 1851,
+    "numero_paginas": 628,
+    "genero": "Aventura",
+    "ISBN": "978-0141439600"
+  },
+  {
+    "titulo": "Os Miseráveis",
+    "autor": "Victor Hugo",
+    "editora": "Penguin Classics",
+    "ano_publicacao": 1862,
+    "numero_paginas": 1463,
+    "genero": "Romance",
+    "ISBN": "978-0140444308"
+  },
+  {
+    "titulo": "O Sol é para Todos",
+    "autor": "Harper Lee",
+    "editora": "J.B. Lippincott & Co.",
+    "ano_publicacao": 1960,
+    "numero_paginas": 324,
+    "genero": "Ficção",
+    "ISBN": "978-0061120084"
+  },
+  {
+    "titulo": "O Iluminado",
+    "autor": "Stephen King",
+    "editora": "Doubleday",
+    "ano_publicacao": 1977,
+    "numero_paginas": 447,
+    "genero": "Horror",
+    "ISBN": "978-0450040184"
+  },
+  {
+    "titulo": "Crime e Castigo",
+    "autor": "Fyodor Dostoevsky",
+    "editora": "Vintage Classics",
+    "ano_publicacao": 1866,
+    "numero_paginas": 430,
+    "genero": "Romance",
+    "ISBN": "978-0099981904"
+  },
+  {
+    "titulo": "A Odisséia",
+    "autor": "Homero",
+    "editora": "Penguin Classics",
+    "ano_publicacao": 1800,
+    "numero_paginas": 541,
+    "genero": "Épico",
+    "ISBN": "978-0140268867"
+  },
+  {
+    "titulo": "O Grande Gatsby",
+    "autor": "F. Scott Fitzgerald",
+    "editora": "Scribner",
+    "ano_publicacao": 1925,
+    "numero_paginas": 180,
+    "genero": "Romance",
+    "ISBN": "978-0743273565"
+  },
+  {
+    "titulo": "As Aventuras de Sherlock Holmes",
+    "autor": "Arthur Conan Doyle",
+    "editora": "Penguin Classics",
+    "ano_publicacao": 1892,
+    "numero_paginas": 337,
+    "genero": "Mistério",
+    "ISBN": "978-0140437713"
+  },
+  {
+    "titulo": "Ulisses",
+    "autor": "James Joyce",
+    "editora": "Penguin Classics",
+    "ano_publicacao": 1922,
+    "numero_paginas": 732,
+    "genero": "Modernismo",
+    "ISBN": "978-0141927346"
+  },
+  {
+    "titulo": "Os Jogos da Fome",
+    "autor": "Suzanne Collins",
+    "editora": "Scholastic Press",
+    "ano_publicacao": 2008,
+    "numero_paginas": 374,
+    "genero": "Ficção Científica",
+    "ISBN": "978-0439023481"
+  },
+  {
+    "titulo": "O Poder do Hábito",
+    "autor": "Charles Duhigg",
+    "editora": "Random House",
+    "ano_publicacao": 2012,
+    "numero_paginas": 371,
+    "genero": "Não-ficção",
+    "ISBN": "978-0812981605"
+  },
+  {
+    "titulo": "A Guerra dos Tronos",
+    "autor": "George R.R. Martin",
+    "editora": "Bantam Books",
+    "ano_publicacao": 1996,
+    "numero_paginas": 694,
+    "genero": "Fantasia",
+    "ISBN": "978-0553386790"
+  },
+  {
+    "titulo": "A Moreninha",
+    "autor": "Joaquim Manuel de Macedo",
+    "editora": "Editora Unesp",
+    "ano_publicacao": 1844,
+    "numero_paginas": 206,
+    "genero": "Romance",
+    "ISBN": "978-8544901205"
+  },
+  {
+    "titulo": "Harry Potter e o Calice de Fogo",
+    "autor": "J.K. Rowling",
+    "editora": "Bloomsbury",
+    "ano_publicacao": 1999,
+    "numero_paginas": 233,
+    "genero": "Fantasia",
+    "ISBN": "978-5447532709"
+  },
+  {
+    "titulo": "Harry Potter e o Prisioneiro de Azkaban",
+    "autor": "J.K. Rowling",
+    "editora": "Bloomsbury",
+    "ano_publicacao": 2001,
+    "numero_paginas": 193,
+    "genero": "Fantasia",
+    "ISBN": "978-5533532709"
+  },
+  {
+    "titulo": "Harry Potter e a Camara Secreta",
+    "autor": "J.K. Rowling",
+    "editora": "Bloomsbury",
+    "ano_publicacao": 1987,
+    "numero_paginas": 303,
+    "genero": "Fantasia",
+    "ISBN": "978-5447512309"
+  }
+]

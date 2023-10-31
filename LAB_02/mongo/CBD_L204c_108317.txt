@@ -1,0 +1,4 @@
+Considero a solucao do MongoDB a mais adequada tendo em conta a sua maior capacidade de lidar com maiores volumes de dados que o Redis, este tambem suporta consultas mais complexas, o que é essencial para o
+desenvolvimento desde projeto. Permite a adição de novos campos sem que seja necessario alterar a estrutura da base de dados, o que é uma vantagem. É escalável pelo que nao terá dificuldade em lidar com o 
+aumento dos dados. Ao contrário do Redis, o MongoDB armazena os dados em disco que permite que os dados sejam persistentes e nao sejam perdidos em caso de falha do sistema, o que em Redis nao acontece pois
+sao guardados em cache. 

@@ -1,0 +1,12 @@
+SET nome "João"
+SET idade 30
+HSET pessoa1 nome "Maria" idade 25
+HSET pessoa2 nome "Carlos" idade 35
+LPUSH frutas "maçã" "banana" "laranja"
+RPUSH lista_tarefas "Tarefa 1" "Tarefa 2" "Tarefa 3"
+INCRBY contador 5
+HMSET pessoa3 nome "Ana" idade 28 cidade "Aveiro"
+SADD hobbies "leitura" "desportos" "cozinhar"
+ZADD placar_futebol 100 "Benfica" 75 "Porto" 50 "Braga"
+RPUSH Engenharias "LEI" "LECI" "LEM"
+LPUSH Disciplinas "CBD" "IA" "PDS"

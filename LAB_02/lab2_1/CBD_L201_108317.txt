@@ -1,0 +1,43 @@
+> show dbs
+
+admin   40.00 KiB
+config  12.00 KiB
+local   72.00 KiB
+
+
+> use miragaiadb
+
+switched to db miragaiadb
+
+
+> db.users.insert({ "name": "David", "age": 28 })
+DeprecationWarning: Collection.insert() is deprecated. Use insertOne, insertMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("651a845095a709bce6eec33b") }
+}
+
+
+>  db.users.find({ "_id": 1, "name": "Alice", "age": 31})
+
+The find query will be run with Query Assist.
+Mostrou o output esperado
+
+> db.users.update({ "name": "Alice" }, { $set: { "age": 31 } })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+
+
+> db.users.deleteMany({ "name": "David" })
+
+{ acknowledged: true, deletedCount: 1 }
+
+
+>db.users.getIndexes()
+
+[ { v: 2, key: { _id: 1 }, name: '_id_' } ]

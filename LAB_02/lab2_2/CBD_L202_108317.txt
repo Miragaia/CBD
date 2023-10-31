@@ -1,0 +1,7461 @@
+// //1. Liste todos os documentos da coleção "restaurants".
+
+// Input:
+
+db.restaurants.find()
+
+// Output:
+
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d2795"),
+//     "address" : {
+//         "building" : "1007",
+//         "coord" : [
+//             -73.856077,
+//             40.848447
+//         ],
+//         "rua" : "Morris Park Ave",
+//         "zipcode" : "10462"
+//     },
+//     "localidade" : "Bronx",
+//     "gastronomia" : "Bakery",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-03-03T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(2)
+//         },
+//         {
+//             "date" : ISODate("2013-09-11T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(6)
+//         },
+//         {
+//             "date" : ISODate("2013-01-24T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         },
+//         {
+//             "date" : ISODate("2011-11-23T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(9)
+//         },
+//         {
+//             "date" : ISODate("2011-03-10T00:00:00.000+0000"),
+//             "grade" : "B",
+//             "score" : NumberInt(14)
+//         }
+//     ],
+//     "nome" : "Morris Park Bake Shop",
+//     "restaurant_id" : "30075445"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d2796"),
+//     "address" : {
+//         "building" : "469",
+//         "coord" : [
+//             -73.961704,
+//             40.662942
+//         ],
+//         "rua" : "Flatbush Avenue",
+//         "zipcode" : "11225"
+//     },
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Hamburgers",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-12-30T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(8)
+//         },
+//         {
+//             "date" : ISODate("2014-07-01T00:00:00.000+0000"),
+//             "grade" : "B",
+//             "score" : NumberInt(23)
+//         },
+//         {
+//             "date" : ISODate("2013-04-30T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2012-05-08T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         }
+//     ],
+//     "nome" : "Wendy'S",
+//     "restaurant_id" : "30112340"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d2797"),
+//     "address" : {
+//         "building" : "351",
+//         "coord" : [
+//             -73.98513559999999,
+//             40.7676919
+//         ],
+//         "rua" : "West   57 Street",
+//         "zipcode" : "10019"
+//     },
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "Irish",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-09-06T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(2)
+//         },
+//         {
+//             "date" : ISODate("2013-07-22T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         },
+//         {
+//             "date" : ISODate("2012-07-31T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2011-12-29T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         }
+//     ],
+//     "nome" : "Dj Reynolds Pub And Restaurant",
+//     "restaurant_id" : "30191841"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d2798"),
+//     "address" : {
+//         "building" : "2780",
+//         "coord" : [
+//             -73.98241999999999,
+//             40.579505
+//         ],
+//         "rua" : "Stillwell Avenue",
+//         "zipcode" : "11224"
+//     },
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "American",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-06-10T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(5)
+//         },
+//         {
+//             "date" : ISODate("2013-06-05T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(7)
+//         },
+//         {
+//             "date" : ISODate("2012-04-13T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2011-10-12T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         }
+//     ],
+//     "nome" : "Riviera Caterer",
+//     "restaurant_id" : "40356018"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d2799"),
+//     "address" : {
+//         "building" : "97-22",
+//         "coord" : [
+//             -73.8601152,
+//             40.7311739
+//         ],
+//         "rua" : "63 Road",
+//         "zipcode" : "11374"
+//     },
+//     "localidade" : "Queens",
+//     "gastronomia" : "Jewish/Kosher",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-11-24T00:00:00.000+0000"),
+//             "grade" : "Z",
+//             "score" : NumberInt(20)
+//         },
+//         {
+//             "date" : ISODate("2013-01-17T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(13)
+//         },
+//         {
+//             "date" : ISODate("2012-08-02T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(13)
+//         },
+//         {
+//             "date" : ISODate("2011-12-15T00:00:00.000+0000"),
+//             "grade" : "B",
+//             "score" : NumberInt(25)
+//         }
+//     ],
+//     "nome" : "Tov Kosher Kitchen",
+//     "restaurant_id" : "40356068"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d279a"),
+//     "address" : {
+//         "building" : "8825",
+//         "coord" : [
+//             -73.8803827,
+//             40.7643124
+//         ],
+//         "rua" : "Astoria Boulevard",
+//         "zipcode" : "11369"
+//     },
+//     "localidade" : "Queens",
+//     "gastronomia" : "American",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-11-15T00:00:00.000+0000"),
+//             "grade" : "Z",
+//             "score" : NumberInt(38)
+//         },
+//         {
+//             "date" : ISODate("2014-05-02T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         },
+//         {
+//             "date" : ISODate("2013-03-02T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(7)
+//         },
+//         {
+//             "date" : ISODate("2012-02-10T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(13)
+//         }
+//     ],
+//     "nome" : "Brunos On The Boulevard",
+//     "restaurant_id" : "40356151"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d279b"),
+//     "address" : {
+//         "building" : "2206",
+//         "coord" : [
+//             -74.1377286,
+//             40.6119572
+//         ],
+//         "rua" : "Victory Boulevard",
+//         "zipcode" : "10314"
+//     },
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "Jewish/Kosher",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-10-06T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(9)
+//         },
+//         {
+//             "date" : ISODate("2014-05-20T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2013-04-04T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2012-01-24T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(9)
+//         }
+//     ],
+//     "nome" : "Kosher Island",
+//     "restaurant_id" : "40356442"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d279c"),
+//     "address" : {
+//         "building" : "7114",
+//         "coord" : [
+//             -73.9068506,
+//             40.6199034
+//         ],
+//         "rua" : "Avenue U",
+//         "zipcode" : "11234"
+//     },
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Delicatessen",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-05-29T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         },
+//         {
+//             "date" : ISODate("2014-01-14T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         },
+//         {
+//             "date" : ISODate("2013-08-03T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(8)
+//         },
+//         {
+//             "date" : ISODate("2012-07-18T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         },
+//         {
+//             "date" : ISODate("2012-03-09T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(13)
+//         },
+//         {
+//             "date" : ISODate("2011-10-14T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(9)
+//         }
+//     ],
+//     "nome" : "Wilken'S Fine Food",
+//     "restaurant_id" : "40356483"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d279d"),
+//     "address" : {
+//         "building" : "6409",
+//         "coord" : [
+//             -74.00528899999999,
+//             40.628886
+//         ],
+//         "rua" : "11 Avenue",
+//         "zipcode" : "11219"
+//     },
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "American",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-07-18T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2013-07-30T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2013-02-13T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         },
+//         {
+//             "date" : ISODate("2012-08-16T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(2)
+//         },
+//         {
+//             "date" : ISODate("2011-08-17T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         }
+//     ],
+//     "nome" : "Regina Caterers",
+//     "restaurant_id" : "40356649"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d279e"),
+//     "address" : {
+//         "building" : "1839",
+//         "coord" : [
+//             -73.9482609,
+//             40.6408271
+//         ],
+//         "rua" : "Nostrand Avenue",
+//         "zipcode" : "11226"
+//     },
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Ice Cream, Gelato, Yogurt, Ices",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-07-14T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2013-07-10T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(8)
+//         },
+//         {
+//             "date" : ISODate("2012-07-11T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(5)
+//         },
+//         {
+//             "date" : ISODate("2012-02-23T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(8)
+//         }
+//     ],
+//     "nome" : "Taste The Tropics Ice Cream",
+//     "restaurant_id" : "40356731"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d279f"),
+//     "address" : {
+//         "building" : "2300",
+//         "coord" : [
+//             -73.8786113,
+//             40.8502883
+//         ],
+//         "rua" : "Southern Boulevard",
+//         "zipcode" : "10460"
+//     },
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-05-28T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         },
+//         {
+//             "date" : ISODate("2013-06-19T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(4)
+//         },
+//         {
+//             "date" : ISODate("2012-06-15T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(3)
+//         }
+//     ],
+//     "nome" : "Wild Asia",
+//     "restaurant_id" : "40357217"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27a0"),
+//     "address" : {
+//         "building" : "7715",
+//         "coord" : [
+//             -73.9973325,
+//             40.61174889999999
+//         ],
+//         "rua" : "18 Avenue",
+//         "zipcode" : "11214"
+//     },
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "American",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-04-16T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(5)
+//         },
+//         {
+//             "date" : ISODate("2013-04-23T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(2)
+//         },
+//         {
+//             "date" : ISODate("2012-04-24T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(5)
+//         },
+//         {
+//             "date" : ISODate("2011-12-16T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(2)
+//         }
+//     ],
+//     "nome" : "C & C Catering Service",
+//     "restaurant_id" : "40357437"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27a1"),
+//     "address" : {
+//         "building" : "1269",
+//         "coord" : [
+//             -73.871194,
+//             40.6730975
+//         ],
+//         "rua" : "Sutter Avenue",
+//         "zipcode" : "11208"
+//     },
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Chinese",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-09-16T00:00:00.000+0000"),
+//             "grade" : "B",
+//             "score" : NumberInt(21)
+//         },
+//         {
+//             "date" : ISODate("2013-08-28T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(7)
+//         },
+//         {
+//             "date" : ISODate("2013-04-02T00:00:00.000+0000"),
+//             "grade" : "C",
+//             "score" : NumberInt(56)
+//         },
+//         {
+//             "date" : ISODate("2012-08-15T00:00:00.000+0000"),
+//             "grade" : "B",
+//             "score" : NumberInt(27)
+//         },
+//         {
+//             "date" : ISODate("2012-03-28T00:00:00.000+0000"),
+//             "grade" : "B",
+//             "score" : NumberInt(27)
+//         }
+//     ],
+//     "nome" : "May May Kitchen",
+//     "restaurant_id" : "40358429"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27a2"),
+//     "address" : {
+//         "building" : "1",
+//         "coord" : [
+//             -73.96926909999999,
+//             40.7685235
+//         ],
+//         "rua" : "East   66 Street",
+//         "zipcode" : "10065"
+//     },
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "American",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-05-07T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(3)
+//         },
+//         {
+//             "date" : ISODate("2013-05-03T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(4)
+//         },
+//         {
+//             "date" : ISODate("2012-04-30T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(6)
+//         },
+//         {
+//             "date" : ISODate("2011-12-27T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(0)
+//         }
+//     ],
+//     "nome" : "1 East 66Th Street Kitchen",
+//     "restaurant_id" : "40359480"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27a3"),
+//     "address" : {
+//         "building" : "705",
+//         "coord" : [
+//             -73.9653967,
+//             40.6064339
+//         ],
+//         "rua" : "Kings Highway",
+//         "zipcode" : "11223"
+//     },
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Jewish/Kosher",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-11-10T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         },
+//         {
+//             "date" : ISODate("2013-10-10T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(13)
+//         },
+//         {
+//             "date" : ISODate("2012-10-04T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(7)
+//         },
+//         {
+//             "date" : ISODate("2012-05-21T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(9)
+//         },
+//         {
+//             "date" : ISODate("2011-12-30T00:00:00.000+0000"),
+//             "grade" : "B",
+//             "score" : NumberInt(19)
+//         }
+//     ],
+//     "nome" : "Seuda Foods",
+//     "restaurant_id" : "40360045"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27a4"),
+//     "address" : {
+//         "building" : "203",
+//         "coord" : [
+//             -73.97822040000001,
+//             40.6435254
+//         ],
+//         "rua" : "Church Avenue",
+//         "zipcode" : "11218"
+//     },
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Ice Cream, Gelato, Yogurt, Ices",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-02-10T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(2)
+//         },
+//         {
+//             "date" : ISODate("2013-01-02T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(13)
+//         },
+//         {
+//             "date" : ISODate("2012-01-09T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(3)
+//         },
+//         {
+//             "date" : ISODate("2011-11-07T00:00:00.000+0000"),
+//             "grade" : "P",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2011-07-21T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(13)
+//         }
+//     ],
+//     "nome" : "Carvel Ice Cream",
+//     "restaurant_id" : "40360076"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27a5"),
+//     "address" : {
+//         "building" : "265-15",
+//         "coord" : [
+//             -73.7032601,
+//             40.7386417
+//         ],
+//         "rua" : "Hillside Avenue",
+//         "zipcode" : "11004"
+//     },
+//     "localidade" : "Queens",
+//     "gastronomia" : "Ice Cream, Gelato, Yogurt, Ices",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-10-28T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(9)
+//         },
+//         {
+//             "date" : ISODate("2013-09-18T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         },
+//         {
+//             "date" : ISODate("2012-09-20T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(13)
+//         }
+//     ],
+//     "nome" : "Carvel Ice Cream",
+//     "restaurant_id" : "40361322"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27a6"),
+//     "address" : {
+//         "building" : "6909",
+//         "coord" : [
+//             -74.0259567,
+//             40.6353674
+//         ],
+//         "rua" : "3 Avenue",
+//         "zipcode" : "11209"
+//     },
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Delicatessen",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-08-21T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(4)
+//         },
+//         {
+//             "date" : ISODate("2014-03-05T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(3)
+//         },
+//         {
+//             "date" : ISODate("2013-01-10T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         }
+//     ],
+//     "nome" : "Nordic Delicacies",
+//     "restaurant_id" : "40361390"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27a7"),
+//     "address" : {
+//         "building" : "522",
+//         "coord" : [
+//             -73.95171,
+//             40.767461
+//         ],
+//         "rua" : "East   74 Street",
+//         "zipcode" : "10021"
+//     },
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "American",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-09-02T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2013-12-19T00:00:00.000+0000"),
+//             "grade" : "B",
+//             "score" : NumberInt(16)
+//         },
+//         {
+//             "date" : ISODate("2013-05-28T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(9)
+//         },
+//         {
+//             "date" : ISODate("2012-12-07T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(13)
+//         },
+//         {
+//             "date" : ISODate("2012-03-29T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         }
+//     ],
+//     "nome" : "Glorious Food",
+//     "restaurant_id" : "40361521"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27a8"),
+//     "address" : {
+//         "building" : "284",
+//         "coord" : [
+//             -73.9829239,
+//             40.6580753
+//         ],
+//         "rua" : "Prospect Park West",
+//         "zipcode" : "11215"
+//     },
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "American",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-11-19T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         },
+//         {
+//             "date" : ISODate("2013-11-14T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(2)
+//         },
+//         {
+//             "date" : ISODate("2012-12-05T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(13)
+//         },
+//         {
+//             "date" : ISODate("2012-05-17T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         }
+//     ],
+//     "nome" : "The Movable Feast",
+//     "restaurant_id" : "40361606"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27a9"),
+//     "address" : {
+//         "building" : "129-08",
+//         "coord" : [
+//             -73.839297,
+//             40.78147
+//         ],
+//         "rua" : "20 Avenue",
+//         "zipcode" : "11356"
+//     },
+//     "localidade" : "Queens",
+//     "gastronomia" : "Delicatessen",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-08-16T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2013-08-27T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(9)
+//         },
+//         {
+//             "date" : ISODate("2012-09-20T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(7)
+//         },
+//         {
+//             "date" : ISODate("2011-09-29T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         }
+//     ],
+//     "nome" : "Sal'S Deli",
+//     "restaurant_id" : "40361618"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27aa"),
+//     "address" : {
+//         "building" : "759",
+//         "coord" : [
+//             -73.9925306,
+//             40.7309346
+//         ],
+//         "rua" : "Broadway",
+//         "zipcode" : "10003"
+//     },
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "Delicatessen",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-01-21T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2013-01-04T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         },
+//         {
+//             "date" : ISODate("2012-06-07T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(6)
+//         },
+//         {
+//             "date" : ISODate("2012-01-17T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(8)
+//         }
+//     ],
+//     "nome" : "Bully'S Deli",
+//     "restaurant_id" : "40361708"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27ab"),
+//     "address" : {
+//         "building" : "3406",
+//         "coord" : [
+//             -73.94024739999999,
+//             40.7623288
+//         ],
+//         "rua" : "10 Street",
+//         "zipcode" : "11106"
+//     },
+//     "localidade" : "Queens",
+//     "gastronomia" : "Delicatessen",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-03-19T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(3)
+//         },
+//         {
+//             "date" : ISODate("2013-03-13T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2012-03-27T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(8)
+//         },
+//         {
+//             "date" : ISODate("2011-04-05T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(7)
+//         }
+//     ],
+//     "nome" : "Steve Chu'S Deli & Grocery",
+//     "restaurant_id" : "40361998"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27ac"),
+//     "address" : {
+//         "building" : "502",
+//         "coord" : [
+//             -73.976112,
+//             40.786714
+//         ],
+//         "rua" : "Amsterdam Avenue",
+//         "zipcode" : "10024"
+//     },
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "Chicken",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-09-15T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         },
+//         {
+//             "date" : ISODate("2014-03-04T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(13)
+//         },
+//         {
+//             "date" : ISODate("2013-07-18T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(13)
+//         },
+//         {
+//             "date" : ISODate("2013-01-09T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         },
+//         {
+//             "date" : ISODate("2012-04-10T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         },
+//         {
+//             "date" : ISODate("2011-11-15T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(7)
+//         }
+//     ],
+//     "nome" : "Harriet'S Kitchen",
+//     "restaurant_id" : "40362098"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27ad"),
+//     "address" : {
+//         "building" : "730",
+//         "coord" : [
+//             -73.96805719999999,
+//             40.7925587
+//         ],
+//         "rua" : "Columbus Avenue",
+//         "zipcode" : "10025"
+//     },
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "American",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-09-12T00:00:00.000+0000"),
+//             "grade" : "B",
+//             "score" : NumberInt(26)
+//         },
+//         {
+//             "date" : ISODate("2013-08-28T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(9)
+//         },
+//         {
+//             "date" : ISODate("2013-03-25T00:00:00.000+0000"),
+//             "grade" : "B",
+//             "score" : NumberInt(20)
+//         },
+//         {
+//             "date" : ISODate("2012-02-14T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         }
+//     ],
+//     "nome" : "P & S Deli Grocery",
+//     "restaurant_id" : "40362264"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27ae"),
+//     "address" : {
+//         "building" : "18",
+//         "coord" : [
+//             -73.996984,
+//             40.72589
+//         ],
+//         "rua" : "West Houston Street",
+//         "zipcode" : "10012"
+//     },
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "American",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-04-03T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(9)
+//         },
+//         {
+//             "date" : ISODate("2013-04-05T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(4)
+//         },
+//         {
+//             "date" : ISODate("2012-03-21T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(13)
+//         },
+//         {
+//             "date" : ISODate("2011-04-27T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(5)
+//         }
+//     ],
+//     "nome" : "Angelika Film Center",
+//     "restaurant_id" : "40362274"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27af"),
+//     "address" : {
+//         "building" : "531",
+//         "coord" : [
+//             -73.9634876,
+//             40.6940001
+//         ],
+//         "rua" : "Myrtle Avenue",
+//         "zipcode" : "11205"
+//     },
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Hamburgers",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-03-18T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(8)
+//         },
+//         {
+//             "date" : ISODate("2013-03-18T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(8)
+//         },
+//         {
+//             "date" : ISODate("2012-10-10T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(7)
+//         },
+//         {
+//             "date" : ISODate("2011-09-22T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(2)
+//         }
+//     ],
+//     "nome" : "White Castle",
+//     "restaurant_id" : "40362344"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27b0"),
+//     "address" : {
+//         "building" : "103-05",
+//         "coord" : [
+//             -73.8642349,
+//             40.75356
+//         ],
+//         "rua" : "37 Avenue",
+//         "zipcode" : "11368"
+//     },
+//     "localidade" : "Queens",
+//     "gastronomia" : "Chinese",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-04-21T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         },
+//         {
+//             "date" : ISODate("2013-11-12T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(5)
+//         },
+//         {
+//             "date" : ISODate("2013-06-04T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2012-11-14T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         },
+//         {
+//             "date" : ISODate("2012-10-11T00:00:00.000+0000"),
+//             "grade" : "P",
+//             "score" : NumberInt(0)
+//         },
+//         {
+//             "date" : ISODate("2012-05-24T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(13)
+//         },
+//         {
+//             "date" : ISODate("2011-12-08T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2011-07-20T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         }
+//     ],
+//     "nome" : "Ho Mei Restaurant",
+//     "restaurant_id" : "40362432"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27b1"),
+//     "address" : {
+//         "building" : "60",
+//         "coord" : [
+//             -74.0085357,
+//             40.70620539999999
+//         ],
+//         "rua" : "Wall Street",
+//         "zipcode" : "10005"
+//     },
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "Turkish",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-09-26T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(9)
+//         },
+//         {
+//             "date" : ISODate("2013-09-18T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(13)
+//         },
+//         {
+//             "date" : ISODate("2012-09-21T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(9)
+//         },
+//         {
+//             "date" : ISODate("2012-05-09T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         }
+//     ],
+//     "nome" : "The Country Cafe",
+//     "restaurant_id" : "40362715"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27b2"),
+//     "address" : {
+//         "building" : "195",
+//         "coord" : [
+//             -73.9246028,
+//             40.6522396
+//         ],
+//         "rua" : "East   56 Street",
+//         "zipcode" : "11203"
+//     },
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Caribbean",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-05-13T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(2)
+//         },
+//         {
+//             "date" : ISODate("2013-05-08T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(7)
+//         },
+//         {
+//             "date" : ISODate("2012-09-22T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         },
+//         {
+//             "date" : ISODate("2011-06-06T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         }
+//     ],
+//     "nome" : "Shashemene Int'L Restaura",
+//     "restaurant_id" : "40362869"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27b3"),
+//     "address" : {
+//         "building" : "107",
+//         "coord" : [
+//             -74.00920839999999,
+//             40.7132925
+//         ],
+//         "rua" : "Church Street",
+//         "zipcode" : "10007"
+//     },
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "American",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-07-18T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2014-02-26T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(9)
+//         },
+//         {
+//             "date" : ISODate("2013-08-26T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(9)
+//         },
+//         {
+//             "date" : ISODate("2013-02-01T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2012-01-17T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(13)
+//         },
+//         {
+//             "date" : ISODate("2011-10-18T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         }
+//     ],
+//     "nome" : "Downtown Deli",
+//     "restaurant_id" : "40363021"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27b4"),
+//     "address" : {
+//         "building" : "1006",
+//         "coord" : [
+//             -73.84856870000002,
+//             40.8903781
+//         ],
+//         "rua" : "East 233 Street",
+//         "zipcode" : "10466"
+//     },
+//     "localidade" : "Bronx",
+//     "gastronomia" : "Ice Cream, Gelato, Yogurt, Ices",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-04-24T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         },
+//         {
+//             "date" : ISODate("2013-09-05T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         },
+//         {
+//             "date" : ISODate("2013-02-21T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(9)
+//         },
+//         {
+//             "date" : ISODate("2012-07-03T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         },
+//         {
+//             "date" : ISODate("2011-07-11T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(5)
+//         }
+//     ],
+//     "nome" : "Carvel Ice Cream",
+//     "restaurant_id" : "40363093"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27b5"),
+//     "address" : {
+//         "building" : "56",
+//         "coord" : [
+//             -73.991495,
+//             40.692273
+//         ],
+//         "rua" : "Court Street",
+//         "zipcode" : "11201"
+//     },
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Donuts",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-12-30T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(8)
+//         },
+//         {
+//             "date" : ISODate("2014-01-15T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(9)
+//         },
+//         {
+//             "date" : ISODate("2013-01-08T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         },
+//         {
+//             "date" : ISODate("2012-01-19T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         }
+//     ],
+//     "nome" : "Dunkin' Donuts",
+//     "restaurant_id" : "40363098"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27b6"),
+//     "address" : {
+//         "building" : "7615",
+//         "coord" : [
+//             -74.0228449,
+//             40.6281815
+//         ],
+//         "rua" : "5 Avenue",
+//         "zipcode" : "11209"
+//     },
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "American",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-12-04T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         },
+//         {
+//             "date" : ISODate("2013-10-24T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         },
+//         {
+//             "date" : ISODate("2013-04-18T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(5)
+//         },
+//         {
+//             "date" : ISODate("2012-04-05T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(13)
+//         }
+//     ],
+//     "nome" : "Mejlander & Mulgannon",
+//     "restaurant_id" : "40363117"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27b7"),
+//     "address" : {
+//         "building" : "120",
+//         "coord" : [
+//             -73.9998042,
+//             40.7251256
+//         ],
+//         "rua" : "Prince Street",
+//         "zipcode" : "10012"
+//     },
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "Bakery",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-10-17T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         },
+//         {
+//             "date" : ISODate("2013-09-18T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(13)
+//         },
+//         {
+//             "date" : ISODate("2013-04-30T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(7)
+//         },
+//         {
+//             "date" : ISODate("2012-04-20T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(7)
+//         },
+//         {
+//             "date" : ISODate("2011-12-19T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(3)
+//         }
+//     ],
+//     "nome" : "Olive'S",
+//     "restaurant_id" : "40363151"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27b8"),
+//     "address" : {
+//         "building" : "1236",
+//         "coord" : [
+//             -73.8893654,
+//             40.81376179999999
+//         ],
+//         "rua" : "238 Spofford Ave",
+//         "zipcode" : "10474"
+//     },
+//     "localidade" : "Bronx",
+//     "gastronomia" : "Chinese",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2013-12-30T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(8)
+//         },
+//         {
+//             "date" : ISODate("2013-01-08T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         },
+//         {
+//             "date" : ISODate("2012-06-12T00:00:00.000+0000"),
+//             "grade" : "B",
+//             "score" : NumberInt(15)
+//         }
+//     ],
+//     "nome" : "Happy Garden",
+//     "restaurant_id" : "40363289"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27b9"),
+//     "address" : {
+//         "building" : "625",
+//         "coord" : [
+//             -73.990494,
+//             40.7569545
+//         ],
+//         "rua" : "8 Avenue",
+//         "zipcode" : "10018"
+//     },
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "American",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-06-09T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2014-01-10T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(9)
+//         },
+//         {
+//             "date" : ISODate("2012-12-07T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(4)
+//         },
+//         {
+//             "date" : ISODate("2011-12-13T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(9)
+//         },
+//         {
+//             "date" : ISODate("2011-09-09T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(13)
+//         }
+//     ],
+//     "nome" : "Cafe Metro",
+//     "restaurant_id" : "40363298"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27ba"),
+//     "address" : {
+//         "building" : "1069",
+//         "coord" : [
+//             -73.902463,
+//             40.694924
+//         ],
+//         "rua" : "Wyckoff Avenue",
+//         "zipcode" : "11385"
+//     },
+//     "localidade" : "Queens",
+//     "gastronomia" : "Delicatessen",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-05-08T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         },
+//         {
+//             "date" : ISODate("2013-12-12T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(8)
+//         },
+//         {
+//             "date" : ISODate("2013-06-21T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2012-12-24T00:00:00.000+0000"),
+//             "grade" : "B",
+//             "score" : NumberInt(25)
+//         },
+//         {
+//             "date" : ISODate("2011-10-19T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         },
+//         {
+//             "date" : ISODate("2011-06-15T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         }
+//     ],
+//     "nome" : "Tony'S Deli",
+//     "restaurant_id" : "40363333"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27bb"),
+//     "address" : {
+//         "building" : "405",
+//         "coord" : [
+//             -73.97534999999999,
+//             40.7516269
+//         ],
+//         "rua" : "Lexington Avenue",
+//         "zipcode" : "10174"
+//     },
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "Sandwiches/Salads/Mixed Buffet",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-02-21T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(3)
+//         },
+//         {
+//             "date" : ISODate("2013-09-13T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(3)
+//         },
+//         {
+//             "date" : ISODate("2012-08-28T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(0)
+//         },
+//         {
+//             "date" : ISODate("2011-09-13T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2011-05-03T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(5)
+//         }
+//     ],
+//     "nome" : "Lexler Deli",
+//     "restaurant_id" : "40363426"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27bc"),
+//     "address" : {
+//         "building" : "2491",
+//         "coord" : [
+//             -74.1459332,
+//             40.6103714
+//         ],
+//         "rua" : "Victory Boulevard",
+//         "zipcode" : "10314"
+//     },
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "Delicatessen",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2015-01-09T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(3)
+//         },
+//         {
+//             "date" : ISODate("2013-12-05T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         },
+//         {
+//             "date" : ISODate("2013-06-19T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         },
+//         {
+//             "date" : ISODate("2013-01-08T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         }
+//     ],
+//     "nome" : "Bagels N Buns",
+//     "restaurant_id" : "40363427"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27bd"),
+//     "address" : {
+//         "building" : "7905",
+//         "coord" : [
+//             -73.8740217,
+//             40.7135015
+//         ],
+//         "rua" : "Metropolitan Avenue",
+//         "zipcode" : "11379"
+//     },
+//     "localidade" : "Queens",
+//     "gastronomia" : "Bagels/Pretzels",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-09-17T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         },
+//         {
+//             "date" : ISODate("2014-01-16T00:00:00.000+0000"),
+//             "grade" : "B",
+//             "score" : NumberInt(23)
+//         },
+//         {
+//             "date" : ISODate("2013-08-07T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         },
+//         {
+//             "date" : ISODate("2013-02-21T00:00:00.000+0000"),
+//             "grade" : "B",
+//             "score" : NumberInt(27)
+//         },
+//         {
+//             "date" : ISODate("2012-06-20T00:00:00.000+0000"),
+//             "grade" : "B",
+//             "score" : NumberInt(27)
+//         },
+//         {
+//             "date" : ISODate("2012-01-31T00:00:00.000+0000"),
+//             "grade" : "B",
+//             "score" : NumberInt(18)
+//         }
+//     ],
+//     "nome" : "Hot Bagels",
+//     "restaurant_id" : "40363565"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27be"),
+//     "address" : {
+//         "building" : "87-69",
+//         "coord" : [
+//             -73.8309503,
+//             40.7001121
+//         ],
+//         "rua" : "Lefferts Boulevard",
+//         "zipcode" : "11418"
+//     },
+//     "localidade" : "Queens",
+//     "gastronomia" : "American",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-02-25T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(7)
+//         },
+//         {
+//             "date" : ISODate("2013-08-14T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         },
+//         {
+//             "date" : ISODate("2012-08-07T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(7)
+//         },
+//         {
+//             "date" : ISODate("2012-03-26T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         },
+//         {
+//             "date" : ISODate("2011-11-04T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(0)
+//         },
+//         {
+//             "date" : ISODate("2011-06-29T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(4)
+//         }
+//     ],
+//     "nome" : "Snack Time Grill",
+//     "restaurant_id" : "40363590"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27bf"),
+//     "address" : {
+//         "building" : "1418",
+//         "coord" : [
+//             -73.95685019999999,
+//             40.7753401
+//         ],
+//         "rua" : "Third Avenue",
+//         "zipcode" : "10028"
+//     },
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "Continental",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-06-02T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(9)
+//         },
+//         {
+//             "date" : ISODate("2013-12-27T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(8)
+//         },
+//         {
+//             "date" : ISODate("2013-03-18T00:00:00.000+0000"),
+//             "grade" : "B",
+//             "score" : NumberInt(26)
+//         },
+//         {
+//             "date" : ISODate("2012-02-01T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(7)
+//         },
+//         {
+//             "date" : ISODate("2011-07-06T00:00:00.000+0000"),
+//             "grade" : "B",
+//             "score" : NumberInt(25)
+//         }
+//     ],
+//     "nome" : "Lorenzo & Maria'S",
+//     "restaurant_id" : "40363630"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27c0"),
+//     "address" : {
+//         "building" : "464",
+//         "coord" : [
+//             -73.9791458,
+//             40.744328
+//         ],
+//         "rua" : "3 Avenue",
+//         "zipcode" : "10016"
+//     },
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "Pizza",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-08-05T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(3)
+//         },
+//         {
+//             "date" : ISODate("2014-03-06T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         },
+//         {
+//             "date" : ISODate("2013-07-09T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2013-01-30T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(4)
+//         },
+//         {
+//             "date" : ISODate("2012-01-05T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(2)
+//         },
+//         {
+//             "date" : ISODate("2011-09-26T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(0)
+//         }
+//     ],
+//     "nome" : "Domino'S Pizza",
+//     "restaurant_id" : "40363644"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27c1"),
+//     "address" : {
+//         "building" : "437",
+//         "coord" : [
+//             -73.975393,
+//             40.757365
+//         ],
+//         "rua" : "Madison Avenue",
+//         "zipcode" : "10022"
+//     },
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "American",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-06-03T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(9)
+//         },
+//         {
+//             "date" : ISODate("2013-06-07T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(5)
+//         },
+//         {
+//             "date" : ISODate("2012-06-29T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2012-02-06T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         },
+//         {
+//             "date" : ISODate("2011-06-23T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(13)
+//         }
+//     ],
+//     "nome" : "Berkely",
+//     "restaurant_id" : "40363685"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27c2"),
+//     "address" : {
+//         "building" : "1031",
+//         "coord" : [
+//             -73.9075537,
+//             40.6438684
+//         ],
+//         "rua" : "East   92 Street",
+//         "zipcode" : "11236"
+//     },
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "American",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-02-05T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(0)
+//         },
+//         {
+//             "date" : ISODate("2013-01-29T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(3)
+//         },
+//         {
+//             "date" : ISODate("2011-12-08T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         }
+//     ],
+//     "nome" : "Sonny'S Heros",
+//     "restaurant_id" : "40363744"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27c3"),
+//     "address" : {
+//         "building" : "1111",
+//         "coord" : [
+//             -74.0796436,
+//             40.59878339999999
+//         ],
+//         "rua" : "Hylan Boulevard",
+//         "zipcode" : "10305"
+//     },
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "Ice Cream, Gelato, Yogurt, Ices",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-04-24T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2013-02-26T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(5)
+//         },
+//         {
+//             "date" : ISODate("2012-02-02T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(2)
+//         }
+//     ],
+//     "nome" : "Carvel Ice Cream",
+//     "restaurant_id" : "40363834"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27c4"),
+//     "address" : {
+//         "building" : "976",
+//         "coord" : [
+//             -73.92701509999999,
+//             40.6620192
+//         ],
+//         "rua" : "Rutland Road",
+//         "zipcode" : "11212"
+//     },
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Chinese",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-04-23T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(13)
+//         },
+//         {
+//             "date" : ISODate("2013-03-26T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         },
+//         {
+//             "date" : ISODate("2012-03-13T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(4)
+//         },
+//         {
+//             "date" : ISODate("2011-11-16T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(13)
+//         }
+//     ],
+//     "nome" : "Golden Pavillion",
+//     "restaurant_id" : "40363920"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27c5"),
+//     "address" : {
+//         "building" : "148",
+//         "coord" : [
+//             -73.9806854,
+//             40.7778589
+//         ],
+//         "rua" : "West   72 Street",
+//         "zipcode" : "10023"
+//     },
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "Pizza",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-12-08T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(13)
+//         },
+//         {
+//             "date" : ISODate("2014-05-05T00:00:00.000+0000"),
+//             "grade" : "B",
+//             "score" : NumberInt(18)
+//         },
+//         {
+//             "date" : ISODate("2013-04-05T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(13)
+//         },
+//         {
+//             "date" : ISODate("2012-03-30T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(9)
+//         }
+//     ],
+//     "nome" : "Domino'S Pizza",
+//     "restaurant_id" : "40363945"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27c6"),
+//     "address" : {
+//         "building" : "364",
+//         "coord" : [
+//             -73.96084119999999,
+//             40.8014307
+//         ],
+//         "rua" : "West  110 Street",
+//         "zipcode" : "10025"
+//     },
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "American",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-09-04T00:00:00.000+0000"),
+//             "grade" : "B",
+//             "score" : NumberInt(20)
+//         },
+//         {
+//             "date" : ISODate("2014-02-26T00:00:00.000+0000"),
+//             "grade" : "B",
+//             "score" : NumberInt(23)
+//         },
+//         {
+//             "date" : ISODate("2013-03-25T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2012-02-21T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(8)
+//         }
+//     ],
+//     "nome" : "Spoon Bread Catering",
+//     "restaurant_id" : "40364179"
+// }
+
+
+// //2. Apresente os campos restaurant_id, nome, localidade e gastronomia para todos os
+// documentos da coleção.
+
+// Input:
+
+db.restaurants.find({}, { "restaurant_id": 1, "nome": 1, "localidade": 1, "gastronomia": 1 })
+
+// Output:
+
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d2795"),
+//     "localidade" : "Bronx",
+//     "gastronomia" : "Bakery",
+//     "nome" : "Morris Park Bake Shop",
+//     "restaurant_id" : "30075445"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d2796"),
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Hamburgers",
+//     "nome" : "Wendy'S",
+//     "restaurant_id" : "30112340"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d2797"),
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "Irish",
+//     "nome" : "Dj Reynolds Pub And Restaurant",
+//     "restaurant_id" : "30191841"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d2798"),
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "American",
+//     "nome" : "Riviera Caterer",
+//     "restaurant_id" : "40356018"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d2799"),
+//     "localidade" : "Queens",
+//     "gastronomia" : "Jewish/Kosher",
+//     "nome" : "Tov Kosher Kitchen",
+//     "restaurant_id" : "40356068"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d279a"),
+//     "localidade" : "Queens",
+//     "gastronomia" : "American",
+//     "nome" : "Brunos On The Boulevard",
+//     "restaurant_id" : "40356151"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d279b"),
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "Jewish/Kosher",
+//     "nome" : "Kosher Island",
+//     "restaurant_id" : "40356442"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d279c"),
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Delicatessen",
+//     "nome" : "Wilken'S Fine Food",
+//     "restaurant_id" : "40356483"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d279d"),
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "American",
+//     "nome" : "Regina Caterers",
+//     "restaurant_id" : "40356649"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d279e"),
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Ice Cream, Gelato, Yogurt, Ices",
+//     "nome" : "Taste The Tropics Ice Cream",
+//     "restaurant_id" : "40356731"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d279f"),
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "Wild Asia",
+//     "restaurant_id" : "40357217"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27a0"),
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "American",
+//     "nome" : "C & C Catering Service",
+//     "restaurant_id" : "40357437"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27a1"),
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Chinese",
+//     "nome" : "May May Kitchen",
+//     "restaurant_id" : "40358429"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27a2"),
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "American",
+//     "nome" : "1 East 66Th Street Kitchen",
+//     "restaurant_id" : "40359480"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27a3"),
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Jewish/Kosher",
+//     "nome" : "Seuda Foods",
+//     "restaurant_id" : "40360045"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27a4"),
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Ice Cream, Gelato, Yogurt, Ices",
+//     "nome" : "Carvel Ice Cream",
+//     "restaurant_id" : "40360076"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27a5"),
+//     "localidade" : "Queens",
+//     "gastronomia" : "Ice Cream, Gelato, Yogurt, Ices",
+//     "nome" : "Carvel Ice Cream",
+//     "restaurant_id" : "40361322"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27a6"),
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Delicatessen",
+//     "nome" : "Nordic Delicacies",
+//     "restaurant_id" : "40361390"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27a7"),
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "American",
+//     "nome" : "Glorious Food",
+//     "restaurant_id" : "40361521"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27a8"),
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "American",
+//     "nome" : "The Movable Feast",
+//     "restaurant_id" : "40361606"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27a9"),
+//     "localidade" : "Queens",
+//     "gastronomia" : "Delicatessen",
+//     "nome" : "Sal'S Deli",
+//     "restaurant_id" : "40361618"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27aa"),
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "Delicatessen",
+//     "nome" : "Bully'S Deli",
+//     "restaurant_id" : "40361708"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27ab"),
+//     "localidade" : "Queens",
+//     "gastronomia" : "Delicatessen",
+//     "nome" : "Steve Chu'S Deli & Grocery",
+//     "restaurant_id" : "40361998"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27ac"),
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "Chicken",
+//     "nome" : "Harriet'S Kitchen",
+//     "restaurant_id" : "40362098"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27ad"),
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "American",
+//     "nome" : "P & S Deli Grocery",
+//     "restaurant_id" : "40362264"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27ae"),
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "American",
+//     "nome" : "Angelika Film Center",
+//     "restaurant_id" : "40362274"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27af"),
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Hamburgers",
+//     "nome" : "White Castle",
+//     "restaurant_id" : "40362344"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27b0"),
+//     "localidade" : "Queens",
+//     "gastronomia" : "Chinese",
+//     "nome" : "Ho Mei Restaurant",
+//     "restaurant_id" : "40362432"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27b1"),
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "Turkish",
+//     "nome" : "The Country Cafe",
+//     "restaurant_id" : "40362715"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27b2"),
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Caribbean",
+//     "nome" : "Shashemene Int'L Restaura",
+//     "restaurant_id" : "40362869"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27b3"),
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "American",
+//     "nome" : "Downtown Deli",
+//     "restaurant_id" : "40363021"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27b4"),
+//     "localidade" : "Bronx",
+//     "gastronomia" : "Ice Cream, Gelato, Yogurt, Ices",
+//     "nome" : "Carvel Ice Cream",
+//     "restaurant_id" : "40363093"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27b5"),
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Donuts",
+//     "nome" : "Dunkin' Donuts",
+//     "restaurant_id" : "40363098"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27b6"),
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "American",
+//     "nome" : "Mejlander & Mulgannon",
+//     "restaurant_id" : "40363117"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27b7"),
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "Bakery",
+//     "nome" : "Olive'S",
+//     "restaurant_id" : "40363151"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27b8"),
+//     "localidade" : "Bronx",
+//     "gastronomia" : "Chinese",
+//     "nome" : "Happy Garden",
+//     "restaurant_id" : "40363289"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27b9"),
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "American",
+//     "nome" : "Cafe Metro",
+//     "restaurant_id" : "40363298"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27ba"),
+//     "localidade" : "Queens",
+//     "gastronomia" : "Delicatessen",
+//     "nome" : "Tony'S Deli",
+//     "restaurant_id" : "40363333"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27bb"),
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "Sandwiches/Salads/Mixed Buffet",
+//     "nome" : "Lexler Deli",
+//     "restaurant_id" : "40363426"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27bc"),
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "Delicatessen",
+//     "nome" : "Bagels N Buns",
+//     "restaurant_id" : "40363427"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27bd"),
+//     "localidade" : "Queens",
+//     "gastronomia" : "Bagels/Pretzels",
+//     "nome" : "Hot Bagels",
+//     "restaurant_id" : "40363565"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27be"),
+//     "localidade" : "Queens",
+//     "gastronomia" : "American",
+//     "nome" : "Snack Time Grill",
+//     "restaurant_id" : "40363590"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27bf"),
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "Continental",
+//     "nome" : "Lorenzo & Maria'S",
+//     "restaurant_id" : "40363630"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27c0"),
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "Pizza",
+//     "nome" : "Domino'S Pizza",
+//     "restaurant_id" : "40363644"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27c1"),
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "American",
+//     "nome" : "Berkely",
+//     "restaurant_id" : "40363685"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27c2"),
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "American",
+//     "nome" : "Sonny'S Heros",
+//     "restaurant_id" : "40363744"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27c3"),
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "Ice Cream, Gelato, Yogurt, Ices",
+//     "nome" : "Carvel Ice Cream",
+//     "restaurant_id" : "40363834"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27c4"),
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Chinese",
+//     "nome" : "Golden Pavillion",
+//     "restaurant_id" : "40363920"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27c5"),
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "Pizza",
+//     "nome" : "Domino'S Pizza",
+//     "restaurant_id" : "40363945"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27c6"),
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "American",
+//     "nome" : "Spoon Bread Catering",
+//     "restaurant_id" : "40364179"
+// }
+
+
+// //3. Apresente os campos restaurant_id, nome, localidade e código postal (zipcode), mas
+// exclua o campo _id de todos os documentos da coleção.
+
+// Input:
+
+db.restaurants.find({}, { "restaurant_id": 1, "nome": 1, "localidade": 1, "codigo_postal": 1, "_id": 0 })
+
+// Output:
+// {
+//     "localidade" : "Bronx",
+//     "nome" : "Morris Park Bake Shop",
+//     "restaurant_id" : "30075445"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "nome" : "Wendy'S",
+//     "restaurant_id" : "30112340"
+// }
+// {
+//     "localidade" : "Manhattan",
+//     "nome" : "Dj Reynolds Pub And Restaurant",
+//     "restaurant_id" : "30191841"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "nome" : "Riviera Caterer",
+//     "restaurant_id" : "40356018"
+// }
+// {
+//     "localidade" : "Queens",
+//     "nome" : "Tov Kosher Kitchen",
+//     "restaurant_id" : "40356068"
+// }
+// {
+//     "localidade" : "Queens",
+//     "nome" : "Brunos On The Boulevard",
+//     "restaurant_id" : "40356151"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "nome" : "Kosher Island",
+//     "restaurant_id" : "40356442"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "nome" : "Wilken'S Fine Food",
+//     "restaurant_id" : "40356483"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "nome" : "Regina Caterers",
+//     "restaurant_id" : "40356649"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "nome" : "Taste The Tropics Ice Cream",
+//     "restaurant_id" : "40356731"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "nome" : "Wild Asia",
+//     "restaurant_id" : "40357217"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "nome" : "C & C Catering Service",
+//     "restaurant_id" : "40357437"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "nome" : "May May Kitchen",
+//     "restaurant_id" : "40358429"
+// }
+// {
+//     "localidade" : "Manhattan",
+//     "nome" : "1 East 66Th Street Kitchen",
+//     "restaurant_id" : "40359480"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "nome" : "Seuda Foods",
+//     "restaurant_id" : "40360045"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "nome" : "Carvel Ice Cream",
+//     "restaurant_id" : "40360076"
+// }
+// {
+//     "localidade" : "Queens",
+//     "nome" : "Carvel Ice Cream",
+//     "restaurant_id" : "40361322"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "nome" : "Nordic Delicacies",
+//     "restaurant_id" : "40361390"
+// }
+// {
+//     "localidade" : "Manhattan",
+//     "nome" : "Glorious Food",
+//     "restaurant_id" : "40361521"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "nome" : "The Movable Feast",
+//     "restaurant_id" : "40361606"
+// }
+// {
+//     "localidade" : "Queens",
+//     "nome" : "Sal'S Deli",
+//     "restaurant_id" : "40361618"
+// }
+// {
+//     "localidade" : "Manhattan",
+//     "nome" : "Bully'S Deli",
+//     "restaurant_id" : "40361708"
+// }
+// {
+//     "localidade" : "Queens",
+//     "nome" : "Steve Chu'S Deli & Grocery",
+//     "restaurant_id" : "40361998"
+// }
+// {
+//     "localidade" : "Manhattan",
+//     "nome" : "Harriet'S Kitchen",
+//     "restaurant_id" : "40362098"
+// }
+// {
+//     "localidade" : "Manhattan",
+//     "nome" : "P & S Deli Grocery",
+//     "restaurant_id" : "40362264"
+// }
+// {
+//     "localidade" : "Manhattan",
+//     "nome" : "Angelika Film Center",
+//     "restaurant_id" : "40362274"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "nome" : "White Castle",
+//     "restaurant_id" : "40362344"
+// }
+// {
+//     "localidade" : "Queens",
+//     "nome" : "Ho Mei Restaurant",
+//     "restaurant_id" : "40362432"
+// }
+// {
+//     "localidade" : "Manhattan",
+//     "nome" : "The Country Cafe",
+//     "restaurant_id" : "40362715"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "nome" : "Shashemene Int'L Restaura",
+//     "restaurant_id" : "40362869"
+// }
+// {
+//     "localidade" : "Manhattan",
+//     "nome" : "Downtown Deli",
+//     "restaurant_id" : "40363021"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "nome" : "Carvel Ice Cream",
+//     "restaurant_id" : "40363093"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "nome" : "Dunkin' Donuts",
+//     "restaurant_id" : "40363098"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "nome" : "Mejlander & Mulgannon",
+//     "restaurant_id" : "40363117"
+// }
+// {
+//     "localidade" : "Manhattan",
+//     "nome" : "Olive'S",
+//     "restaurant_id" : "40363151"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "nome" : "Happy Garden",
+//     "restaurant_id" : "40363289"
+// }
+// {
+//     "localidade" : "Manhattan",
+//     "nome" : "Cafe Metro",
+//     "restaurant_id" : "40363298"
+// }
+// {
+//     "localidade" : "Queens",
+//     "nome" : "Tony'S Deli",
+//     "restaurant_id" : "40363333"
+// }
+// {
+//     "localidade" : "Manhattan",
+//     "nome" : "Lexler Deli",
+//     "restaurant_id" : "40363426"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "nome" : "Bagels N Buns",
+//     "restaurant_id" : "40363427"
+// }
+// {
+//     "localidade" : "Queens",
+//     "nome" : "Hot Bagels",
+//     "restaurant_id" : "40363565"
+// }
+// {
+//     "localidade" : "Queens",
+//     "nome" : "Snack Time Grill",
+//     "restaurant_id" : "40363590"
+// }
+// {
+//     "localidade" : "Manhattan",
+//     "nome" : "Lorenzo & Maria'S",
+//     "restaurant_id" : "40363630"
+// }
+// {
+//     "localidade" : "Manhattan",
+//     "nome" : "Domino'S Pizza",
+//     "restaurant_id" : "40363644"
+// }
+// {
+//     "localidade" : "Manhattan",
+//     "nome" : "Berkely",
+//     "restaurant_id" : "40363685"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "nome" : "Sonny'S Heros",
+//     "restaurant_id" : "40363744"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "nome" : "Carvel Ice Cream",
+//     "restaurant_id" : "40363834"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "nome" : "Golden Pavillion",
+//     "restaurant_id" : "40363920"
+// }
+// {
+//     "localidade" : "Manhattan",
+//     "nome" : "Domino'S Pizza",
+//     "restaurant_id" : "40363945"
+// }
+// {
+//     "localidade" : "Manhattan",
+//     "nome" : "Spoon Bread Catering",
+//     "restaurant_id" : "40364179"
+// }
+
+// // 4. Indique o total de restaurantes localizados no Bronx.
+
+// Input:
+
+db.restaurants.find({ "localidade": "Bronx" }).count()
+
+// Output:
+
+// 309
+
+// // 5. Apresente os primeiros 15 restaurantes localizados no Bronx, ordenados por
+// ordem crescente de nome
+
+// Input:
+
+db.restaurants.find({ "localidade": "Bronx" }).sort({ "nome": 1 }).limit(15)
+
+// Output:
+
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d2870"),
+//     "address" : {
+//         "building" : "2300",
+//         "coord" : [
+//             -73.8786113,
+//             40.8502883
+//         ],
+//         "rua" : "Southern Boulevard",
+//         "zipcode" : "10460"
+//     },
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-05-21T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(5)
+//         },
+//         {
+//             "date" : ISODate("2013-05-28T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(3)
+//         },
+//         {
+//             "date" : ISODate("2012-06-18T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(4)
+//         },
+//         {
+//             "date" : ISODate("2011-06-07T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(9)
+//         }
+//     ],
+//     "nome" : "African Market (Baboon Cafe)",
+//     "restaurant_id" : "40368026"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d286d"),
+//     "address" : {
+//         "building" : "2300",
+//         "coord" : [
+//             -73.8786113,
+//             40.8502883
+//         ],
+//         "rua" : "Southern Boulevard",
+//         "zipcode" : "10460"
+//     },
+//     "localidade" : "Bronx",
+//     "gastronomia" : "African",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-05-21T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(8)
+//         },
+//         {
+//             "date" : ISODate("2013-06-01T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(6)
+//         },
+//         {
+//             "date" : ISODate("2012-06-12T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(0)
+//         },
+//         {
+//             "date" : ISODate("2011-06-08T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(0)
+//         }
+//     ],
+//     "nome" : "African Terrace",
+//     "restaurant_id" : "40368021"
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d2d0c"),
+//     "address" : {
+//         "building" : "3825",
+//         "coord" : [
+//             -73.86267,
+//             40.884484
+//         ],
+//         "rua" : "White Plains Road",
+//         "zipcode" : "10467"
+//     },
+//     "localidade" : "Bronx",
+//     "gastronomia" : "Caribbean",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-11-06T00:00:00.000+0000"),
+//             "grade" : "Z",
+//             "score" : NumberInt(20)
+//         },
+//         {
+//             "date" : ISODate("2014-06-16T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2013-10-21T00:00:00.000+0000"),
+//             "grade" : "B",
+//             "score" : NumberInt(15)
+//         },
+//         {
+//             "date" : ISODate("2013-05-20T00:00:00.000+0000"),
+//             "grade" : "B",
+//             "score" : NumberInt(22)
+//         },
+//         {
+//             "date" : ISODate("2012-04-17T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         }
+//     ],
+//     "nome" : "Al Cholo Bakery",
+//     "restaurant_id" : "40424273"
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d32dd"),
+//     "address" : {
+//         "building" : "4220",
+//         "coord" : [
+//             -73.85672319999999,
+//             40.8939927
+//         ],
+//         "rua" : "White Plains Road",
+//         "zipcode" : "10466"
+//     },
+//     "localidade" : "Bronx",
+//     "gastronomia" : "Caribbean",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-11-06T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         },
+//         {
+//             "date" : ISODate("2013-11-06T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(9)
+//         },
+//         {
+//             "date" : ISODate("2013-05-31T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(9)
+//         },
+//         {
+//             "date" : ISODate("2012-11-27T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(7)
+//         },
+//         {
+//             "date" : ISODate("2012-06-28T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(7)
+//         },
+//         {
+//             "date" : ISODate("2012-01-19T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(13)
+//         }
+//     ],
+//     "nome" : "Ali'S Roti Shop",
+//     "restaurant_id" : "40738028"
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d2ceb"),
+//     "address" : {
+//         "building" : "730",
+//         "coord" : [
+//             -73.89954829999999,
+//             40.8164378
+//         ],
+//         "rua" : "Kelly Street",
+//         "zipcode" : "10455"
+//     },
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2015-01-20T00:00:00.000+0000"),
+//             "grade" : "Not Yet Graded",
+//             "score" : NumberInt(4)
+//         }
+//     ],
+//     "nome" : "Ambassador Diner",
+//     "restaurant_id" : "40403946"
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d2f04"),
+//     "address" : {
+//         "building" : "445",
+//         "coord" : [
+//             -73.9049794,
+//             40.8874509
+//         ],
+//         "rua" : "West  238 Street",
+//         "zipcode" : "10463"
+//     },
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-03-20T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         },
+//         {
+//             "date" : ISODate("2013-08-15T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         },
+//         {
+//             "date" : ISODate("2012-08-01T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         },
+//         {
+//             "date" : ISODate("2012-03-27T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         }
+//     ],
+//     "nome" : "An Beal Bocht Cafe",
+//     "restaurant_id" : "40570634"
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d329e"),
+//     "address" : {
+//         "building" : "4315",
+//         "coord" : [
+//             -73.8676548,
+//             40.8992003
+//         ],
+//         "rua" : "Katonah Ave",
+//         "zipcode" : "10470"
+//     },
+//     "localidade" : "Bronx",
+//     "gastronomia" : "Bakery",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-09-22T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(7)
+//         },
+//         {
+//             "date" : ISODate("2013-10-08T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2013-05-29T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(7)
+//         },
+//         {
+//             "date" : ISODate("2012-12-12T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(0)
+//         },
+//         {
+//             "date" : ISODate("2011-12-06T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(7)
+//         }
+//     ],
+//     "nome" : "Angelica'S Bakery",
+//     "restaurant_id" : "40730301"
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d334d"),
+//     "address" : {
+//         "building" : "2276",
+//         "coord" : [
+//             -73.8263328,
+//             40.8662088
+//         ],
+//         "rua" : "Bartow Avenue",
+//         "zipcode" : "10475"
+//     },
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2015-01-14T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(3)
+//         },
+//         {
+//             "date" : ISODate("2014-08-28T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         },
+//         {
+//             "date" : ISODate("2013-08-09T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2013-03-06T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(5)
+//         },
+//         {
+//             "date" : ISODate("2012-02-02T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         }
+//     ],
+//     "nome" : "Applebee'S Neighborhood Grill & Bar",
+//     "restaurant_id" : "40752494"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d297b"),
+//     "address" : {
+//         "building" : "4277",
+//         "coord" : [
+//             -73.8675389,
+//             40.8977829
+//         ],
+//         "rua" : "Katonah Ave",
+//         "zipcode" : "10470"
+//     },
+//     "localidade" : "Bronx",
+//     "gastronomia" : "Irish",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-10-06T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(2)
+//         },
+//         {
+//             "date" : ISODate("2013-10-16T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(7)
+//         },
+//         {
+//             "date" : ISODate("2013-04-30T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2012-04-30T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(8)
+//         },
+//         {
+//             "date" : ISODate("2011-11-01T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         }
+//     ],
+//     "nome" : "Aqueduct North",
+//     "restaurant_id" : "40379894"
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d2f0a"),
+//     "address" : {
+//         "building" : "1511",
+//         "coord" : [
+//             -73.86362500000001,
+//             40.8381664
+//         ],
+//         "rua" : "White Plains Road",
+//         "zipcode" : "10462"
+//     },
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-06-25T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(13)
+//         },
+//         {
+//             "date" : ISODate("2013-06-03T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2012-06-06T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(13)
+//         }
+//     ],
+//     "nome" : "Archer Sports Bar",
+//     "restaurant_id" : "40571081"
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d2d93"),
+//     "address" : {
+//         "building" : "394",
+//         "coord" : [
+//             -73.78706799999999,
+//             40.8496359
+//         ],
+//         "rua" : "City Island Avenue",
+//         "zipcode" : "10464"
+//     },
+//     "localidade" : "Bronx",
+//     "gastronomia" : "Italian",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-05-22T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(7)
+//         },
+//         {
+//             "date" : ISODate("2013-12-11T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         },
+//         {
+//             "date" : ISODate("2013-03-28T00:00:00.000+0000"),
+//             "grade" : "B",
+//             "score" : NumberInt(22)
+//         },
+//         {
+//             "date" : ISODate("2012-08-07T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(13)
+//         },
+//         {
+//             "date" : ISODate("2012-01-18T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(13)
+//         }
+//     ],
+//     "nome" : "Artie'S",
+//     "restaurant_id" : "40515670"
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d2a28"),
+//     "address" : {
+//         "building" : "5189A",
+//         "coord" : [
+//             -73.91039789999999,
+//             40.8745536
+//         ],
+//         "rua" : "Broadway",
+//         "zipcode" : "10463"
+//     },
+//     "localidade" : "Bronx",
+//     "gastronomia" : "Pizza",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2015-01-09T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         },
+//         {
+//             "date" : ISODate("2014-06-23T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(9)
+//         },
+//         {
+//             "date" : ISODate("2013-10-16T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         },
+//         {
+//             "date" : ISODate("2013-05-15T00:00:00.000+0000"),
+//             "grade" : "C",
+//             "score" : NumberInt(13)
+//         },
+//         {
+//             "date" : ISODate("2012-09-20T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(4)
+//         },
+//         {
+//             "date" : ISODate("2012-04-23T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         }
+//     ],
+//     "nome" : "Arturo'S Pizza",
+//     "restaurant_id" : "40387399"
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d2d04"),
+//     "address" : {
+//         "building" : "670",
+//         "coord" : [
+//             -73.8851025,
+//             40.8541951
+//         ],
+//         "rua" : "East  187 Street",
+//         "zipcode" : "10458"
+//     },
+//     "localidade" : "Bronx",
+//     "gastronomia" : "Italian",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-05-29T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(8)
+//         },
+//         {
+//             "date" : ISODate("2014-01-02T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(2)
+//         },
+//         {
+//             "date" : ISODate("2012-12-07T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(13)
+//         },
+//         {
+//             "date" : ISODate("2011-11-29T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(13)
+//         }
+//     ],
+//     "nome" : "Artuso Pastry Shop",
+//     "restaurant_id" : "40423571"
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d3379"),
+//     "address" : {
+//         "building" : "5500",
+//         "coord" : [
+//             -73.90567390000001,
+//             40.8766056
+//         ],
+//         "rua" : "Broadway",
+//         "zipcode" : "10463"
+//     },
+//     "localidade" : "Bronx",
+//     "gastronomia" : "Juice, Smoothies, Fruit Salads",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-09-16T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2013-09-19T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2012-09-20T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         },
+//         {
+//             "date" : ISODate("2011-10-06T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(13)
+//         }
+//     ],
+//     "nome" : "Astral Fitness & Wellness",
+//     "restaurant_id" : "40760469"
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d2a64"),
+//     "address" : {
+//         "building" : "2214",
+//         "coord" : [
+//             -73.82328319999999,
+//             40.8689401
+//         ],
+//         "rua" : "Bartow Ave",
+//         "zipcode" : "10475"
+//     },
+//     "localidade" : "Bronx",
+//     "gastronomia" : "Delicatessen",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-10-18T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2014-05-02T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(7)
+//         },
+//         {
+//             "date" : ISODate("2013-10-30T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         },
+//         {
+//             "date" : ISODate("2013-05-30T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(13)
+//         },
+//         {
+//             "date" : ISODate("2013-02-12T00:00:00.000+0000"),
+//             "grade" : "B",
+//             "score" : NumberInt(18)
+//         },
+//         {
+//             "date" : ISODate("2012-01-18T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(7)
+//         }
+//     ],
+//     "nome" : "Bagel Cafe",
+//     "restaurant_id" : "40389011"
+// }
+
+// // 6. Liste todos os restaurantes que tenham pelo menos um score superior a 85.
+
+// Input:
+
+db.restaurants.find({ "grades.score": { $gt: 85 } })
+
+// Output:
+
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d28f3"),
+//     "address" : {
+//         "building" : "65",
+//         "coord" : [
+//             -73.9782725,
+//             40.7624022
+//         ],
+//         "rua" : "West   54 Street",
+//         "zipcode" : "10019"
+//     },
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "American",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-08-22T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         },
+//         {
+//             "date" : ISODate("2014-03-28T00:00:00.000+0000"),
+//             "grade" : "C",
+//             "score" : NumberInt(131)
+//         },
+//         {
+//             "date" : ISODate("2013-09-25T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         },
+//         {
+//             "date" : ISODate("2013-04-08T00:00:00.000+0000"),
+//             "grade" : "B",
+//             "score" : NumberInt(25)
+//         },
+//         {
+//             "date" : ISODate("2012-10-15T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         },
+//         {
+//             "date" : ISODate("2011-10-19T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(13)
+//         }
+//     ],
+//     "nome" : "Murals On 54/Randolphs'S",
+//     "restaurant_id" : "40372466"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d2994"),
+//     "address" : {
+//         "building" : "345",
+//         "coord" : [
+//             -73.9864626,
+//             40.7266739
+//         ],
+//         "rua" : "East 6 Street",
+//         "zipcode" : "10003"
+//     },
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "Indian",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-09-15T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(5)
+//         },
+//         {
+//             "date" : ISODate("2014-01-14T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(8)
+//         },
+//         {
+//             "date" : ISODate("2013-05-30T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2013-04-24T00:00:00.000+0000"),
+//             "grade" : "P",
+//             "score" : NumberInt(2)
+//         },
+//         {
+//             "date" : ISODate("2012-10-01T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(9)
+//         },
+//         {
+//             "date" : ISODate("2012-04-06T00:00:00.000+0000"),
+//             "grade" : "C",
+//             "score" : NumberInt(92)
+//         },
+//         {
+//             "date" : ISODate("2011-11-03T00:00:00.000+0000"),
+//             "grade" : "C",
+//             "score" : NumberInt(41)
+//         }
+//     ],
+//     "nome" : "Gandhi",
+//     "restaurant_id" : "40381295"
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d2af7"),
+//     "address" : {
+//         "building" : "130",
+//         "coord" : [
+//             -73.984758,
+//             40.7457939
+//         ],
+//         "rua" : "Madison Avenue",
+//         "zipcode" : "10016"
+//     },
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "Pizza/Italian",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-12-24T00:00:00.000+0000"),
+//             "grade" : "Z",
+//             "score" : NumberInt(31)
+//         },
+//         {
+//             "date" : ISODate("2014-06-17T00:00:00.000+0000"),
+//             "grade" : "C",
+//             "score" : NumberInt(98)
+//         },
+//         {
+//             "date" : ISODate("2013-12-12T00:00:00.000+0000"),
+//             "grade" : "C",
+//             "score" : NumberInt(32)
+//         },
+//         {
+//             "date" : ISODate("2013-05-22T00:00:00.000+0000"),
+//             "grade" : "B",
+//             "score" : NumberInt(21)
+//         },
+//         {
+//             "date" : ISODate("2012-05-02T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         }
+//     ],
+//     "nome" : "Bella Napoli",
+//     "restaurant_id" : "40393488"
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d3363"),
+//     "address" : {
+//         "building" : "",
+//         "coord" : [
+//             -74.0163793,
+//             40.7167671
+//         ],
+//         "rua" : "Hudson River",
+//         "zipcode" : "10282"
+//     },
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "American",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-06-27T00:00:00.000+0000"),
+//             "grade" : "C",
+//             "score" : NumberInt(89)
+//         },
+//         {
+//             "date" : ISODate("2013-06-06T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(6)
+//         },
+//         {
+//             "date" : ISODate("2012-06-19T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(13)
+//         }
+//     ],
+//     "nome" : "West 79Th Street Boat Basin Cafe",
+//     "restaurant_id" : "40756344"
+// }
+
+// // 7. Encontre os restaurantes que obtiveram uma ou mais pontuações (score) entre
+// [80 e 100].
+
+// Input:
+
+db.restaurants.find({ "grades.score": { $gte: 80, $lte: 100 } })
+
+// Output:
+
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d28f3"),
+//     "address" : {
+//         "building" : "65",
+//         "coord" : [
+//             -73.9782725,
+//             40.7624022
+//         ],
+//         "rua" : "West   54 Street",
+//         "zipcode" : "10019"
+//     },
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "American",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-08-22T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         },
+//         {
+//             "date" : ISODate("2014-03-28T00:00:00.000+0000"),
+//             "grade" : "C",
+//             "score" : NumberInt(131)
+//         },
+//         {
+//             "date" : ISODate("2013-09-25T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         },
+//         {
+//             "date" : ISODate("2013-04-08T00:00:00.000+0000"),
+//             "grade" : "B",
+//             "score" : NumberInt(25)
+//         },
+//         {
+//             "date" : ISODate("2012-10-15T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         },
+//         {
+//             "date" : ISODate("2011-10-19T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(13)
+//         }
+//     ],
+//     "nome" : "Murals On 54/Randolphs'S",
+//     "restaurant_id" : "40372466"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d2994"),
+//     "address" : {
+//         "building" : "345",
+//         "coord" : [
+//             -73.9864626,
+//             40.7266739
+//         ],
+//         "rua" : "East 6 Street",
+//         "zipcode" : "10003"
+//     },
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "Indian",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-09-15T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(5)
+//         },
+//         {
+//             "date" : ISODate("2014-01-14T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(8)
+//         },
+//         {
+//             "date" : ISODate("2013-05-30T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2013-04-24T00:00:00.000+0000"),
+//             "grade" : "P",
+//             "score" : NumberInt(2)
+//         },
+//         {
+//             "date" : ISODate("2012-10-01T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(9)
+//         },
+//         {
+//             "date" : ISODate("2012-04-06T00:00:00.000+0000"),
+//             "grade" : "C",
+//             "score" : NumberInt(92)
+//         },
+//         {
+//             "date" : ISODate("2011-11-03T00:00:00.000+0000"),
+//             "grade" : "C",
+//             "score" : NumberInt(41)
+//         }
+//     ],
+//     "nome" : "Gandhi",
+//     "restaurant_id" : "40381295"
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d2af7"),
+//     "address" : {
+//         "building" : "130",
+//         "coord" : [
+//             -73.984758,
+//             40.7457939
+//         ],
+//         "rua" : "Madison Avenue",
+//         "zipcode" : "10016"
+//     },
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "Pizza/Italian",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-12-24T00:00:00.000+0000"),
+//             "grade" : "Z",
+//             "score" : NumberInt(31)
+//         },
+//         {
+//             "date" : ISODate("2014-06-17T00:00:00.000+0000"),
+//             "grade" : "C",
+//             "score" : NumberInt(98)
+//         },
+//         {
+//             "date" : ISODate("2013-12-12T00:00:00.000+0000"),
+//             "grade" : "C",
+//             "score" : NumberInt(32)
+//         },
+//         {
+//             "date" : ISODate("2013-05-22T00:00:00.000+0000"),
+//             "grade" : "B",
+//             "score" : NumberInt(21)
+//         },
+//         {
+//             "date" : ISODate("2012-05-02T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         }
+//     ],
+//     "nome" : "Bella Napoli",
+//     "restaurant_id" : "40393488"
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d31ef"),
+//     "address" : {
+//         "building" : "243",
+//         "coord" : [
+//             -73.9889479,
+//             40.7568894
+//         ],
+//         "rua" : "West   42 Street",
+//         "zipcode" : "10036"
+//     },
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "American",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-10-31T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(9)
+//         },
+//         {
+//             "date" : ISODate("2014-05-16T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         },
+//         {
+//             "date" : ISODate("2013-11-19T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(5)
+//         },
+//         {
+//             "date" : ISODate("2013-03-25T00:00:00.000+0000"),
+//             "grade" : "B",
+//             "score" : NumberInt(19)
+//         },
+//         {
+//             "date" : ISODate("2012-09-05T00:00:00.000+0000"),
+//             "grade" : "B",
+//             "score" : NumberInt(26)
+//         },
+//         {
+//             "date" : ISODate("2012-04-10T00:00:00.000+0000"),
+//             "grade" : "C",
+//             "score" : NumberInt(49)
+//         },
+//         {
+//             "date" : ISODate("2011-11-21T00:00:00.000+0000"),
+//             "grade" : "C",
+//             "score" : NumberInt(80)
+//         }
+//     ],
+//     "nome" : "B.B. Kings",
+//     "restaurant_id" : "40704853"
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d3363"),
+//     "address" : {
+//         "building" : "",
+//         "coord" : [
+//             -74.0163793,
+//             40.7167671
+//         ],
+//         "rua" : "Hudson River",
+//         "zipcode" : "10282"
+//     },
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "American",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-06-27T00:00:00.000+0000"),
+//             "grade" : "C",
+//             "score" : NumberInt(89)
+//         },
+//         {
+//             "date" : ISODate("2013-06-06T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(6)
+//         },
+//         {
+//             "date" : ISODate("2012-06-19T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(13)
+//         }
+//     ],
+//     "nome" : "West 79Th Street Boat Basin Cafe",
+//     "restaurant_id" : "40756344"
+// }
+
+// //8. Indique os restaurantes com latitude inferior a -95,7.
+
+// Input:
+
+db.restaurants.find({ "address.coord.0": { $lt: -95.7 } })
+
+// Output:
+
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d2ddd"),
+//     "address" : {
+//         "building" : "3707",
+//         "coord" : [
+//             -101.8945214,
+//             33.5197474
+//         ],
+//         "rua" : "82 Street",
+//         "zipcode" : "11372"
+//     },
+//     "localidade" : "Queens",
+//     "gastronomia" : "American",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-06-04T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2013-11-07T00:00:00.000+0000"),
+//             "grade" : "B",
+//             "score" : NumberInt(19)
+//         },
+//         {
+//             "date" : ISODate("2013-05-17T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         },
+//         {
+//             "date" : ISODate("2012-08-29T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         },
+//         {
+//             "date" : ISODate("2012-04-03T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2011-11-16T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(7)
+//         }
+//     ],
+//     "nome" : "Burger King",
+//     "restaurant_id" : "40534067"
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d3148"),
+//     "address" : {
+//         "building" : "15259",
+//         "coord" : [
+//             -119.6368672,
+//             36.2504996
+//         ],
+//         "rua" : "10 Avenue",
+//         "zipcode" : "11357"
+//     },
+//     "localidade" : "Queens",
+//     "gastronomia" : "Italian",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-09-04T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         },
+//         {
+//             "date" : ISODate("2014-03-26T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(8)
+//         },
+//         {
+//             "date" : ISODate("2013-03-04T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         },
+//         {
+//             "date" : ISODate("2012-09-27T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         },
+//         {
+//             "date" : ISODate("2012-04-20T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(7)
+//         },
+//         {
+//             "date" : ISODate("2011-11-23T00:00:00.000+0000"),
+//             "grade" : "C",
+//             "score" : NumberInt(34)
+//         }
+//     ],
+//     "nome" : "Cascarino'S",
+//     "restaurant_id" : "40668681"
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d35ee"),
+//     "address" : {
+//         "building" : "60",
+//         "coord" : [
+//             -111.9975205,
+//             42.0970258
+//         ],
+//         "rua" : "West Side Highway",
+//         "zipcode" : "10006"
+//     },
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "Japanese",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-03-20T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(9)
+//         },
+//         {
+//             "date" : ISODate("2013-06-28T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         },
+//         {
+//             "date" : ISODate("2012-07-05T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(13)
+//         },
+//         {
+//             "date" : ISODate("2011-07-27T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(2)
+//         }
+//     ],
+//     "nome" : "Sports Center At Chelsea Piers (Sushi Bar)",
+//     "restaurant_id" : "40882356"
+// }
+
+// // 9. Indique os restaurantes que não têm gastronomia "American", tiveram uma (ou
+// mais) pontuação superior a 70 e estão numa latitude inferior a -65.
+
+// Input:
+
+db.restaurants.find({
+  "gastronomia": { $ne: "American" },
+  "grades.score": { $gt: 70 },
+  "address.coord.0": { $lt: -65 }
+})
+
+// Output:
+
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d2994"),
+//     "address" : {
+//         "building" : "345",
+//         "coord" : [
+//             -73.9864626,
+//             40.7266739
+//         ],
+//         "rua" : "East 6 Street",
+//         "zipcode" : "10003"
+//     },
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "Indian",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-09-15T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(5)
+//         },
+//         {
+//             "date" : ISODate("2014-01-14T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(8)
+//         },
+//         {
+//             "date" : ISODate("2013-05-30T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2013-04-24T00:00:00.000+0000"),
+//             "grade" : "P",
+//             "score" : NumberInt(2)
+//         },
+//         {
+//             "date" : ISODate("2012-10-01T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(9)
+//         },
+//         {
+//             "date" : ISODate("2012-04-06T00:00:00.000+0000"),
+//             "grade" : "C",
+//             "score" : NumberInt(92)
+//         },
+//         {
+//             "date" : ISODate("2011-11-03T00:00:00.000+0000"),
+//             "grade" : "C",
+//             "score" : NumberInt(41)
+//         }
+//     ],
+//     "nome" : "Gandhi",
+//     "restaurant_id" : "40381295"
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d2af7"),
+//     "address" : {
+//         "building" : "130",
+//         "coord" : [
+//             -73.984758,
+//             40.7457939
+//         ],
+//         "rua" : "Madison Avenue",
+//         "zipcode" : "10016"
+//     },
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "Pizza/Italian",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-12-24T00:00:00.000+0000"),
+//             "grade" : "Z",
+//             "score" : NumberInt(31)
+//         },
+//         {
+//             "date" : ISODate("2014-06-17T00:00:00.000+0000"),
+//             "grade" : "C",
+//             "score" : NumberInt(98)
+//         },
+//         {
+//             "date" : ISODate("2013-12-12T00:00:00.000+0000"),
+//             "grade" : "C",
+//             "score" : NumberInt(32)
+//         },
+//         {
+//             "date" : ISODate("2013-05-22T00:00:00.000+0000"),
+//             "grade" : "B",
+//             "score" : NumberInt(21)
+//         },
+//         {
+//             "date" : ISODate("2012-05-02T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         }
+//     ],
+//     "nome" : "Bella Napoli",
+//     "restaurant_id" : "40393488"
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d2b02"),
+//     "address" : {
+//         "building" : "101",
+//         "coord" : [
+//             -73.9243061,
+//             40.8276297
+//         ],
+//         "rua" : "East 161 Street",
+//         "zipcode" : "10451"
+//     },
+//     "localidade" : "Bronx",
+//     "gastronomia" : "Latin (Cuban, Dominican, Puerto Rican, South & Central American)",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-04-10T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         },
+//         {
+//             "date" : ISODate("2013-10-01T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(6)
+//         },
+//         {
+//             "date" : ISODate("2013-04-11T00:00:00.000+0000"),
+//             "grade" : "B",
+//             "score" : NumberInt(25)
+//         },
+//         {
+//             "date" : ISODate("2012-10-25T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2012-10-10T00:00:00.000+0000"),
+//             "grade" : "P",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2012-05-25T00:00:00.000+0000"),
+//             "grade" : "B",
+//             "score" : NumberInt(14)
+//         },
+//         {
+//             "date" : ISODate("2011-09-14T00:00:00.000+0000"),
+//             "grade" : "B",
+//             "score" : NumberInt(26)
+//         },
+//         {
+//             "date" : ISODate("2011-04-25T00:00:00.000+0000"),
+//             "grade" : "C",
+//             "score" : NumberInt(76)
+//         }
+//     ],
+//     "nome" : "El Molino Rojo Restaurant",
+//     "restaurant_id" : "40393688"
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d2c52"),
+//     "address" : {
+//         "building" : "289",
+//         "coord" : [
+//             -73.94610279999999,
+//             40.7137587
+//         ],
+//         "rua" : "Manhattan Avenue",
+//         "zipcode" : "11211"
+//     },
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Bakery",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-03-19T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         },
+//         {
+//             "date" : ISODate("2013-10-10T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         },
+//         {
+//             "date" : ISODate("2013-05-07T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(13)
+//         },
+//         {
+//             "date" : ISODate("2012-09-11T00:00:00.000+0000"),
+//             "grade" : "B",
+//             "score" : NumberInt(18)
+//         },
+//         {
+//             "date" : ISODate("2012-04-18T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(9)
+//         },
+//         {
+//             "date" : ISODate("2011-09-27T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(8)
+//         },
+//         {
+//             "date" : ISODate("2011-05-03T00:00:00.000+0000"),
+//             "grade" : "C",
+//             "score" : NumberInt(77)
+//         }
+//     ],
+//     "nome" : "Fortunato Bros Cafe & Bakery",
+//     "restaurant_id" : "40400561"
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d327c"),
+//     "address" : {
+//         "building" : "231",
+//         "coord" : [
+//             -73.9772294,
+//             40.7527262
+//         ],
+//         "rua" : "Grand Central Station",
+//         "zipcode" : "10017"
+//     },
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "Italian",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2015-01-07T00:00:00.000+0000"),
+//             "grade" : "Z",
+//             "score" : NumberInt(20)
+//         },
+//         {
+//             "date" : ISODate("2014-07-03T00:00:00.000+0000"),
+//             "grade" : "B",
+//             "score" : NumberInt(14)
+//         },
+//         {
+//             "date" : ISODate("2013-12-21T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(13)
+//         },
+//         {
+//             "date" : ISODate("2013-05-17T00:00:00.000+0000"),
+//             "grade" : "C",
+//             "score" : NumberInt(76)
+//         },
+//         {
+//             "date" : ISODate("2012-04-20T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         }
+//     ],
+//     "nome" : "Two Boots Grand Central",
+//     "restaurant_id" : "40725591"
+// }
+
+// // 10. Liste o restaurant_id, o nome, a localidade e gastronomia dos restaurantes cujo nome
+// começam por "Wil".
+
+// Input:
+
+db.restaurants.find(
+  { "nome": /^Wil/ }, 
+  { "restaurant_id": 1, "nome": 1, "localidade": 1, "gastronomia": 1, "_id": 0 }
+)
+
+// Output:
+
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Delicatessen",
+//     "nome" : "Wilken'S Fine Food",
+//     "restaurant_id" : "40356483"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "Wild Asia",
+//     "restaurant_id" : "40357217"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "Pizza",
+//     "nome" : "Wilbel Pizza",
+//     "restaurant_id" : "40871979"
+// }
+
+// // 11. Liste o nome, a localidade e a gastronomia dos restaurantes que pertencem ao Bronx
+// e cuja gastronomia é do tipo "American" ou "Chinese"
+
+// Input:
+
+db.restaurants.find({
+  "localidade": "Bronx",
+  "gastronomia": { $in: ["American", "Chinese"] }
+},
+{
+  "nome": 1,
+  "localidade": 1,
+  "gastronomia": 1,
+  "_id": 0
+})
+
+// Output:
+
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "Wild Asia"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "Chinese",
+//     "nome" : "Happy Garden"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "Chinese",
+//     "nome" : "Happy Garden"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "Manhem Club"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "The New Starling Athletic Club Of The Bronx"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "Yankee Tavern"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "The Punch Bowl"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "Munchtime"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "Marina Delray"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "Cool Zone"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "Beaver Pond"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "African Market (Baboon Cafe)"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "Blue Bay Restaurant"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "Bronx Grill"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "P & K'S Grill"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "John Mulligan'S Fireside Pub"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "Quality Cafe & Restaurant"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "Riverdale Diner"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "Castlehill Diner"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "Short Stop Restaurant"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "Burger Barn Restaurant"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "Eastwood Manor"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "Walnut Bus Stop"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "Villa Barone Manor"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "Gleason'S Cafe"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "Fordham Seafood And Chicken"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "Gun Post Lanes Snack Bar"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "O'Brien'S Pub"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "Tibbett Diner"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "Celeste'S Snack Bar"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "Wembley Athletic Club"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "Pelham Bay Diner"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "Cullen'S Tavern"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "Stuyvesant Yacht Club"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "Riverdale Yacht Club"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "Ambassador Diner"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "Chinese",
+//     "nome" : "China Wok Ii"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "Woodlawn Cafe"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "Crown Diner"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "Crosstown Diner"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "Jimmy Ryan'S"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "Park Billiards"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "Chinese",
+//     "nome" : "Dragon City"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "Bowler Land"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "Louie'Sdale Diner"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "Chinese",
+//     "nome" : "Hunan Balcony"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "Chinese",
+//     "nome" : "Great Wall Restaurant"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "Keenans"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "Glen Roy Bar And Grill"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "American",
+//     "nome" : "An Beal Bocht Cafe"
+// }
+
+// // 12. Liste o restaurant_id, o nome, a localidade e a gastronomia dos restaurantes
+// localizados em "Staten Island", "Queens", ou "Brooklyn".
+
+db.restaurants.find({
+  "localidade": { $in: ["Staten Island", "Queens", "Brooklyn"] }
+},
+{
+  "restaurant_id": 1,
+  "nome": 1,
+  "localidade": 1,
+  "gastronomia": 1,
+  "_id": 0
+})
+
+// Output:
+
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Hamburgers",
+//     "nome" : "Wendy'S",
+//     "restaurant_id" : "30112340"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "American",
+//     "nome" : "Riviera Caterer",
+//     "restaurant_id" : "40356018"
+// }
+// {
+//     "localidade" : "Queens",
+//     "gastronomia" : "Jewish/Kosher",
+//     "nome" : "Tov Kosher Kitchen",
+//     "restaurant_id" : "40356068"
+// }
+// {
+//     "localidade" : "Queens",
+//     "gastronomia" : "American",
+//     "nome" : "Brunos On The Boulevard",
+//     "restaurant_id" : "40356151"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "Jewish/Kosher",
+//     "nome" : "Kosher Island",
+//     "restaurant_id" : "40356442"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Delicatessen",
+//     "nome" : "Wilken'S Fine Food",
+//     "restaurant_id" : "40356483"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "American",
+//     "nome" : "Regina Caterers",
+//     "restaurant_id" : "40356649"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Ice Cream, Gelato, Yogurt, Ices",
+//     "nome" : "Taste The Tropics Ice Cream",
+//     "restaurant_id" : "40356731"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "American",
+//     "nome" : "C & C Catering Service",
+//     "restaurant_id" : "40357437"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Chinese",
+//     "nome" : "May May Kitchen",
+//     "restaurant_id" : "40358429"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Jewish/Kosher",
+//     "nome" : "Seuda Foods",
+//     "restaurant_id" : "40360045"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Ice Cream, Gelato, Yogurt, Ices",
+//     "nome" : "Carvel Ice Cream",
+//     "restaurant_id" : "40360076"
+// }
+// {
+//     "localidade" : "Queens",
+//     "gastronomia" : "Ice Cream, Gelato, Yogurt, Ices",
+//     "nome" : "Carvel Ice Cream",
+//     "restaurant_id" : "40361322"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Delicatessen",
+//     "nome" : "Nordic Delicacies",
+//     "restaurant_id" : "40361390"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "American",
+//     "nome" : "The Movable Feast",
+//     "restaurant_id" : "40361606"
+// }
+// {
+//     "localidade" : "Queens",
+//     "gastronomia" : "Delicatessen",
+//     "nome" : "Sal'S Deli",
+//     "restaurant_id" : "40361618"
+// }
+// {
+//     "localidade" : "Queens",
+//     "gastronomia" : "Delicatessen",
+//     "nome" : "Steve Chu'S Deli & Grocery",
+//     "restaurant_id" : "40361998"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Hamburgers",
+//     "nome" : "White Castle",
+//     "restaurant_id" : "40362344"
+// }
+// {
+//     "localidade" : "Queens",
+//     "gastronomia" : "Chinese",
+//     "nome" : "Ho Mei Restaurant",
+//     "restaurant_id" : "40362432"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Caribbean",
+//     "nome" : "Shashemene Int'L Restaura",
+//     "restaurant_id" : "40362869"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Donuts",
+//     "nome" : "Dunkin' Donuts",
+//     "restaurant_id" : "40363098"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "American",
+//     "nome" : "Mejlander & Mulgannon",
+//     "restaurant_id" : "40363117"
+// }
+// {
+//     "localidade" : "Queens",
+//     "gastronomia" : "Delicatessen",
+//     "nome" : "Tony'S Deli",
+//     "restaurant_id" : "40363333"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "Delicatessen",
+//     "nome" : "Bagels N Buns",
+//     "restaurant_id" : "40363427"
+// }
+// {
+//     "localidade" : "Queens",
+//     "gastronomia" : "Bagels/Pretzels",
+//     "nome" : "Hot Bagels",
+//     "restaurant_id" : "40363565"
+// }
+// {
+//     "localidade" : "Queens",
+//     "gastronomia" : "American",
+//     "nome" : "Snack Time Grill",
+//     "restaurant_id" : "40363590"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "American",
+//     "nome" : "Sonny'S Heros",
+//     "restaurant_id" : "40363744"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "Ice Cream, Gelato, Yogurt, Ices",
+//     "nome" : "Carvel Ice Cream",
+//     "restaurant_id" : "40363834"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Chinese",
+//     "nome" : "Golden Pavillion",
+//     "restaurant_id" : "40363920"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Jewish/Kosher",
+//     "nome" : "Kosher Bagel Hole",
+//     "restaurant_id" : "40364220"
+// }
+// {
+//     "localidade" : "Queens",
+//     "gastronomia" : "American",
+//     "nome" : "Terminal Cafe/Yankee Clipper",
+//     "restaurant_id" : "40364262"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "Delicatessen",
+//     "nome" : "Plaza Bagels & Deli",
+//     "restaurant_id" : "40364286"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "Delicatessen",
+//     "nome" : "B & M Hot Bagel & Grocery",
+//     "restaurant_id" : "40364299"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Italian",
+//     "nome" : "Philadelhia Grille Express",
+//     "restaurant_id" : "40364305"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Steak",
+//     "nome" : "Peter Luger Steakhouse",
+//     "restaurant_id" : "40364335"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Polish",
+//     "nome" : "Polish National Home",
+//     "restaurant_id" : "40364404"
+// }
+// {
+//     "localidade" : "Queens",
+//     "gastronomia" : "German",
+//     "nome" : "Gottscheer Hall",
+//     "restaurant_id" : "40364449"
+// }
+// {
+//     "localidade" : "Queens",
+//     "gastronomia" : "Jewish/Kosher",
+//     "nome" : "Ben-Best Deli & Restaurant",
+//     "restaurant_id" : "40364529"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "American",
+//     "nome" : "Junior'S",
+//     "restaurant_id" : "40364581"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "Great Kills Yacht Club",
+//     "restaurant_id" : "40364610"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "American",
+//     "nome" : "Towne Cafe",
+//     "restaurant_id" : "40364681"
+// }
+// {
+//     "localidade" : "Queens",
+//     "gastronomia" : "Pizza/Italian",
+//     "nome" : "New Park Pizzeria & Restaurant",
+//     "restaurant_id" : "40364744"
+// }
+// {
+//     "localidade" : "Queens",
+//     "gastronomia" : "American",
+//     "nome" : "Douglaston Club",
+//     "restaurant_id" : "40364858"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "American",
+//     "nome" : "Melody Lanes",
+//     "restaurant_id" : "40364889"
+// }
+// {
+//     "localidade" : "Queens",
+//     "gastronomia" : "Pizza",
+//     "nome" : "Rizzo'S Fine Pizza",
+//     "restaurant_id" : "40364920"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "Italian",
+//     "nome" : "Crystal Room",
+//     "restaurant_id" : "40365013"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "Labetti'S Post # 2159",
+//     "restaurant_id" : "40365022"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "American",
+//     "nome" : "Shell Lanes",
+//     "restaurant_id" : "40365043"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "South Shore Swimming Club",
+//     "restaurant_id" : "40365120"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Donuts",
+//     "nome" : "Nostrand Donut Shop",
+//     "restaurant_id" : "40365226"
+// }
+
+// // 13. Liste o nome, a localidade, o score e gastronomia dos restaurantes que alcançaram
+// sempre pontuações inferiores ou igual a 3
+
+// Input:
+
+db.restaurants.find({
+  "grades": { $not: { $elemMatch: { "score": { $gt: 3 } } } }
+},
+{
+  "nome": 1,
+  "localidade": 1,
+  "grades.score": 1,
+  "gastronomia": 1,
+  "_id": 0
+})
+
+// Output:
+
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Hamburgers",
+//     "grades" : [
+//         {
+//             "score" : NumberInt(2)
+//         },
+//         {
+//             "score" : NumberInt(3)
+//         },
+//         {
+//             "score" : NumberInt(0)
+//         }
+//     ],
+//     "nome" : "White Castle"
+// }
+// {
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "Café/Coffee/Tea",
+//     "grades" : [
+//         {
+//             "score" : NumberInt(2)
+//         },
+//         {
+//             "score" : NumberInt(2)
+//         },
+//         {
+//             "score" : NumberInt(2)
+//         },
+//         {
+//             "score" : NumberInt(2)
+//         }
+//     ],
+//     "nome" : "Cafe Madison"
+// }
+// {
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "American",
+//     "grades" : [
+//         {
+//             "score" : NumberInt(0)
+//         },
+//         {
+//             "score" : NumberInt(3)
+//         },
+//         {
+//             "score" : NumberInt(2)
+//         }
+//     ],
+//     "nome" : "Citibank Executive Conference Center"
+// }
+// {
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "American",
+//     "grades" : [
+//         {
+//             "score" : NumberInt(3)
+//         },
+//         {
+//             "score" : NumberInt(2)
+//         },
+//         {
+//             "score" : NumberInt(2)
+//         },
+//         {
+//             "score" : NumberInt(0)
+//         }
+//     ],
+//     "nome" : "Kenyon & Kenyon Cafeteria"
+// }
+// {
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "American",
+//     "grades" : [
+//         {
+//             "score" : NumberInt(2)
+//         },
+//         {
+//             "score" : NumberInt(0)
+//         }
+//     ],
+//     "nome" : "Gold Bar B"
+// }
+// {
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "American",
+//     "grades" : [
+//         {
+//             "score" : NumberInt(0)
+//         },
+//         {
+//             "score" : NumberInt(0)
+//         },
+//         {
+//             "score" : NumberInt(2)
+//         }
+//     ],
+//     "nome" : "Circle In The Square Theatre"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "American",
+//     "grades" : [
+//         {
+//             "score" : NumberInt(3)
+//         }
+//     ],
+//     "nome" : "Stand # 210"
+// }
+
+
+// // 14. Liste o nome e as avaliações dos restaurantes que obtiveram uma avaliação com
+// um grade "A", um score 10 na data "2014-08-11T00: 00: 00Z" (ISODATE).
+
+// Input:
+
+db.restaurants.find(
+  {
+    "grades": { $elemMatch: { "grade": "A", "score": 10, "date": ISODate("2014-08-11T00:00:00Z") } }
+  },
+  {
+    "nome": 1,
+    "grades": 1,
+    "_id": 0
+  }
+)
+
+// Output:
+
+// {
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-08-11T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         },
+//         {
+//             "date" : ISODate("2014-03-14T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(3)
+//         },
+//         {
+//             "date" : ISODate("2013-01-16T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         },
+//         {
+//             "date" : ISODate("2012-07-12T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(9)
+//         }
+//     ],
+//     "nome" : "Serendipity 3"
+// }
+// {
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-08-11T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         },
+//         {
+//             "date" : ISODate("2013-08-30T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2012-08-31T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(4)
+//         },
+//         {
+//             "date" : ISODate("2012-04-13T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(9)
+//         }
+//     ],
+//     "nome" : "Mutual Of America"
+// }
+// {
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-08-11T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         },
+//         {
+//             "date" : ISODate("2014-01-27T00:00:00.000+0000"),
+//             "grade" : "B",
+//             "score" : NumberInt(22)
+//         },
+//         {
+//             "date" : ISODate("2013-06-26T00:00:00.000+0000"),
+//             "grade" : "C",
+//             "score" : NumberInt(37)
+//         },
+//         {
+//             "date" : ISODate("2012-09-05T00:00:00.000+0000"),
+//             "grade" : "C",
+//             "score" : NumberInt(29)
+//         },
+//         {
+//             "date" : ISODate("2012-04-16T00:00:00.000+0000"),
+//             "grade" : "C",
+//             "score" : NumberInt(33)
+//         }
+//     ],
+//     "nome" : "Udon West"
+// }
+// {
+//     "grades" : [
+//         {
+//             "date" : ISODate("2015-01-05T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(9)
+//         },
+//         {
+//             "date" : ISODate("2014-08-11T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         },
+//         {
+//             "date" : ISODate("2014-03-04T00:00:00.000+0000"),
+//             "grade" : "B",
+//             "score" : NumberInt(22)
+//         },
+//         {
+//             "date" : ISODate("2013-09-13T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(5)
+//         },
+//         {
+//             "date" : ISODate("2013-01-16T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         }
+//     ],
+//     "nome" : "Gene'S Coffee Shop"
+// }
+// {
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-08-11T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         },
+//         {
+//             "date" : ISODate("2014-02-20T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(7)
+//         },
+//         {
+//             "date" : ISODate("2013-08-29T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(7)
+//         },
+//         {
+//             "date" : ISODate("2013-03-29T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         },
+//         {
+//             "date" : ISODate("2012-03-07T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(12)
+//         },
+//         {
+//             "date" : ISODate("2011-11-18T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         },
+//         {
+//             "date" : ISODate("2011-10-12T00:00:00.000+0000"),
+//             "grade" : "P",
+//             "score" : NumberInt(4)
+//         }
+//     ],
+//     "nome" : "Union Cafe Restaurant"
+// }
+// {
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-08-11T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         },
+//         {
+//             "date" : ISODate("2013-08-28T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(9)
+//         },
+//         {
+//             "date" : ISODate("2012-09-05T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(11)
+//         },
+//         {
+//             "date" : ISODate("2011-08-25T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(7)
+//         }
+//     ],
+//     "nome" : "Jojo'S Pizza"
+// }
+
+// // 15. Liste o restaurant_id, o nome e os score dos restaurantes nos quais a segunda
+// avaliação foi grade "A" e ocorreu em ISODATE "2014-08-11T00: 00: 00Z".
+
+// Input:
+
+db.restaurants.find(
+  {
+    "grades.1.grade": "A",
+    "grades.1.date": ISODate("2014-08-11T00:00:00Z")
+  },
+  {
+    "restaurant_id": 1,
+    "nome": 1,
+    "grades": {
+      $elemMatch: {
+        "grade": "A",
+        "date": ISODate("2014-08-11T00:00:00Z")
+      }
+    }
+  }
+)
+
+// Output:
+
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d2dc0"),
+//     "nome" : "Club Macanudo (Cigar Bar)",
+//     "restaurant_id" : "40526406",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-08-11T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(9)
+//         }
+//     ]
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d305d"),
+//     "nome" : "Gene'S Coffee Shop",
+//     "restaurant_id" : "40614916",
+//     "grades" : [
+//         {
+//             "date" : ISODate("2014-08-11T00:00:00.000+0000"),
+//             "grade" : "A",
+//             "score" : NumberInt(10)
+//         }
+//     ]
+// }
+
+// // 16. Liste o restaurant_id, o nome, o endereço (address) e as coordenadas geográficas
+// (coord) dos restaurantes onde o 2º elemento da matriz de coordenadas tem um
+// valor superior a 42 e inferior ou igual a 52
+
+// Input:
+
+db.restaurants.find(
+  {
+    "address.coord.1": { $gt: 42, $lte: 52 }
+  },
+  {
+    "restaurant_id": 1,
+    "nome": 1,
+    "address": 1,
+    "_id": 0
+  }
+)
+
+// Output:
+// {
+//     "address" : {
+//         "building" : "47",
+//         "coord" : [
+//             -78.877224,
+//             42.89546199999999
+//         ],
+//         "rua" : "Broadway @ Trinity Pl",
+//         "zipcode" : "10006"
+//     },
+//     "nome" : "T.G.I. Friday'S",
+//     "restaurant_id" : "40387990"
+// }
+// {
+//     "address" : {
+//         "building" : "1",
+//         "coord" : [
+//             -0.7119979,
+//             51.6514664
+//         ],
+//         "rua" : "Pennplaza E, Penn Sta",
+//         "zipcode" : "10001"
+//     },
+//     "nome" : "T.G.I. Fridays",
+//     "restaurant_id" : "40388936"
+// }
+// {
+//     "address" : {
+//         "building" : "3000",
+//         "coord" : [
+//             -87.86567699999999,
+//             42.61150920000001
+//         ],
+//         "rua" : "47 Avenue",
+//         "zipcode" : "11101"
+//     },
+//     "nome" : "Di Luvio'S Deli",
+//     "restaurant_id" : "40402284"
+// }
+// {
+//     "address" : {
+//         "building" : "21972199",
+//         "coord" : [
+//             -78.589606,
+//             42.8912372
+//         ],
+//         "rua" : "Broadway",
+//         "zipcode" : "10024"
+//     },
+//     "nome" : "La Caridad 78",
+//     "restaurant_id" : "40568285"
+// }
+// {
+//     "address" : {
+//         "building" : "7981",
+//         "coord" : [
+//             -84.9751215,
+//             45.4713351
+//         ],
+//         "rua" : "Hoyt Street",
+//         "zipcode" : "11201"
+//     },
+//     "nome" : "Bijan'S",
+//     "restaurant_id" : "40876618"
+// }
+// {
+//     "address" : {
+//         "building" : "0",
+//         "coord" : [
+//             -88.0778799,
+//             42.4154769
+//         ],
+//         "rua" : "& Grand Central",
+//         "zipcode" : "10017"
+//     },
+//     "nome" : "Hyatt, Ny Central/Room Service",
+//     "restaurant_id" : "40879243"
+// }
+// {
+//     "address" : {
+//         "building" : "60",
+//         "coord" : [
+//             -111.9975205,
+//             42.0970258
+//         ],
+//         "rua" : "West Side Highway",
+//         "zipcode" : "10006"
+//     },
+//     "nome" : "Sports Center At Chelsea Piers (Sushi Bar)",
+//     "restaurant_id" : "40882356"
+// }
+
+// // 17.Liste nome, gastronomia e localidade de todos os restaurantes ordenando por ordem
+// crescente da gastronomia e, em segundo, por ordem decrescente de localidade.
+
+// Input:
+
+db.restaurants.find({}, { "nome": 1, "gastronomia": 1, "localidade": 1, "_id": 0 }).sort({ "gastronomia": 1, "localidade": -1 })
+
+// Output:
+
+// {
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "Afghan",
+//     "nome" : "Afghan Kebab House"
+// }
+// {
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "Afghan",
+//     "nome" : "Khyber Pass"
+// }
+// {
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "Afghan",
+//     "nome" : "Afghan Kebab House #1"
+// }
+// {
+//     "localidade" : "Manhattan",
+//     "gastronomia" : "Afghan",
+//     "nome" : "Ariana Kebab House"
+// }
+// {
+//     "localidade" : "Queens",
+//     "gastronomia" : "African",
+//     "nome" : "Africana Restaurant"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "African",
+//     "nome" : "Madiba"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "African",
+//     "nome" : "African Terrace"
+// }
+// {
+//     "localidade" : "Bronx",
+//     "gastronomia" : "African",
+//     "nome" : "Ebe Ye Yie African Restaurant"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "Great Kills Yacht Club"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "Labetti'S Post # 2159"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "South Shore Swimming Club"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "Joyce'S Tavern"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "Li Greci'S Staaten Restaurant"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "Richmond County Country Club"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "Buddy'S Wonder Bar"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "Colonnade Diner"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "Jody'S Club"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "Perkins Family Restaurant & Bakery"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "Schaffer'S Tavern"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "Exclusive Catering"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "Golden Dove Diner"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "King'S Arms Restaurant"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "War Memorial Ice Skating Rink"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "Union Hall"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "Duffy'S"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "Latourette Golf Course"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "Dakota Diner"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "Jimmy Max Restaurant"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "Rosebank Tavern"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "Danny Blaine"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "Excelsior Catering"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "Hillside Swimming Club"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "Henny'S Restaurant"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "Legend'S Pub"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "Rab'S Country Lane"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "Island Chateau"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "The Cake Chef"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "Hidden Cottage"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "Woodrow Diner"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "Campus Center Cafeteria"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "Grand Plaza"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "Perkins Family Restaurant & Bakery"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "W'S Bar & Restaurant"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "The Corner House"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "Blue & Gray Inn"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "Mug Shots"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "Ground Level Beer Pub"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "Afternoone'S Restaurant"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "Applebee'S Neighborhood Grill & Bar"
+// }
+// {
+//     "localidade" : "Staten Island",
+//     "gastronomia" : "American",
+//     "nome" : "The Mansion Grand"
+// }
+
+// // 18.Liste nome, localidade, grade e gastronomia de todos os restaurantes localizados em
+// Brooklyn que não incluem gastronomia "American" e obtiveram uma classificação
+// (grade) "A". Deve apresentá-los por ordem decrescente de gastronomia.
+
+// Input:
+
+db.restaurants.find(
+  {
+    "localidade": "Brooklyn",
+    "gastronomia": { $ne: "American" },
+    "grades.grade": "A"
+  },
+  {
+    "nome": 1,
+    "localidade": 1,
+    "grades.grade": 1,
+    "gastronomia": 1,
+    "_id": 0
+  }
+).sort({ "gastronomia": -1 })
+
+// Output:
+
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Vegetarian",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "C"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "Strictly Vegetarian"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Vegetarian",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "C"
+//         }
+//     ],
+//     "nome" : "Original Vegetarian Restaurant"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Vegetarian",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "Bliss Bakery & Cafe"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Turkish",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "B"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "C"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "Sahara Restaurant"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Turkish",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "Istanbul Restaurant"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Turkish",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "B"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "B"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "Memo Shish Kebab"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Thai",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "Bangkok Thai House"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Thai",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "B"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "Joya"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Thai",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "C"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "Ott Thai Cuisine"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Tex-Mex",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "B"
+//         }
+//     ],
+//     "nome" : "Santa Fe Grill & Bar"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Tex-Mex",
+//     "grades" : [
+//         {
+//             "grade" : "B"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "B"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "B"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "Buddy'S Burrito & Taco Bar"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Steak",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "Peter Luger Steakhouse"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Steak",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "Hunter'S Steak & Ale House"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Steak",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "C"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "Arirang Hibachi Steakhouse"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Spanish",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "Sancho'S Restaurant"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Spanish",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "Charle'S Corner Restaurant & Deli"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Spanish",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "C"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "Don Paco  Lopez Panderia"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Spanish",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "B"
+//         }
+//     ],
+//     "nome" : "La Cabana Restaurant"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Spanish",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "La Lechonera Restaurant"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Spanish",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "M. Restaurant"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Spanish",
+//     "grades" : [
+//         {
+//             "grade" : "B"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "C"
+//         },
+//         {
+//             "grade" : "B"
+//         },
+//         {
+//             "grade" : "B"
+//         }
+//     ],
+//     "nome" : "El Salvador Restaurant"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Spanish",
+//     "grades" : [
+//         {
+//             "grade" : "Z"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "B"
+//         },
+//         {
+//             "grade" : "B"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "AmericanCoffee Shop"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Spanish",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "B"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "Cindy Restaurant Luncheonette"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Spanish",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "Cherokee Deli"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Spanish",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "La Villita Restaurant"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Soups & Sandwiches",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "Hale & Hearty Soups"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Soul Food",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "C"
+//         },
+//         {
+//             "grade" : "B"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "Mitchell'S Restaurant"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Soul Food",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "Enid'S"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Seafood",
+//     "grades" : [
+//         {
+//             "grade" : "B"
+//         },
+//         {
+//             "grade" : "B"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "Pete'S Clam Stop"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Seafood",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "B"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "Surf Bar"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Seafood",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "Randazzo'S Clam Bar"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Sandwiches/Salads/Mixed Buffet",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "Au Bon Pain"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Sandwiches",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "White Castle"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Sandwiches",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "Subway / Twin Donut"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Russian",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "National Restaurant & Catering"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Russian",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "Cafe Paris"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Russian",
+//     "grades" : [
+//         {
+//             "grade" : "B"
+//         },
+//         {
+//             "grade" : "B"
+//         },
+//         {
+//             "grade" : "B"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "Cafe Volna"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Russian",
+//     "grades" : [
+//         {
+//             "grade" : "Z"
+//         },
+//         {
+//             "grade" : "B"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "B"
+//         }
+//     ],
+//     "nome" : "Tatiana Restaurant"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Russian",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "B66 Club"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Russian",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "Varenichnaya - Pelmini Varenichky"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Russian",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "C"
+//         },
+//         {
+//             "grade" : "C"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "B"
+//         }
+//     ],
+//     "nome" : "Anyway Cafe Bar"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Russian",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "Russian Baths"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Polish",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "C"
+//         }
+//     ],
+//     "nome" : "Polish National Home"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Polish",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "B"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "Irene'S Place"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Polish",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "Christina'S Restaurant"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Polish",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "B"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "Lomzymianka Restaurant"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Polish",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "Psc Cafeteria"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Polish",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "Restauracja Relax"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Polish",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "B"
+//         },
+//         {
+//             "grade" : "B"
+//         }
+//     ],
+//     "nome" : "Polonia Restaurant"
+// }
+// {
+//     "localidade" : "Brooklyn",
+//     "gastronomia" : "Pizza/Italian",
+//     "grades" : [
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         },
+//         {
+//             "grade" : "A"
+//         }
+//     ],
+//     "nome" : "Fascati'S Pizzeria"
+// }
+
+
+// // 19.Indique o número total de avaliações (numGrades) na coleção.
+
+// Input:
+
+db.restaurants.aggregate([
+  {
+    $group: {
+      _id: null,
+      numGrades: { $sum: { $size: "$grades" } }
+    }
+  }
+])
+
+// Output:
+
+// 18142
+
+// // 20. Apresente o nome e número de avaliações (numGrades) dos 3 restaurante com
+// mais avaliações.
+
+// Input:
+
+db.restaurants.aggregate([
+  {
+    $project: {
+      nome: 1,
+      numGrades: { $size: "$grades" }
+    }
+  },
+  {
+    $sort: { numGrades: -1 }
+  },
+  {
+    $limit: 3
+  }
+])
+
+// Output:
+
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d28a2"),
+//     "nome" : "Bronx Grill",
+//     "numGrades" : NumberInt(8)
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d2890"),
+//     "nome" : "Blue Bay Restaurant",
+//     "numGrades" : NumberInt(8)
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27b0"),
+//     "nome" : "Ho Mei Restaurant",
+//     "numGrades" : NumberInt(8)
+// }
+
+// // 21.Apresente o número total de avaliações (numGrades) em cada dia da semana.
+
+// Input:
+
+db.restaurants.aggregate([
+  {
+    $unwind: "$grades"
+  },
+  {
+    $project: {
+      dayOfWeek: { $dayOfWeek: "$grades.date" }
+    }
+  },
+  {
+    $group: {
+      _id: "$dayOfWeek",
+      numGrades: { $sum: 1 }
+    }
+  },
+  {
+    $sort: {
+      _id: 1
+    }
+  },
+  {
+    $project: {
+      _id: 0,
+      dayOfWeek: "$_id",
+      numGrades: 1
+    }
+  }
+])
+
+// Output:
+// {
+//     "numGrades" : 7.0,
+//     "dayOfWeek" : NumberInt(1)
+// }
+// {
+//     "numGrades" : 3186.0,
+//     "dayOfWeek" : NumberInt(2)
+// }
+// {
+//     "numGrades" : 3878.0,
+//     "dayOfWeek" : NumberInt(3)
+// }
+// {
+//     "numGrades" : 4118.0,
+//     "dayOfWeek" : NumberInt(4)
+// }
+// {
+//     "numGrades" : 3984.0,
+//     "dayOfWeek" : NumberInt(5)
+// }
+// {
+//     "numGrades" : 2440.0,
+//     "dayOfWeek" : NumberInt(6)
+// }
+// {
+//     "numGrades" : 529.0,
+//     "dayOfWeek" : NumberInt(7)
+// }
+
+// // 22. Conte o total de restaurante existentes em cada localidade.
+
+// Input:
+
+db.restaurants.aggregate([
+  {
+    $group: {
+      _id: "$localidade",
+      totalRestaurants: { $sum: 1 }
+    }
+  }
+])
+
+// Output:
+
+// {
+//     "_id" : "Queens",
+//     "totalRestaurants" : 738.0
+// }
+// {
+//     "_id" : "Bronx",
+//     "totalRestaurants" : 309.0
+// }
+// {
+//     "_id" : "Manhattan",
+//     "totalRestaurants" : 1883.0
+// }
+// {
+//     "_id" : "Staten Island",
+//     "totalRestaurants" : 158.0
+// }
+// {
+//     "_id" : "Brooklyn",
+//     "totalRestaurants" : 684.0
+// }
+
+// // 23. Indique os restaurantes que têm gastronomia "Portuguese", o somatório de score é
+// superior a 50 e estão numa latitude inferior a -60.
+
+// Input:
+
+db.restaurants.find({
+  "gastronomia": "Portuguese",
+  $expr: { $gt: [{ $sum: "$grades.score" }, 50] },
+  "address.coord.1": { $lt: -60 }
+},
+{
+  "nome": 1,
+  "gastronomia": 1,
+  "address.coord": 1,
+  "_id": 0
+})
+
+// Output:
+// *(Nenhum)*
+
+// // 24. Apresente o número de gastronomias diferentes na rua "Fifth Avenue"
+
+// Input: 
+
+db.restaurants.aggregate([
+  {
+    $match: {
+      "address.rua": "Fifth Avenue"
+    }
+  },
+  {
+    $group: {
+      _id: "$gastronomia"
+    }
+  },
+  {
+    $group: {
+      _id: null,
+      totalGastronomias: { $sum: 1 }
+    }
+  }
+])
+
+// Output:
+
+// {
+//     "_id" : null,
+//     "totalGastronomias" : 4.0
+// }
+
+// // 25. Apresente o nome e o score médio (avgScore) e número de avaliações (numGrades)
+// dos restaurantes com score médio superior a 30 desde 1-Jan-2014.
+
+// Input:
+
+db.restaurants.aggregate([
+  {
+    $unwind: "$grades"
+  },
+  {
+    $match: {
+      "grades.date": { $gte: ISODate("2014-01-01T00:00:00Z") }
+    }
+  },
+  {
+    $group: {
+      _id: "$_id",
+      nome: { $first: "$nome" },
+      avgScore: { $avg: "$grades.score" },
+      numGrades: { $sum: 1 }
+    }
+  },
+  {
+    $match: {
+      avgScore: { $gt: 30 }
+    }
+  },
+  {
+    $sort: {
+      avgScore: -1
+    }
+  }
+])
+
+// Output:
+
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d3363"),
+//     "nome" : "West 79Th Street Boat Basin Cafe",
+//     "avgScore" : 89.0,
+//     "numGrades" : 1.0
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d28f3"),
+//     "nome" : "Murals On 54/Randolphs'S",
+//     "avgScore" : 71.0,
+//     "numGrades" : 2.0
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d2af7"),
+//     "nome" : "Bella Napoli",
+//     "avgScore" : 64.5,
+//     "numGrades" : 2.0
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d2a27"),
+//     "nome" : "Cafe Lalo",
+//     "avgScore" : 50.0,
+//     "numGrades" : 1.0
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d2cda"),
+//     "nome" : "Harmonie Club",
+//     "avgScore" : 50.0,
+//     "numGrades" : 1.0
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d2a3f"),
+//     "nome" : "Holland Bar",
+//     "avgScore" : 47.0,
+//     "numGrades" : 1.0
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d3074"),
+//     "nome" : "Planet Sushi",
+//     "avgScore" : 44.0,
+//     "numGrades" : 1.0
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d3409"),
+//     "nome" : "La Palapa",
+//     "avgScore" : 44.0,
+//     "numGrades" : 1.0
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d3483"),
+//     "nome" : "Seo Japanese Restaurant",
+//     "avgScore" : 42.5,
+//     "numGrades" : 2.0
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d2c50"),
+//     "nome" : "Legend'S Pub",
+//     "avgScore" : 38.0,
+//     "numGrades" : 1.0
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d31d6"),
+//     "nome" : "Pho Bang Restaurant",
+//     "avgScore" : 36.5,
+//     "numGrades" : 2.0
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d32c5"),
+//     "nome" : "Mesivta Eitz Chaim",
+//     "avgScore" : 36.0,
+//     "numGrades" : 1.0
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d32f7"),
+//     "nome" : "Del Corso Pizzeria",
+//     "avgScore" : 35.0,
+//     "numGrades" : 2.0
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d2f1b"),
+//     "nome" : "Rio Dela Plata Bakery",
+//     "avgScore" : 34.5,
+//     "numGrades" : 2.0
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d3566"),
+//     "nome" : "Times Deli & Cafe",
+//     "avgScore" : 34.5,
+//     "numGrades" : 2.0
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d33fd"),
+//     "nome" : "Crystal Palace",
+//     "avgScore" : 34.5,
+//     "numGrades" : 2.0
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d3492"),
+//     "nome" : "Italian Village Restaurant Pizzeria",
+//     "avgScore" : 34.0,
+//     "numGrades" : 2.0
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d3554"),
+//     "nome" : "New Victory Restaurant",
+//     "avgScore" : 34.0,
+//     "numGrades" : 2.0
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d2ad9"),
+//     "nome" : "Dojo Restaurant",
+//     "avgScore" : 33.5,
+//     "numGrades" : 2.0
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d359b"),
+//     "nome" : "Acqua",
+//     "avgScore" : 33.333333333333336,
+//     "numGrades" : 3.0
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d2adb"),
+//     "nome" : "Nueva Villa China Restaurant",
+//     "avgScore" : 33.0,
+//     "numGrades" : 2.0
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d2c31"),
+//     "nome" : "Cafe Gitane",
+//     "avgScore" : 33.0,
+//     "numGrades" : 1.0
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d31fd"),
+//     "nome" : "Michael'S Restaurant",
+//     "avgScore" : 33.0,
+//     "numGrades" : 2.0
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d2be6"),
+//     "nome" : "World Cup Cafe",
+//     "avgScore" : 33.0,
+//     "numGrades" : 3.0
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d313e"),
+//     "nome" : "Coppola'S",
+//     "avgScore" : 32.666666666666664,
+//     "numGrades" : 3.0
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d31c5"),
+//     "nome" : "Europa Cafe",
+//     "avgScore" : 32.5,
+//     "numGrades" : 2.0
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d2ec0"),
+//     "nome" : "Miyagi Japanese Home Cooking",
+//     "avgScore" : 32.5,
+//     "numGrades" : 2.0
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d2b6a"),
+//     "nome" : "Tequilla Sunrise",
+//     "avgScore" : 32.0,
+//     "numGrades" : 2.0
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d3498"),
+//     "nome" : "Wu Liang Ye Restaurant",
+//     "avgScore" : 31.5,
+//     "numGrades" : 2.0
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d2bba"),
+//     "nome" : "Sharaku Japanese Restaurant",
+//     "avgScore" : 31.0,
+//     "numGrades" : 2.0
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d307f"),
+//     "nome" : "Good Enough To Eat (A.G. Bistro)",
+//     "avgScore" : 30.5,
+//     "numGrades" : 2.0
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d3195"),
+//     "nome" : "Michelle'S Cocktail Lounge",
+//     "avgScore" : 30.333333333333332,
+//     "numGrades" : 3.0
+// }
+
+
+// // 26. Quantos restaurantes têm uma classificação (grade) de "A" ou "B" em todas as avaliações?
+
+// Input:
+
+db.restaurants.find({
+  "grades.grade": { $all: ["A", "B"] }
+}).count()
+
+// Output:
+
+// 1512
+
+// // 27. Quais são os restaurantes com uma avaliação (grade) "C" ou inferior e que estejam fechados aos fins de semana?
+
+// Input:
+
+db.restaurants.aggregate([
+  {
+    $unwind: "$grades"
+  },
+  {
+    $project: {
+      nome: 1,
+      grade: "$grades.grade",
+      abertoSabado: "$horario.abertoSabado",
+      abertoDomingo: "$horario.abertoDomingo"
+    }
+  },
+  {
+    $match: {
+      $or: [
+        { grade: { $in: ["C", "D", "F"] } },
+        { abertoSabado: false, abertoDomingo: false }
+      ]
+    }
+  }
+])
+
+// Output:
+
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27a1"),
+//     "nome" : "May May Kitchen",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27c8"),
+//     "nome" : "Terminal Cafe/Yankee Clipper",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27cb"),
+//     "nome" : "B & M Hot Bagel & Grocery",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27cc"),
+//     "nome" : "Texas Rotisserie",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27d4"),
+//     "nome" : "Old Town Bar & Restaurant",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27d5"),
+//     "nome" : "Polish National Home",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27d9"),
+//     "nome" : "Nyac Main Dining Room",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27d9"),
+//     "nome" : "Nyac Main Dining Room",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27de"),
+//     "nome" : "Tout Va Bien",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27de"),
+//     "nome" : "Tout Va Bien",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27de"),
+//     "nome" : "Tout Va Bien",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27e1"),
+//     "nome" : "Marchis Restaurant",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27ee"),
+//     "nome" : "Shell Lanes",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27ee"),
+//     "nome" : "Shell Lanes",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27f6"),
+//     "nome" : "Como Pizza",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27fb"),
+//     "nome" : "The Princeton Club",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d27fe"),
+//     "nome" : "Reynold'S Bar",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d2802"),
+//     "nome" : "Yankee Tavern",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d2807"),
+//     "nome" : "King Yum Restaurant",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d2820"),
+//     "nome" : "Nanni Restaurant",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d2820"),
+//     "nome" : "Nanni Restaurant",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d2820"),
+//     "nome" : "Nanni Restaurant",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d2820"),
+//     "nome" : "Nanni Restaurant",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d2822"),
+//     "nome" : "Emilio Iii Bar",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d2824"),
+//     "nome" : "Don Peppe",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d2828"),
+//     "nome" : "Dangerfield'S Night Club",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d282e"),
+//     "nome" : "The Punch Bowl",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d2831"),
+//     "nome" : "Blarney Stone",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d2841"),
+//     "nome" : "Mitchell'S Restaurant",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d2847"),
+//     "nome" : "New Floridian Diner",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d284f"),
+//     "nome" : "Emerald Pub",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d2859"),
+//     "nome" : "Mr Broadway Kosher Restaurant",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d285a"),
+//     "nome" : "Piccola Venezia",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d2875"),
+//     "nome" : "Oyster Bar",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d2882"),
+//     "nome" : "Maries Crisis Cafe",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d288b"),
+//     "nome" : "La Mangeoire",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d289b"),
+//     "nome" : "Cafe Un Deux Trois",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d28a2"),
+//     "nome" : "Bronx Grill",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d28ab"),
+//     "nome" : "Mcdonald'S",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d28ac"),
+//     "nome" : "Viand Cafe",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d28bf"),
+//     "nome" : "Burger King",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d28c5"),
+//     "nome" : "Mcdonald'S",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d28c7"),
+//     "nome" : "Rossini'S",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d28cb"),
+//     "nome" : "The Players Club",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d28ce"),
+//     "nome" : "Cafe Espanol",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d28d0"),
+//     "nome" : "Mcdonald'S",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d28d3"),
+//     "nome" : "Burger King",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d28dc"),
+//     "nome" : "Kosher Delight",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d28e7"),
+//     "nome" : "North Shore Diner",
+//     "grade" : "C"
+// }
+// {
+//     "_id" : ObjectId("651a8b9b9f1ffb7d9f1d28ed"),
+//     "nome" : "Marina Cafe",
+//     "grade" : "C"
+// }
+
+// // 28. Quais são os tipos de cozinha (gastronomia) únicos disponíveis na base de dados?
+
+// Input:
+
+db.restaurants.distinct("gastronomia")
+
+
+// Output:
+
+// [
+//     "Afghan",
+//     "African",
+//     "American",
+//     "Armenian",
+//     "Asian",
+//     "Bagels/Pretzels",
+//     "Bakery",
+//     "Bangladeshi",
+//     "Barbecue",
+//     "Bottled beverages, including water, sodas, juices, etc.",
+//     "Brazilian",
+//     "CafÃ©/Coffee/Tea",
+//     "Café/Coffee/Tea",
+//     "Caribbean",
+//     "Chicken",
+//     "Chinese",
+//     "Chinese/Cuban",
+//     "Chinese/Japanese",
+//     "Continental",
+//     "Czech",
+//     "Delicatessen",
+//     "Donuts",
+//     "Eastern European",
+//     "Egyptian",
+//     "English",
+//     "Ethiopian",
+//     "Filipino",
+//     "French",
+//     "German",
+//     "Greek",
+//     "Hamburgers",
+//     "Hotdogs",
+//     "Ice Cream, Gelato, Yogurt, Ices",
+//     "Indian",
+//     "Indonesian",
+//     "Irish",
+//     "Italian",
+//     "Japanese",
+//     "Jewish/Kosher",
+//     "Juice, Smoothies, Fruit Salads",
+//     "Korean",
+//     "Latin (Cuban, Dominican, Puerto Rican, South & Central American)",
+//     "Mediterranean",
+//     "Mexican",
+//     "Middle Eastern",
+//     "Moroccan",
+//     "Not Listed/Not Applicable",
+//     "Other",
+//     "Pakistani",
+//     "Pancakes/Waffles",
+//     "Peruvian",
+//     "Pizza",
+//     "Pizza/Italian",
+//     "Polish",
+//     "Portuguese",
+//     "Russian",
+//     "Salads",
+//     "Sandwiches",
+//     "Sandwiches/Salads/Mixed Buffet",
+//     "Seafood",
+//     "Soul Food",
+//     "Soups & Sandwiches",
+//     "Spanish",
+//     "Steak",
+//     "Tapas",
+//     "Tex-Mex",
+//     "Thai",
+//     "Turkish",
+//     "Vegetarian",
+//     "Vietnamese/Cambodian/Malaysia"
+// ]
+
+// // 29. Apresente o nome e o score medio dos 2 restaurantes de gastronomia "African" com melhor media
+
+// Input:
+
+db.restaurants.aggregate([
+  {
+    $match: {
+      "gastronomia": "African"
+    }
+  },
+  {
+    $unwind: "$grades"
+  },
+  {
+    $group: {
+      _id: "$_id",
+      nome: { $first: "$nome" },
+      scoreMedio: { $avg: "$grades.score" }
+    }
+  },
+  {
+    $sort: {
+      scoreMedio: -1
+    }
+  },
+  {
+    $limit: 2
+  }
+])
+
+// Output:
+
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d34b4"),
+//     "nome" : "Ebe Ye Yie African Restaurant",
+//     "scoreMedio" : 11.2
+// }
+// {
+//     "_id" : ObjectId("651a8b9c9f1ffb7d9f1d3186"),
+//     "nome" : "Madiba",
+//     "scoreMedio" : 10.833333333333334
+// }
+
+
+// // 30. Apresente o nome e o score medio dos 5 restaurantes com pior score medio
+
+// Input:
+
+db.restaurants.aggregate([
+  {
+    $unwind: "$grades"
+  },
+  {
+    $group: {
+      _id: "$_id",
+      nome: { $first: "$nome" },
+      scoreMedio: { $avg: "$grades.score" }
+    }
+  },
+  {
+    $project: {
+      _id: 0,
+      nome: 1,
+      scoreMedio: 1
+    }
+  },
+  {
+    $sort: {
+      scoreMedio: 1
+    }
+  },
+  {
+    $limit: 5
+  }
+])
+
+// Output:
+
+// {
+//     "nome" : "Circle In The Square Theatre",
+//     "scoreMedio" : 0.6666666666666666
+// }
+// {
+//     "nome" : "Gold Bar B",
+//     "scoreMedio" : 1.0
+// }
+// {
+//     "nome" : "Citibank Executive Conference Center",
+//     "scoreMedio" : 1.6666666666666667
+// }
+// {
+//     "nome" : "White Castle",
+//     "scoreMedio" : 1.6666666666666667
+// }
+// {
+//     "nome" : "Forest Park Golf Course",
+//     "scoreMedio" : 1.75
+// }
+
+
+
+
+

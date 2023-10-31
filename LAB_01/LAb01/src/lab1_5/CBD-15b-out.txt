@@ -1,0 +1,23 @@
+User Input (Username / Exit): miragaia
+User Input (Product): arroz
+User Input (Quantity): 3
+Machine Input: Pedido registrado com sucesso.
+User Input (Username / Exit): miragaia
+User Input (Product): banana
+User Input (Quantity): 23
+Machine Input: Pedido registrado com sucesso.
+User Input (Username / Exit): paulo
+User Input (Product): roupa
+User Input (Quantity): 1
+Machine Input: Pedido registrado com sucesso.
+User Input (Username / Exit): exit
+Machine Input: It is all for now!
+
+
+
+PS: mais uma vez visto que reutilizei o codigo anterior tenho o mesmo problema, deixo aqui de novo o que escrevi anteriormente levemente adaptado
+
+Se o user exceder um limite de unidades de produtos estipulado para 30 o programa nao o permite registar o pedido. 
+Nao esta demosntrado neste file pois implicaria criar uma funcao para na main poder colocar a verificacao e esvrecer neste ficheiro.
+Infelizmente devido ao tempo de entrega vou ter de enviar o guiao assim, espero que isto nao seja motivo de um grande desconto visto se for testar o programa ele 
+funciona como o suposto. Agradeco pela compreensao, Miguel Miragaia

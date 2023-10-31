@@ -1,0 +1,35 @@
+Username (or type 'exit' to exit the app): miragaia
+Product: papaia
+Pedido registrado com sucesso.
+Username (or type 'exit' to exit the app): miragaia
+Product: roupa
+Timeslot for user miragaia has expired.
+Pedido registrado com sucesso.
+Username (or type 'exit' to exit the app): exit
+It is all for now!
+
+
+
+
+Username (or type 'exit' to exit the app): miguel
+Product: pao
+Pedido registrado com sucesso.
+Username (or type 'exit' to exit the app): miguel
+Product: batata
+Pedido registrado com sucesso.
+Username (or type 'exit' to exit the app): miguel
+Product: agua
+Timeslot for user miguel has expired.
+Pedido registrado com sucesso.
+Username (or type 'exit' to exit the app): manuel
+Product: arvore
+Pedido registrado com sucesso.
+Username (or type 'exit' to exit the app): manuel
+Product: catos
+Pedido registrado com sucesso.
+Username (or type 'exit' to exit the app): manuel
+Product: vitamina
+Timeslot for user manuel has expired.
+Pedido registrado com sucesso.
+Username (or type 'exit' to exit the app): exit
+It is all for now!

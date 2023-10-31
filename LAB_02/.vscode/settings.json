@@ -1,0 +1,15 @@
+{
+    "maven.view": "hierarchical",
+    "java.project.sourcePaths": [
+        "lab2_4/src",
+        "lab2_3/mongo_driver/src/main/java/com/example",
+        "Java/ex2_3"
+    ],
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "mongodb-driver-sync-4.10.2.jar",
+        "/home/miragaia/Documents/3_ANO/1_SEMESTRE/CBD/Práticas/Mongo_JARs/bson-4.10.2.jar",
+        "/home/miragaia/Documents/3_ANO/1_SEMESTRE/CBD/Práticas/Mongo_JARs/mongodb-driver-core-4.10.2.jar",
+        "/home/miragaia/Documents/3_ANO/1_SEMESTRE/CBD/Práticas/Mongo_JARs/mongo-java-driver-3.12.14.jar"
+    ]
+}

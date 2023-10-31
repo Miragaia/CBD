@@ -1,0 +1,20 @@
+User Input: maria
+Autocomplete Result: maria
+
+Autocomplete Result: mariam
+
+Autocomplete Result: marian
+
+Autocomplete Result: mariana
+
+Autocomplete Result: mariann
+
+Autocomplete Result: marianna
+
+Autocomplete Result: marianne
+
+User Input: miguel
+Autocomplete Result: miguela
+
+Autocomplete Result: miguelita
+

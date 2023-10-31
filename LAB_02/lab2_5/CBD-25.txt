@@ -1,0 +1,161 @@
+a) 
+> load("/home/miragaia/Documents/3_ANO/1_SEMESTRE/CBD/Práticas/LAB_02/lab2_5/populatePhones.js")
+true
+
+> populatePhones(351, 1, 5)
+Inserted number +351-232000001
+Inserted number +351-231000002
+Inserted number +351-234000003
+Inserted number +351-234000004
+Inserted number +351-231000005
+Done!
+
+b)
+> populatePhones(351, 1, 200000)
+(...)
+Inserted number +351-231199985
+Inserted number +351-210199986
+Inserted number +351-234199987
+Inserted number +351-220199988
+Inserted number +351-232199989
+Inserted number +351-220199990
+Inserted number +351-233199991
+Inserted number +351-233199992
+Inserted number +351-232199993
+Inserted number +351-210199994
+Inserted number +351-231199995
+Inserted number +351-231199996
+Inserted number +351-231199997
+Inserted number +351-231199998
+Inserted number +351-210199999
+Inserted number +351-220200000
+Done!
+
+> db.phones.find().limit(10)
+{
+    "_id" : 351233000001.0,
+    "components" : {
+        "country" : NumberInt(351),
+        "prefix" : NumberInt(233),
+        "number" : NumberInt(1)
+    },
+    "display" : "+351-233000001"
+}
+{
+    "_id" : 351231000002.0,
+    "components" : {
+        "country" : NumberInt(351),
+        "prefix" : NumberInt(231),
+        "number" : NumberInt(2)
+    },
+    "display" : "+351-231000002"
+}
+{
+    "_id" : 351234000003.0,
+    "components" : {
+        "country" : NumberInt(351),
+        "prefix" : NumberInt(234),
+        "number" : NumberInt(3)
+    },
+    "display" : "+351-234000003"
+}
+{
+    "_id" : 351231000004.0,
+    "components" : {
+        "country" : NumberInt(351),
+        "prefix" : NumberInt(231),
+        "number" : NumberInt(4)
+    },
+    "display" : "+351-231000004"
+}
+{
+    "_id" : 351231000005.0,
+    "components" : {
+        "country" : NumberInt(351),
+        "prefix" : NumberInt(231),
+        "number" : NumberInt(5)
+    },
+    "display" : "+351-231000005"
+}
+{
+    "_id" : 351234000006.0,
+    "components" : {
+        "country" : NumberInt(351),
+        "prefix" : NumberInt(234),
+        "number" : NumberInt(6)
+    },
+    "display" : "+351-234000006"
+}
+{
+    "_id" : 351210000007.0,
+    "components" : {
+        "country" : NumberInt(351),
+        "prefix" : NumberInt(21),
+        "number" : NumberInt(7)
+    },
+    "display" : "+351-210000007"
+}
+{
+    "_id" : 351210000008.0,
+    "components" : {
+        "country" : NumberInt(351),
+        "prefix" : NumberInt(21),
+        "number" : NumberInt(8)
+    },
+    "display" : "+351-210000008"
+}
+{
+    "_id" : 351220000009.0,
+    "components" : {
+        "country" : NumberInt(351),
+        "prefix" : NumberInt(22),
+        "number" : NumberInt(9)
+    },
+    "display" : "+351-220000009"
+}
+{
+    "_id" : 351210000010.0,
+    "components" : {
+        "country" : NumberInt(351),
+        "prefix" : NumberInt(21),
+        "number" : NumberInt(10)
+    },
+    "display" : "+351-210000010"
+}
+
+> db.phones.count()
+200000
+
+c)
+>db.phones.aggregate([ {$group : {_id:'$components.prefix', count : {$sum : 1} } } ])
+{
+    "_id" : NumberInt(233),
+    "count" : 33490.0
+}
+{
+    "_id" : NumberInt(232),
+    "count" : 33274.0
+}
+{
+    "_id" : NumberInt(234),
+    "count" : 33043.0
+}
+{
+    "_id" : NumberInt(21),
+    "count" : 33582.0
+}
+{
+    "_id" : NumberInt(22),
+    "count" : 33256.0
+}
+{
+    "_id" : NumberInt(231),
+    "count" : 33355.0
+}
+
+d)
+
+(ver capicua.js)
+
+> iscapicua()
+Existem 0 capicúas

@@ -1,0 +1,93 @@
+--> Alinea A:
+
+Pesquisa de restaurantes pelo nome:
+
+Restaurante encontrado:
+ID: 651a8b9b9f1ffb7d9f1d279b
+Nome: Kosher Island
+Gastronomia: Jewish/Kosher
+Localidade: Staten Island
+
+
+Restaurante encontrado:
+ID: 651a8b9b9f1ffb7d9f1d2798
+Nome: Riviera Caterer
+Gastronomia: American
+Localidade: Brooklyn
+
+
+Inserção de restaurante:
+Sucesso: Restaurante inserido com sucesso!
+
+
+Pesquisa do Restaurante inserido:
+
+Restaurante encontrado:
+ID: 653cfab7a3520a44fcd714ab
+Nome: Miragaia House
+Gastronomia: Portuguese
+Localidade: Viseu
+
+
+Tentativa de inserção de resturante sem o campo gastronomia:
+Erro: Não é possível executar a ação, insira todos os dados (nome, localidade, gastronomia).
+
+Edicao de restaurante pelo ID:
+Sucesso: Restaurante editado com sucesso!
+
+
+--> Alinea B:
+
+Pesquisa sem Indices
+
+Pesquisa de resstaurantes com localidade Brooklyn e gastronomia Ice Cream, Gelato, Yogurt, Ices ou Chinese
+Duração nas pesquisas sem índices: 4489603
+
+Pesquisa com Indices
+
+Pesquisa de resstaurantes com localidade Brooklyn e gastronomia Ice Cream, Gelato, Yogurt, Ices ou Chinese
+Duração nas pesquisas com índices: 24866
+
+
+--> Alinea C:
+
+Dar run na AlineaC
+
+
+--> Alinea D:
+
+Número de localidades distintas: 8
+
+Nome de restaurantes contendo 'Park' no nome:
+-> The Park
+-> Park'S Snack
+-> Park Bar
+-> Terrace On The Park
+-> Whiskey Park
+-> Park Billiards
+-> Pizza Park
+-> The Park Slope Chipshop
+-> Central Park Boathouse
+-> Morris Park Pizza
+-> Tribeca Park Cafe
+-> Gigino At Wagner Park
+-> Park Italian Gourment
+-> Dyker Park Bagels
+-> Rego Park Cafe
+-> Park Plaza Restaurant
+-> Sunset Park Diner & Donuts
+-> Park Slope Ale House
+-> Forest Park Golf Course
+-> Nora'S Park Bench Cafe
+-> New Park Pizzeria & Restaurant
+-> Morris Park Bake Shop
+-> The Hallmark Of Battery Park City- Dining Room
+
+Numero de restaurantes por localidade: 
+-> Queens - 738
+-> Staten Island - 158
+-> Brooklyn - 684
+-> Manhattan - 1883
+-> Viseu - 2
+-> Bronx - 309
+-> Aveiro - 1

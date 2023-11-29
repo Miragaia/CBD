@@ -1,0 +1,22 @@
+[
+  {
+    "reservation_id": "cc437133-8cc2-48fc-a9d1-0c5bd712edd8",
+    "total_fee": 250
+  },
+  {
+    "reservation_id": "9474c7b9-5c4c-47ce-a1a5-b1e080f68523",
+    "total_fee": 100
+  },
+  {
+    "reservation_id": "4b66408d-8ff2-4e69-88f7-553a96047b59",
+    "total_fee": 100
+  },
+  {
+    "reservation_id": "27acb15b-7f2c-42e5-86ac-3ceb634aea65",
+    "total_fee": 500
+  },
+  {
+    "reservation_id": "57a5354d-564b-4223-afee-e6b0ca8c9614",
+    "total_fee": 100
+  }
+]

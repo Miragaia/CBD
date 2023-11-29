@@ -1,0 +1,435 @@
+> a)
+
+>> 1. Gestão de utilizadores: entre outros, registar o username, nome, email, selo temporal de 
+registo na plataforma; 
+
+    CREATE TABLE IF NOT EXISTS users (
+        user_id UUID PRIMARY KEY,
+        username TEXT,
+        name TEXT,
+        email TEXT,
+        reg_time TIMESTAMP
+    );
+
+
+>> 2. Gestão de vídeos: entre outros, registar o autor da partilha, nome do vídeo, descrição, uma 
+ou mais etiquetas (tag) e selo temporal de upload/partilha; 
+
+    CREATE TABLE IF NOT EXISTS videos (
+        video_id UUID PRIMARY KEY,
+        author_id UUID,
+        name TEXT,
+        description TEXT,
+        tags SET<TEXT>,
+        upload_time TIMESTAMP
+    );
+
+>> 3. Gestão de comentários: realizados para um vídeo em determinado momento temporal e 
+tem como autor um utilizador; 
+
+    CREATE TABLE IF NOT EXISTS comments (
+        comment_id UUID PRIMARY KEY,
+        video_id UUID,
+        author_id UUID,
+        comment_time TIMESTAMP,
+        comment TEXT
+    );
+
+>> 4. Gestão de vídeo followers: permitir o registo de utilizadores que seguem determinado vídeo. 
+Num sistema de informação, permitirá por exemplo notificar todos os followers de um 
+novo comentário inserido para o vídeo; 
+
+        CREATE TABLE IF NOT EXISTS video_followers (
+            video_id UUID,
+            user_id set<text>,
+            PRIMARY KEY (video_id)
+        );
+
+>> 5. Registo de eventos: por vídeo e utilizador e podem ser do tipo play/pause/stop, incluindo 
+o registo temporal do evento e o momento (temporal) em que ocorre no vídeo. Por exemplo, 
+o utilizador XPTO fez play no vídeo YGZ às 2:35:54 do dia 2 de outubro de 2017, 
+ao 300 segundo de tempo do vídeo; 
+
+    CREATE TABLE IF NOT EXISTS events (
+        event_id UUID,
+        video_id UUID,
+        user_id UUID,
+        event_type TEXT,
+        event_timestamp TIMESTAMP,
+        video_event_time INT,
+        PRIMARY KEY (video_id, user_id, event_timestamp)
+    );
+
+>> 6. Rating de vídeos: valor inteiro de 1-5, por vídeo e não necessita de registo do autor.  
+
+    CREATE TABLE IF NOT EXISTS ratings (
+    video_id UUID PRIMARY KEY,
+    user_ratings SET<INT>
+);
+
+>> 7. Permitir a pesquisa de todos os vídeos de determinado autor;
+    CREATE TABLE IF NOT EXISTS videos_autor (
+        video_id UUID,
+        author_id UUID PRIMARY KEY,
+        name TEXT,
+        description TEXT,
+        tags SET<TEXT>,
+        upload_time TIMESTAMP
+    );
+
+    SELECT * FROM videos_autor WHERE author_id = 39b6d4c8-56ee-40a5-b9ec-3dc6f717c5b9;
+
+>> 8. Permitir a pesquisa de comentários por utilizador, ordenado inversamente pela data;
+
+    CREATE TABLE IF NOT EXISTS comments_user (
+            comment_id UUID,
+            video_id UUID,
+            author_id UUID,
+            comment_time TIMESTAMP,
+            comment TEXT,
+
+            PRIMARY KEY (author_id, comment_time)) WITH CLUSTERING ORDER BY (comment_time DESC);
+
+    SELECT * FROM comments_user WHERE author_id = b5c01858-1e56-48cc-99ba-024954d1a0c2 ORDER BY comment_time DESC;
+
+>> 9. Permitir a pesquisa de comentários por vídeos, ordenado inversamente pela data;
+
+    CREATE TABLE IF NOT EXISTS comments_videos (
+            comment_id UUID,
+            video_id UUID,
+            author_id UUID,
+            comment_time TIMESTAMP,
+            comment TEXT,
+
+            PRIMARY KEY (video_id, comment_time)) WITH CLUSTERING ORDER BY (comment_time DESC);
+
+    SELECT * FROM comments_videos WHERE video_id = 8d87e4dd-a6b0-4328-a81d-fb1d64a90e47 ORDER BY comment_time DESC;
+
+>> 10. Permitir a pesquisa do rating médio de um vídeo e quantas vezes foi votado;
+    Por sugestão do professor, criei uma UDF para calcular a media dos ratings:
+
+        create function avg_rating(ratings set<int>)
+            returns null on null input
+            returns double
+            language java as
+            '    double sum = 0.0;
+                int count = 0;
+                for (int rating : ratings) {
+                    sum += rating;
+                    count++;
+                }
+                return count > 0 ? sum / count : null;
+            ';
+    
+    Porem por default Cassandra nao permite UDF's pelo que tive de aceder ao ficheiro cassandra.yaml e alterar o seguinte:
+        enable_user_defined_functions: true
+
+    Desta forma foi possivel criar a UDF e fazer uma pesquisa usando-a através da seguinte query:
+        SELECT video_id, avg_rating(user_ratings) AS average_rating
+        FROM ratings
+        WHERE video_id = 938b2942-9ffd-47eb-a241-a92db9f40de5;
+
+    
+> b)
+
+-- INSERT dados nos users
+
+INSERT INTO users (user_id, username, name, email, reg_time)
+VALUES (uuid(), 'john_doe', 'John Doe', 'john.doe@email.com', toTimestamp(now()));
+
+INSERT INTO users (user_id, username, name, email, reg_time)
+VALUES (uuid(), 'alice_smith', 'Alice Smith', 'alice.smith@email.com', toTimestamp(now()));
+
+INSERT INTO users (user_id, username, name, email, reg_time)
+VALUES (uuid(), 'bob_jones', 'Bob Jones', 'bob.jones@email.com', toTimestamp(now()));
+
+INSERT INTO users (user_id, username, name, email, reg_time)
+VALUES (uuid(), 'susan_green', 'Susan Green', 'susan.green@email.com', toTimestamp(now()));
+
+INSERT INTO users (user_id, username, name, email, reg_time)
+VALUES (uuid(), 'david_white', 'David White', 'david.white@email.com', toTimestamp(now()));
+
+INSERT INTO users (user_id, username, name, email, reg_time)
+VALUES (uuid(), 'emily_brown', 'Emily Brown', 'emily.brown@email.com', toTimestamp(now()));
+
+INSERT INTO users (user_id, username, name, email, reg_time)
+VALUES (uuid(), 'daniel_smith', 'Daniel Smith', 'daniel.smith@email.com', toTimestamp(now()));
+
+INSERT INTO users (user_id, username, name, email, reg_time)
+VALUES (uuid(), 'grace_taylor', 'Grace Taylor', 'grace.taylor@email.com', toTimestamp(now()));
+
+INSERT INTO users (user_id, username, name, email, reg_time)
+VALUES (uuid(), 'robert_jones', 'Robert Jones', 'robert.jones@email.com', toTimestamp(now()));
+
+INSERT INTO users (user_id, username, name, email, reg_time)
+VALUES (uuid(), 'olivia_martin', 'Olivia Martin', 'olivia.martin@email.com', toTimestamp(now()));
+
+
+-- Inserir dados nos videos
+
+INSERT INTO videos (video_id, author_id, name, description, tags, upload_time)
+VALUES (uuid(), b5c01858-1e56-48cc-99ba-024954d1a0c2, 'Awesome Video', 'Check out this video!', {'cool', 'fun'}, toTimestamp(now()));
+
+INSERT INTO videos (video_id, author_id, name, description, tags, upload_time)
+VALUES (uuid(),f023bdfa-4b88-4966-aa47-850d75cbc6ac, 'Amazing Sunset', 'Enjoy this breathtaking sunset!', {'nature', 'beautiful'}, toTimestamp(now()));
+
+INSERT INTO videos (video_id, author_id, name, description, tags, upload_time)
+VALUES (uuid(), 39b6d4c8-56ee-40a5-b9ec-3dc6f717c5b9, 'Funny Cat Compilation', 'Laugh at these adorable cats!', {'cats', 'funny'}, toTimestamp(now()));
+
+INSERT INTO videos (video_id, author_id, name, description, tags, upload_time)
+VALUES (uuid(), 66205b1d-8634-4e8a-8d4a-c8736d359b6b, 'Cooking Masterclass', 'Learn to cook delicious meals at home!', {'cooking', 'food'}, toTimestamp(now()));
+
+INSERT INTO videos (video_id, author_id, name, description, tags, upload_time)
+VALUES (uuid(),cf9f567e-26f9-4ec7-a2f5-361900708169, 'Guitar Solo Performance', 'Listen to an amazing guitar solo!', {'music', 'performance'}, toTimestamp(now()));
+
+INSERT INTO videos (video_id, author_id, name, description, tags, upload_time)
+VALUES (uuid(), fc6aa433-e89c-4da8-b940-ea58731f3f20, 'Travel Vlog - Paris', 'Explore the beauty of Paris!', {'travel', 'adventure'}, toTimestamp(now()));
+
+INSERT INTO videos (video_id, author_id, name, description, tags, upload_time)
+VALUES (uuid(), 406ff87e-7e42-4547-8eda-015396a98229, 'Fitness Workout at Home', 'Stay fit with this home workout routine!', {'fitness', 'exercise'}, toTimestamp(now()));
+
+INSERT INTO videos (video_id, author_id, name, description, tags, upload_time)
+VALUES (uuid(), f8215ed3-ae77-4e35-b1bb-dfc4f60f99f8, 'Science Experiments for Kids', 'Fun and educational experiments!', {'science', 'kids'}, toTimestamp(now()));
+
+INSERT INTO videos (video_id, author_id, name, description, tags, upload_time)
+VALUES (uuid(), d86b3621-f913-4f55-bf5f-92763dc001b7, 'Digital Art Speed Painting', 'Watch the creation of digital artwork!', {'art', 'digital'}, toTimestamp(now()));
+
+INSERT INTO videos (video_id, author_id, name, description, tags, upload_time)
+VALUES (uuid(), 9f83ef45-1078-4f0e-838a-f24c87b1a271, 'DIY Home Decor Ideas', 'Get creative with these home decor tips!', {'diy', 'home'}, toTimestamp(now()));
+
+INSERT INTO videos (video_id, author_id, name, description, tags, upload_time)
+VALUES (uuid(), 9f83ef45-1078-4f0e-838a-f24c87b1a271, 'DIY Home Decor Ideas Part2', 'Get creative with these home decor tips!', {'diy', 'home'}, toTimestamp(now()));
+
+INSERT INTO videos (video_id, author_id, name, description, tags, upload_time)
+VALUES (uuid(), 9f83ef45-1078-4f0e-838a-f24c87b1a271, 'DIY Home Decor Ideas Part3', 'Get creative with these home decor tips!', {'diy', 'home'}, toTimestamp(now()));
+
+-- Inserir dados nos videos_autor
+
+INSERT INTO videos_autor (video_id, author_id, name, description, tags, upload_time)
+VALUES (uuid(), b5c01858-1e56-48cc-99ba-024954d1a0c2, 'Awesome Video', 'Check out this video!', {'cool', 'fun'}, toTimestamp(now()));
+
+INSERT INTO videos_autor (video_id, author_id, name, description, tags, upload_time)
+VALUES (uuid(),f023bdfa-4b88-4966-aa47-850d75cbc6ac, 'Amazing Sunset', 'Enjoy this breathtaking sunset!', {'nature', 'beautiful'}, toTimestamp(now()));
+
+INSERT INTO videos_autor (video_id, author_id, name, description, tags, upload_time)
+VALUES (uuid(), 39b6d4c8-56ee-40a5-b9ec-3dc6f717c5b9, 'Funny Cat Compilation', 'Laugh at these adorable cats!', {'cats', 'funny'}, toTimestamp(now()));
+
+INSERT INTO videos_autor (video_id, author_id, name, description, tags, upload_time)
+VALUES (uuid(), 66205b1d-8634-4e8a-8d4a-c8736d359b6b, 'Cooking Masterclass', 'Learn to cook delicious meals at home!', {'cooking', 'food'}, toTimestamp(now()));
+
+INSERT INTO videos_autor (video_id, author_id, name, description, tags, upload_time)
+VALUES (uuid(),cf9f567e-26f9-4ec7-a2f5-361900708169, 'Guitar Solo Performance', 'Listen to an amazing guitar solo!', {'music', 'performance'}, toTimestamp(now()));
+
+
+-- Inserir dados nos comments
+
+INSERT INTO comments (comment_id, video_id, author_id, comment_time, comment)
+VALUES (uuid(), 938b2942-9ffd-47eb-a241-a92db9f40de5, b5c01858-1e56-48cc-99ba-024954d1a0c2,toTimestamp(now()), 'Great video!' );
+
+INSERT INTO comments (comment_id, video_id, author_id, comment_time, comment)
+VALUES (uuid(), 8d87e4dd-a6b0-4328-a81d-fb1d64a90e47, b5c01858-1e56-48cc-99ba-024954d1a0c2, toTimestamp(now()), 'Awesome video!');
+
+INSERT INTO comments (comment_id, video_id, author_id, comment_time, comment)
+VALUES (uuid(), 8d87e4dd-a6b0-4328-a81d-fb1d64a90e47, b5c01858-1e56-48cc-99ba-024954d1a0c2, toTimestamp(now()), 'Beautiful sunset!');
+
+INSERT INTO comments (comment_id, video_id, author_id, comment_time, comment)
+VALUES (uuid(), 9f3d1df3-306e-46dd-822a-78b9f97362e1,f8215ed3-ae77-4e35-b1bb-dfc4f60f99f8 , toTimestamp(now()), 'Hilarious cats!');
+
+INSERT INTO comments (comment_id, video_id, author_id, comment_time, comment)
+VALUES (uuid(), 938b2942-9ffd-47eb-a241-a92db9f40de5, 66205b1d-8634-4e8a-8d4a-c8736d359b6b,toTimestamp(now()), 'Just WOW!' );
+
+INSERT INTO comments (comment_id, video_id, author_id, comment_time, comment)
+VALUES (uuid(), 8d87e4dd-a6b0-4328-a81d-fb1d64a90e47, 406ff87e-7e42-4547-8eda-015396a98229, toTimestamp(now()), 'Incredible!');
+
+INSERT INTO comments (comment_id, video_id, author_id, comment_time, comment)
+VALUES (uuid(), 8d87e4dd-a6b0-4328-a81d-fb1d64a90e47, f023bdfa-4b88-4966-aa47-850d75cbc6ac, toTimestamp(now()), 'Keep with the good work!');
+
+INSERT INTO comments (comment_id, video_id, author_id, comment_time, comment)
+VALUES (uuid(), 9f3d1df3-306e-46dd-822a-78b9f97362e1,f023bdfa-4b88-4966-aa47-850d75cbc6ac , toTimestamp(now()), 'So funny AHAHA!');
+
+INSERT INTO comments (comment_id, video_id, author_id, comment_time, comment)
+VALUES (uuid(), 0bbddbfd-ee5b-432f-a077-9a18eea53d07, d86b3621-f913-4f55-bf5f-92763dc001b7, toTimestamp(now()), 'Keep with the good work!');
+
+INSERT INTO comments (comment_id, video_id, author_id, comment_time, comment)
+VALUES (uuid(), 043399ac-cb39-4787-b550-83f410bb00aa, 39b6d4c8-56ee-40a5-b9ec-3dc6f717c5b9 , toTimestamp(now()), 'So delicious!');
+
+-- Inserir dados nos comments_user
+
+INSERT INTO comments_user (comment_id, video_id, author_id, comment_time, comment)
+VALUES (uuid(), 938b2942-9ffd-47eb-a241-a92db9f40de5, b5c01858-1e56-48cc-99ba-024954d1a0c2,toTimestamp(now()), 'Great video!' );
+
+INSERT INTO comments_user (comment_id, video_id, author_id, comment_time, comment)
+VALUES (uuid(), 8d87e4dd-a6b0-4328-a81d-fb1d64a90e47, b5c01858-1e56-48cc-99ba-024954d1a0c2, toTimestamp(now()), 'Awesome video!');
+
+INSERT INTO comments_user (comment_id, video_id, author_id, comment_time, comment)
+VALUES (uuid(), 8d87e4dd-a6b0-4328-a81d-fb1d64a90e47, b5c01858-1e56-48cc-99ba-024954d1a0c2, toTimestamp(now()), 'Beautiful sunset!');
+
+INSERT INTO comments_user (comment_id, video_id, author_id, comment_time, comment)
+VALUES (uuid(), 9f3d1df3-306e-46dd-822a-78b9f97362e1,f8215ed3-ae77-4e35-b1bb-dfc4f60f99f8 , toTimestamp(now()), 'Hilarious cats!');
+
+-- Inserir dados nos comments_videos
+
+INSERT INTO comments_videos (comment_id, video_id, author_id, comment_time, comment)
+VALUES (uuid(), 938b2942-9ffd-47eb-a241-a92db9f40de5, b5c01858-1e56-48cc-99ba-024954d1a0c2,toTimestamp(now()), 'Great video!' );
+
+INSERT INTO comments_videos (comment_id, video_id, author_id, comment_time, comment)
+VALUES (uuid(), 8d87e4dd-a6b0-4328-a81d-fb1d64a90e47, b5c01858-1e56-48cc-99ba-024954d1a0c2, toTimestamp(now()), 'Awesome video!');
+
+INSERT INTO comments_videos (comment_id, video_id, author_id, comment_time, comment)
+VALUES (uuid(), 8d87e4dd-a6b0-4328-a81d-fb1d64a90e47, b5c01858-1e56-48cc-99ba-024954d1a0c2, toTimestamp(now()), 'Beautiful sunset!');
+
+INSERT INTO comments_videos (comment_id, video_id, author_id, comment_time, comment)
+VALUES (uuid(), 9f3d1df3-306e-46dd-822a-78b9f97362e1,f8215ed3-ae77-4e35-b1bb-dfc4f60f99f8 , toTimestamp(now()), 'Hilarious cats!');
+
+-- Inserir dados nos video_followers
+
+INSERT INTO video_followers (video_id, user_id)
+VALUES (938b2942-9ffd-47eb-a241-a92db9f40de5, {'b5c01858-1e56-48cc-99ba-024954d1a0c2', '66205b1d-8634-4e8a-8d4a-c8736d359b6b'});
+
+INSERT INTO video_followers (video_id, user_id)
+VALUES (938b2942-9ffd-47eb-a241-a92db9f40de5, {'66205b1d-8634-4e8a-8d4a-c8736d359b6b', '39b6d4c8-56ee-40a5-b9ec-3dc6f717c5b9'});
+
+INSERT INTO video_followers (video_id, user_id)
+VALUES (8d87e4dd-a6b0-4328-a81d-fb1d64a90e47, {'b5c01858-1e56-48cc-99ba-024954d1a0c2', '66205b1d-8634-4e8a-8d4a-c8736d359b6b'});
+
+INSERT INTO video_followers (video_id, user_id)
+VALUES (8d87e4dd-a6b0-4328-a81d-fb1d64a90e47, {'66205b1d-8634-4e8a-8d4a-c8736d359b6b', '39b6d4c8-56ee-40a5-b9ec-3dc6f717c5b9'});
+
+INSERT INTO video_followers (video_id, user_id)
+VALUES (9f3d1df3-306e-46dd-822a-78b9f97362e1, {'f8215ed3-ae77-4e35-b1bb-dfc4f60f99f8', '66205b1d-8634-4e8a-8d4a-c8736d359b6b'});
+
+INSERT INTO video_followers (video_id, user_id)
+VALUES (9f3d1df3-306e-46dd-822a-78b9f97362e1, {'66205b1d-8634-4e8a-8d4a-c8736d359b6b', '39b6d4c8-56ee-40a5-b9ec-3dc6f717c5b9'});
+
+INSERT INTO video_followers (video_id, user_id)
+VALUES (043399ac-cb39-4787-b550-83f410bb00aa, {'39b6d4c8-56ee-40a5-b9ec-3dc6f717c5b9', '66205b1d-8634-4e8a-8d4a-c8736d359b6b'});
+
+INSERT INTO video_followers (video_id, user_id)
+VALUES (043399ac-cb39-4787-b550-83f410bb00aa, {'f023bdfa-4b88-4966-aa47-850d75cbc6ac', '66205b1d-8634-4e8a-8d4a-c8736d359b6b'});
+
+INSERT INTO video_followers (video_id, user_id)
+VALUES (0bbddbfd-ee5b-432f-a077-9a18eea53d07, {'d86b3621-f913-4f55-bf5f-92763dc001b7', '66205b1d-8634-4e8a-8d4a-c8736d359b6b'});
+
+INSERT INTO video_followers (video_id, user_id)
+VALUES (0bbddbfd-ee5b-432f-a077-9a18eea53d07, {'66205b1d-8634-4e8a-8d4a-c8736d359b6b', '39b6d4c8-56ee-40a5-b9ec-3dc6f717c5b9'});
+
+-- Inserir dados nos events
+
+INSERT INTO events (event_id, video_id, user_id, event_type, event_timestamp, video_event_time)
+VALUES (uuid(), 938b2942-9ffd-47eb-a241-a92db9f40de5, b5c01858-1e56-48cc-99ba-024954d1a0c2, 'play', toTimestamp(now()), 300);
+
+INSERT INTO events (event_id, video_id, user_id, event_type, event_timestamp, video_event_time)
+VALUES (uuid(), 938b2942-9ffd-47eb-a241-a92db9f40de5, b5c01858-1e56-48cc-99ba-024954d1a0c2, 'pause', toTimestamp(now()), 600);
+
+INSERT INTO events (event_id, video_id, user_id, event_type, event_timestamp, video_event_time)
+VALUES (uuid(), 938b2942-9ffd-47eb-a241-a92db9f40de5, b5c01858-1e56-48cc-99ba-024954d1a0c2, 'stop', toTimestamp(now()), 900);
+
+INSERT INTO events (event_id, video_id, user_id, event_type, event_timestamp, video_event_time)
+VALUES (uuid(), 8d87e4dd-a6b0-4328-a81d-fb1d64a90e47, 66205b1d-8634-4e8a-8d4a-c8736d359b6b, 'play', toTimestamp(now()), 300);
+
+INSERT INTO events (event_id, video_id, user_id, event_type, event_timestamp, video_event_time)
+VALUES (uuid(), 8d87e4dd-a6b0-4328-a81d-fb1d64a90e47, 66205b1d-8634-4e8a-8d4a-c8736d359b6b, 'pause', toTimestamp(now()), 600);
+
+INSERT INTO events (event_id, video_id, user_id, event_type, event_timestamp, video_event_time)
+VALUES (uuid(), 8d87e4dd-a6b0-4328-a81d-fb1d64a90e47, d86b3621-f913-4f55-bf5f-92763dc001b7, 'stop', toTimestamp(now()), 900);
+
+INSERT INTO events (event_id, video_id, user_id, event_type, event_timestamp, video_event_time)
+VALUES (uuid(), 9f3d1df3-306e-46dd-822a-78b9f97362e1, f8215ed3-ae77-4e35-b1bb-dfc4f60f99f8, 'play', toTimestamp(now()), 300);
+
+INSERT INTO events (event_id, video_id, user_id, event_type, event_timestamp, video_event_time)
+VALUES (uuid(), 9f3d1df3-306e-46dd-822a-78b9f97362e1, f8215ed3-ae77-4e35-b1bb-dfc4f60f99f8, 'pause', toTimestamp(now()), 600);
+
+INSERT INTO events (event_id, video_id, user_id, event_type, event_timestamp, video_event_time)
+VALUES (uuid(), 043399ac-cb39-4787-b550-83f410bb00aa, f8215ed3-ae77-4e35-b1bb-dfc4f60f99f8, 'stop', toTimestamp(now()), 900);
+
+INSERT INTO events (event_id, video_id, user_id, event_type, event_timestamp, video_event_time)
+VALUES (uuid(), 043399ac-cb39-4787-b550-83f410bb00aa, 39b6d4c8-56ee-40a5-b9ec-3dc6f717c5b9, 'play', toTimestamp(now()), 300);
+
+-- Inserir dados nos ratings
+
+UPDATE ratings SET user_ratings = user_ratings + {4} WHERE video_id = 938b2942-9ffd-47eb-a241-a92db9f40de5;
+
+UPDATE ratings SET user_ratings = user_ratings + {5} WHERE video_id = 938b2942-9ffd-47eb-a241-a92db9f40de5;
+
+UPDATE ratings SET user_ratings = user_ratings + {3} WHERE video_id = 938b2942-9ffd-47eb-a241-a92db9f40de5;
+
+UPDATE ratings SET user_ratings = user_ratings + {4} WHERE video_id = 8d87e4dd-a6b0-4328-a81d-fb1d64a90e47;
+
+UPDATE ratings SET user_ratings = user_ratings + {5} WHERE video_id = 8d87e4dd-a6b0-4328-a81d-fb1d64a90e47;
+
+UPDATE ratings SET user_ratings = user_ratings + {1} WHERE video_id = 0bbddbfd-ee5b-432f-a077-9a18eea53d07;
+
+UPDATE ratings SET user_ratings = user_ratings + {2} WHERE video_id = 043399ac-cb39-4787-b550-83f410bb00aa;
+
+UPDATE ratings SET user_ratings = user_ratings + {1} WHERE video_id = 0bbddbfd-ee5b-432f-a077-9a18eea53d07;
+
+UPDATE ratings SET user_ratings = user_ratings + {3} WHERE video_id = 043399ac-cb39-4787-b550-83f410bb00aa;
+
+UPDATE ratings SET user_ratings = user_ratings + {5} WHERE video_id = 043399ac-cb39-4787-b550-83f410bb00aa;
+
+
+-- JSONS(directory: lab3_2)
+
+> c) 
+
+-- Queries feitas em cima 
+
+
+> d)
+
+>> 1. Os últimos 3 comentários introduzidos para um vídeo;
+    
+    SELECT * FROM comments WHERE video_id = 8d87e4dd-a6b0-4328-a81d-fb1d64a90e47 LIMIT 3;
+
+>> 2. Lista das tags de determinado vídeo;
+
+    SELECT tags FROM videos WHERE video_id = 8d87e4dd-a6b0-4328-a81d-fb1d64a90e47;
+
+>> 3. Todos os vídeos com a tag Aveiro;
+
+    Impossivel de executar sem ativar filtering, o que nao é recomendado pois pode tornar performance imprevisivel
+
+>> 4. Os últimos 5 eventos de determinado vídeo realizados por um utilizador;
+
+    SELECT * FROM events WHERE video_id = 8d87e4dd-a6b0-4328-a81d-fb1d64a90e47 AND user_id = 66205b1d-8634-4e8a-8d4a-c8736d359b6b ORDER BY event_timestamp DESC LIMIT 5;
+
+>> 5. Vídeos partilhados por determinado utilizador (maria1987, por exemplo) num determinado período de tempo (Agosto de 2017, por exemplo); 
+
+    SELECT * FROM videos WHERE author_id = 9f83ef45-1078-4f0e-838a-f24c87b1a271 AND upload_time = '2023-11-16 10:10:44.348'
+    
+>> 6. Os últimos 10 vídeos, ordenado inversamente pela data da partilhada; 
+
+    Não é possivel fazer esta query pois Cassandra nao permite ordenar (apenas se atribuirmos um nó que tenha os valores ordenados)
+
+>> 7. Todos os seguidores (followers) de determinado vídeo;
+
+    SELECT * FROM video_followers WHERE video_id = 8d87e4dd-a6b0-4328-a81d-fb1d64a90e47;
+
+>> 8. Todos os comentários (dos vídeos) que determinado utilizador está a seguir (following);
+
+    Visto o operador JOIN nao existir no Cassandra, nao é possivel fazer esta query
+
+>> 9. Os 5 vídeos com maior rating;
+
+    Não é possivel fazer esta query pois Cassandra nao permite ordenar (apenas se atribuirmos um nó que tenha ows valores ordenados)
+
+>> 10. Uma query que retorne todos os vídeos e que mostre claramente a forma pela qual estão 
+ordenados;
+
+    Não é possivel fazer esta query pois Cassandra nao permite ordenar (apenas se atribuirmos um nó que tenha os valores ordenados)
+
+>> 11. Lista com as Tags existentes e o número de vídeos catalogados com cada uma delas;
+
+    Impossivel, seria necessario ter acesso Tag a Tag, e nao exite nenhuma tabela para isso.
+
+>> 12. Lista de videos e o seu rating medio associado
+
+    SELECT video_id, avg_rating(user_ratings) AS avg_rating
+    FROM ratings
+    GROUP BY video_id
+
+>> 13. Lista dos tipos de eventos para um certo video
+
+    SELECT event_type
+    FROM events
+    WHERE video_id = 938b2942-9ffd-47eb-a241-a92db9f40de5;

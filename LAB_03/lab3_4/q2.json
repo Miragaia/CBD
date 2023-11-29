@@ -1,0 +1,26 @@
+[
+  {
+    "reservation_id": "46d16824-9ee8-48e7-9b7a-9c5a68f86fb3",
+    "car_id": "98245280-5f61-46a1-b08c-ef0f966c7218",
+    "customer_id": "c0bb3637-3779-4c11-a422-3c53041841ac",
+    "pickup_date": "2023-12-12",
+    "return_date": "2023-12-15",
+    "status": "Pending"
+  },
+  {
+    "reservation_id": "4b66408d-8ff2-4e69-88f7-553a96047b59",
+    "car_id": "ddbdfdf0-092b-40d9-8fd3-3f89cd0ab81d",
+    "customer_id": "c0bb3637-3779-4c11-a422-3c53041841ac",
+    "pickup_date": "2023-12-17",
+    "return_date": "2023-12-18",
+    "status": "Reserved"
+  },
+  {
+    "reservation_id": "97490b2f-46a9-49ec-84dc-d8db8001edbf",
+    "car_id": "e8d1f380-258c-4113-85e9-0621494aa2fe",
+    "customer_id": "c0bb3637-3779-4c11-a422-3c53041841ac",
+    "pickup_date": "2024-01-07",
+    "return_date": "2024-01-08",
+    "status": "Reserved"
+  }
+]

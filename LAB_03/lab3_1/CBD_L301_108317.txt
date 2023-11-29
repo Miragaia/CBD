@@ -1,0 +1,142 @@
+> RUN CASSANDRA
+
+cd /{directory_of_instalation}/apache-cassandra-3.11.11/bin
+./cassandra -f
+
+> CREATE KEYSAPCE
+
+CREATE KEYSPACE keyspaceCBD
+WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 3};
+
+> DESCRIBE KEYSPACE
+
+DESCRIBE KEYSPACE keyspaceCBD;
+
+> USE KEYSPACE
+
+USE keyspaceCBD;
+
+> CREATE TABLE
+
+CREATE TABLE IF NOT EXISTS users (
+    user_id UUID PRIMARY KEY,
+    first_name TEXT,
+    last_name TEXT,
+    email TEXT,
+    address TEXT
+);
+
+> DESCRIBE TABLE
+
+DESCRIBE TABLE keyspaceCBD.users;
+
+> CRUD OPERATIONS
+
+>> INSERT
+
+INSERT INTO users (user_id, first_name, last_name, email)
+VALUES (uuid(), 'Miguel', 'Miragaia', 'miguelmiragaia@ua.pt');
+
+INSERT INTO users (user_id, first_name, last_name, email)
+VALUES (uuid(), 'Dinis', 'Mendes', 'pinoquio123@email.pt');
+
+INSERT INTO users (user_id, first_name, last_name, email)
+VALUES (uuid(), 'Joel', 'Santos', 'elpablito@email.com');
+
+>> SELECT
+
+SELECT * FROM users;
+
+SELECT * FROM users WHERE user_id = 0e985bbd-62d9-43a1-8cb9-0c60525a0353;
+
+>> UPDATE
+
+UPDATE users
+SET email = 'newemail@email.com'
+WHERE user_id = 0e985bbd-62d9-43a1-8cb9-0c60525a0353;
+
+>> DELETE
+
+DELETE FROM users WHERE user_id = 5226c0b9-00ec-4eca-be80-5cbe0b9b9811;
+
+> TUPLE
+
+CREATE TABLE IF NOT EXISTS pet1 (
+    pet_id UUID PRIMARY KEY,
+    name TEXT,
+    attributes TUPLE<TEXT, INT>
+);
+
+INSERT INTO pet1 (pet_id, name, attributes)
+VALUES (uuid(), 'dog', ('brown', 4));
+
+SELECT * FROM pet1;
+
+> LIST
+
+CREATE TABLE IF NOT EXISTS pet2 (
+    pet_id UUID PRIMARY KEY,
+    name TEXT,
+    colors LIST<TEXT>
+);
+
+INSERT INTO pet2 (pet_id, name, colors)
+VALUES (uuid(), 'dog', ['brown', 'black', 'white']);
+
+SELECT * FROM pet2;
+
+> SET
+
+CREATE TABLE IF NOT EXISTS pet3 (
+    pet_id UUID PRIMARY KEY,
+    name TEXT,
+    colors SET<TEXT>
+);
+
+INSERT INTO pet3 (pet_id, name, colors)
+VALUES (uuid(), 'dog', {'brown', 'black', 'white'});
+
+SELECT * FROM pet3;
+
+> MAP
+
+CREATE TABLE IF NOT EXISTS pet4 (
+    pet_id UUID PRIMARY KEY,
+    name TEXT,
+    colors MAP<TEXT, TEXT>
+);
+
+INSERT INTO pet4 (pet_id, name, colors)
+VALUES (uuid(), 'dog', {'brown': 'dark', 'black': 'dark', 'white': 'light'});
+
+SELECT * FROM pet4;
+
+> COLLECTIONS
+
+CREATE TABLE IF NOT EXISTS pet5 (
+    pet_id UUID PRIMARY KEY,
+    name TEXT,
+    colors LIST<TEXT>,
+    attributes MAP<TEXT, TEXT>
+);
+
+INSERT INTO pet5 (pet_id, name, colors, attributes)
+VALUES (uuid(), 'dog', ['brown', 'black', 'white'], {'brown': 'dark', 'black': 'dark', 'white': 'light'});
+
+SELECT * FROM pet5;
+
+> TIME TO LIVE 
+
+INSERT INTO users (user_id, first_name, last_name, email)
+VALUES (uuid(), 'Ramon', 'Dino', 'dinossaur@email.com')
+USING TTL 604800;
+
+SELECT * FROM users    --valroes só iram aparecer se o TTL já não ter sido excedido
+
+> TIMESTAMP
+
+INSERT INTO users (user_id, first_name, last_name, email)
+VALUES (uuid(), 'Chris', 'Bumbstead', 'cbum@email.com')
+USING TIMESTAMP 1648896000000;  
+
+SELECT * FROM users    

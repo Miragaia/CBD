@@ -1,0 +1,395 @@
+- a) & c)
+
+CREATE KEYSPACE IF NOT EXISTS carrental WITH replication = {'class': 'SimpleStrategy','replication_factor': 1};
+USE carrental;
+
+CREATE TABLE IF NOT EXISTS cars (
+    car_id UUID PRIMARY KEY,
+    brand TEXT,
+    model TEXT,
+    year INT,
+    license_plate TEXT,
+    availability BOOLEAN,
+    features SET<TEXT>
+);
+
+
+CREATE TABLE IF NOT EXISTS customers (
+    customer_id UUID PRIMARY KEY,
+    name TEXT,
+    email TEXT,
+    phone_number TEXT,
+    address TEXT
+);
+
+CREATE TABLE IF NOT EXISTS reservations (
+    reservation_id UUID PRIMARY KEY,
+    customer_id UUID,
+    car_id UUID,
+    pickup_date DATE,
+    return_date DATE,
+    status TEXT
+);
+
+CREATE TABLE IF NOT EXISTS transactions (
+    transaction_id UUID PRIMARY KEY,
+    reservation_id UUID,
+    rental_fee DOUBLE,
+    late_fee DOUBLE,
+    total_fee DOUBLE,
+    payment_status TEXT
+);
+
+CREATE TABLE IF NOT EXISTS rental_history (
+    car_id UUID PRIMARY KEY,
+    rental_dates LIST<TEXT>,
+    rental_details MAP<TEXT, DOUBLE>
+);
+
+- b)
+
+-- Insertion of data into cars table
+
+INSERT INTO cars (car_id, brand, model, year, license_plate, availability, features)
+VALUES (uuid(), 'Mercedes', 'C200', 2011, 'ABC123', true, {'GPS', 'Bluetooth'});
+  
+INSERT INTO cars (car_id, brand, model, year, license_plate, availability, features)
+VALUES (uuid(), 'Honda', 'CRV', 2007, 'XYZ789', true, {'USB Port', 'Sunroof', 'Backup Camera'});
+  
+INSERT INTO cars (car_id, brand, model, year, license_plate, availability, features)
+VALUES (uuid(), 'Fiat', 'Punto', 2014, 'MNO345', true, {'Backup Camera', 'Bluetooth', 'GPS'});
+
+INSERT INTO cars (car_id, brand, model, year, license_plate, availability, features)
+VALUES (uuid(), 'Ford', 'Focus', 2007, 'JKL012', true, {'Leather Seats', 'Seat Warmer', 'GPS'});
+
+INSERT INTO cars (car_id, brand, model, year, license_plate, availability, features)
+VALUES (uuid(), 'Renault', 'Clio', 2008, 'GHI789', true, {'Comercial', 'Backup Camera', 'USB Port'});
+
+INSERT INTO cars (car_id, brand, model, year, license_plate, availability, features)
+VALUES (uuid(), 'Mercedes', 'SLK-200', 1999, 'DEF456', false, {'Cabriolet', 'Leather Seats', 'Seat Warmer'});
+
+INSERT INTO cars (car_id, brand, model, year, license_plate, availability, features)
+VALUES (uuid(), 'Mercedes', 'C220', 2011, 'ABC123', true, {'GPS', 'Bluetooth'});
+
+INSERT INTO cars (car_id, brand, model, year, license_plate, availability, features)
+VALUES (uuid(), 'Wolfswagen', 'Golf', 2007, 'XYZ789', true, {'USB Port', 'Sunroof', 'Backup Camera'});
+
+INSERT INTO cars (car_id, brand, model, year, license_plate, availability, features)
+VALUES (uuid(), 'Fiat', 'Uno', 2014, 'MNO345', true, {'Backup Camera', 'Bluetooth', 'GPS'});
+
+INSERT INTO cars (car_id, brand, model, year, license_plate, availability, features)
+VALUES (uuid(), 'Ford', 'Fiesta', 2007, 'JKL012', true, {'Leather Seats', 'Seat Warmer', 'GPS'});
+
+INSERT INTO cars (car_id, brand, model, year, license_plate, availability, features)
+VALUES (uuid(), 'Renault', 'Megane', 2008, 'GHI789', true, {'Comercial', 'Backup Camera', 'USB Port'});
+
+INSERT INTO cars (car_id, brand, model, year, license_plate, availability, features)
+VALUES (uuid(), 'Nissan', 'Micra', 1999, 'DEF456', false, {'Cabriolet', 'Leather Seats', 'Seat Warmer'});
+
+INSERT INTO cars (car_id, brand, model, year, license_plate, availability, features)
+VALUES (uuid(), 'BMW', 'X5', 2011, 'ABC123', true, {'GPS', 'Bluetooth'});
+
+
+
+-- Insertion of data into customers table
+
+INSERT INTO customers (customer_id, name, email, phone_number, address)
+VALUES (uuid(), 'Miguel Miragaia', 'miragaia@example.com', '+123456789', '123, Abraveses, Viseu');
+
+INSERT INTO customers (customer_id, name, email, phone_number, address)
+VALUES (uuid(), 'Goncalo Lopes', 'lopes@example.com', '+987654321', '456, Pascoal, Viseu');
+
+INSERT INTO customers (customer_id, name, email, phone_number, address)
+VALUES (uuid(), 'Maria Pereira', 'maria@example.com', '+123456565', '789, Pascoal, Viseu');
+
+INSERT INTO customers (customer_id, name, email, phone_number, address)
+VALUES (uuid(), 'Tiago Cruz', 'cruz@example.com', '+999876543', '981, Fragosela, Viseu');
+
+INSERT INTO customers (customer_id, name, email, phone_number, address)
+VALUES (uuid(), 'Joao Silva', 'jsa@example.com', '+997654321', '112, Fragosela, Viseu');
+
+INSERT INTO customers (customer_id, name, email, phone_number, address)
+VALUES (uuid(), 'Rui Santos', 'rss@example.com', '+435621789', '324, Ranhados, Viseu');
+
+INSERT INTO customers (customer_id, name, email, phone_number, address)
+VALUES (uuid(), 'Pedro Costa', 'pca@example.com', '+978654321', '222, Rio de Loba, Viseu');
+
+INSERT INTO customers (customer_id, name, email, phone_number, address)
+VALUES (uuid(), 'Ana Rodrigues', 'ars@example.com', '+981276345', '333, Moselos, Viseu');
+
+INSERT INTO customers (customer_id, name, email, phone_number, address)
+VALUES (uuid(), 'Andre Almeida', 'aaa@example.com', '+123984576', '444, Marzovelos, Viseu');
+
+INSERT INTO customers (customer_id, name, email, phone_number, address)
+VALUES (uuid(), 'Ricardo Ferreira', 'ric@example.com', '+546781932', '555, Cinfaes, Viseu');
+
+INSERT INTO customers (customer_id, name, email, phone_number, address)
+VALUES (uuid(), 'Miguel Pereira', 'per@example.com', '+123987465', '667, Fragosela, Viseu');
+
+INSERT INTO customers (customer_id, name, email, phone_number, address)
+VALUES (uuid(), 'Pedro Rei', 'rei@example.com', '+789654321', '654, Mundao, Viseu');
+
+
+-- Insertion of data into reservations table
+
+INSERT INTO reservations (reservation_id, customer_id, car_id, pickup_date, return_date, status)
+VALUES (uuid(), fe42bebc-9416-44b2-98c0-2024aa222299, e8d1f380-258c-4113-85e9-0621494aa2fe, '2023-12-01', '2023-12-05', 'Reserved');
+
+INSERT INTO reservations (reservation_id, customer_id, car_id, pickup_date, return_date, status)
+VALUES (uuid(), f899c6d9-3ab1-4e83-8b72-bf62dacb74e5, dd5f4e3e-f1df-435f-b19c-30f92521e50e, '2023-12-10', '2023-12-15', 'Pending');
+
+INSERT INTO reservations (reservation_id, customer_id, car_id, pickup_date, return_date, status)
+VALUES (uuid(), 1ccc80c0-67b3-4c0b-b448-d0d8790e9ffd, fb7481e2-670f-4968-ba6f-4a46d49dfc92, '2023-12-10', '2023-12-15', 'Pending');
+
+INSERT INTO reservations (reservation_id, customer_id, car_id, pickup_date, return_date, status)
+VALUES (uuid(), 1ccc80c0-67b3-4c0b-b448-d0d8790e9ffd, a0be04b4-c30f-416f-83c4-66b49ae776c9, '2023-12-11', '2023-12-15', 'Pending');
+
+INSERT INTO reservations (reservation_id, customer_id, car_id, pickup_date, return_date, status)
+VALUES (uuid(), c0bb3637-3779-4c11-a422-3c53041841ac, 98245280-5f61-46a1-b08c-ef0f966c7218, '2023-12-12', '2023-12-15', 'Pending');
+
+INSERT INTO reservations (reservation_id, customer_id, car_id, pickup_date, return_date, status)
+VALUES (uuid(), c0bb3637-3779-4c11-a422-3c53041841ac, ddbdfdf0-092b-40d9-8fd3-3f89cd0ab81d, '2023-12-17', '2023-12-18', 'Reserved');
+
+INSERT INTO reservations (reservation_id, customer_id, car_id, pickup_date, return_date, status)
+VALUES (uuid(), 5e82037a-fad6-4008-89c1-0a1610e290a2, e082eef2-eba0-4777-8606-9d0d073248cd, '2023-12-22', '2023-12-23', 'Reserved');
+
+INSERT INTO reservations (reservation_id, customer_id, car_id, pickup_date, return_date, status)
+VALUES (uuid(), 55781daa-9a0d-4b0f-b03b-5f021069d101, b89e39b3-5cf4-4891-b312-7477c8a7dbe1, '2023-12-24', '2023-12-25', 'Reserved');
+
+INSERT INTO reservations (reservation_id, customer_id, car_id, pickup_date, return_date, status)
+VALUES (uuid(), 1ccc80c0-67b3-4c0b-b448-d0d8790e9ffd, a782f593-4297-4280-81d4-390e5af09e83, '2024-01-01', '2024-01-05', 'Reserved');
+
+INSERT INTO reservations (reservation_id, customer_id, car_id, pickup_date, return_date, status)
+VALUES (uuid(), 1ccc80c0-67b3-4c0b-b448-d0d8790e9ffd, e8d1f380-258c-4113-85e9-0621494aa2fe, '2024-01-01', '2024-01-05', 'Pending');
+
+INSERT INTO reservations (reservation_id, customer_id, car_id, pickup_date, return_date, status)
+VALUES (uuid(), 4b357562-53d9-449c-bf72-b3b93f020959, fb7481e2-670f-4968-ba6f-4a46d49dfc92, '2024-01-01', '2024-01-05', 'Pending');
+
+INSERT INTO reservations (reservation_id, customer_id, car_id, pickup_date, return_date, status)
+VALUES (uuid(), c0bb3637-3779-4c11-a422-3c53041841ac, e8d1f380-258c-4113-85e9-0621494aa2fe, '2024-01-07', '2024-01-08', 'Reserved');
+
+-- Insertion of data into transactions table
+
+INSERT INTO transactions (transaction_id, reservation_id, rental_fee, late_fee, total_fee, payment_status)
+VALUES (uuid(), 97490b2f-46a9-49ec-84dc-d8db8001edbf, 100.00, 0.00, 100.00, 'Paid');
+
+INSERT INTO transactions (transaction_id, reservation_id, rental_fee, late_fee, total_fee, payment_status)
+VALUES (uuid(), 6c3a3543-56b2-42a8-b81b-fa78040e566d, 50.00, 50.00, 100.00, 'Pending');
+
+INSERT INTO transactions (transaction_id, reservation_id, rental_fee, late_fee, total_fee, payment_status)
+VALUES (uuid(), 57a5354d-564b-4223-afee-e6b0ca8c9614, 100.00, 0.00, 100.00, 'Paid');
+
+INSERT INTO transactions (transaction_id, reservation_id, rental_fee, late_fee, total_fee, payment_status)
+VALUES (uuid(), 1f0cc50c-9f89-43c0-96e8-1f976655aeca, 70.00, 200.00, 270.00, 'Pending');
+
+INSERT INTO transactions (transaction_id, reservation_id, rental_fee, late_fee, total_fee, payment_status)
+VALUES (uuid(), 27acb15b-7f2c-42e5-86ac-3ceb634aea65, 500.00, 0.00, 500.00, 'Paid');
+
+INSERT INTO transactions (transaction_id, reservation_id, rental_fee, late_fee, total_fee, payment_status)
+VALUES (uuid(), 29ccd36c-75e7-417e-87d2-89c171de5dc7, 50.00, 100.00, 150.00, 'Pending');
+
+INSERT INTO transactions (transaction_id, reservation_id, rental_fee, late_fee, total_fee, payment_status)
+VALUES (uuid(), cfc4bde2-91f4-4e69-82ef-a739d0abb201, 20.00, 200.00, 220.00, 'Pending');
+
+INSERT INTO transactions (transaction_id, reservation_id, rental_fee, late_fee, total_fee, payment_status)
+VALUES (uuid(), cc437133-8cc2-48fc-a9d1-0c5bd712edd8, 250.00, 0.00, 250.00, 'Paid');
+
+INSERT INTO transactions (transaction_id, reservation_id, rental_fee, late_fee, total_fee, payment_status)
+VALUES (uuid(), 4b66408d-8ff2-4e69-88f7-553a96047b59, 100.00, 0.00, 100.00, 'Paid');
+
+INSERT INTO transactions (transaction_id, reservation_id, rental_fee, late_fee, total_fee, payment_status)
+VALUES (uuid(), 4dd73aec-763f-4268-8c8e-4c468e3030a4, 70.00, 350.00, 420.00, 'Pending');
+
+INSERT INTO transactions (transaction_id, reservation_id, rental_fee, late_fee, total_fee, payment_status)
+VALUES (uuid(), 9474c7b9-5c4c-47ce-a1a5-b1e080f68523, 100.00, 0.00, 100.00, 'Paid');
+
+INSERT INTO transactions (transaction_id, reservation_id, rental_fee, late_fee, total_fee, payment_status)
+VALUES (uuid(), 46d16824-9ee8-48e7-9b7a-9c5a68f86fb3, 250.00, 70.00, 320.00, 'Pending');
+
+-- Insertion of data into rental_history table
+
+INSERT INTO rental_history (car_id, rental_dates, rental_details)
+VALUES (
+    98245280-5f61-46a1-b08c-ef0f966c7218,
+    ['2023-12-12', '2023-12-15'],
+    {'2023-12-12': 100.00, '2023-12-15': 120.00}
+);
+
+INSERT INTO rental_history (car_id, rental_dates, rental_details)
+VALUES (
+    b89e39b3-5cf4-4891-b312-7477c8a7dbe1,
+    ['2023-12-24', '2023-12-25', '2024-01-01', '2024-01-05'],
+    {'2023-12-24': 80.00, '2023-12-25': 90.00}
+);
+
+INSERT INTO rental_history (car_id, rental_dates, rental_details)
+VALUES (
+    ddbdfdf0-092b-40d9-8fd3-3f89cd0ab81d,
+    ['2024-01-01', '2024-01-05', '2024-01-07', '2024-01-08'],
+    {'2024-01-01': 120.00, '2024-01-05': 150.00}
+);
+
+INSERT INTO rental_history (car_id, rental_dates, rental_details)
+VALUES (
+    dd5f4e3e-f1df-435f-b19c-30f92521e50e,
+    ['2023-12-10', '2023-12-15'],
+    {'2023-12-10': 60.00, '2023-12-15': 75.00}
+);
+
+INSERT INTO rental_history (car_id, rental_dates, rental_details)
+VALUES (
+    e8d1f380-258c-4113-85e9-0621494aa2fe,
+    ['2023-12-01', '2023-12-05', '2024-01-01', '2024-01-05'],
+    {'2023-12-01': 70.00, '2023-12-05': 80.00, '2024-01-01': 70.00, '2024-01-05': 80.00}
+);
+
+INSERT INTO rental_history (car_id, rental_dates, rental_details)
+VALUES (
+    a0be04b4-c30f-416f-83c4-66b49ae776c9,
+    ['2023-12-11', '2023-12-15', '2024-01-01', '2024-01-05'],
+    {'2023-12-11': 90.00, '2023-12-15': 100.00, '2024-01-01': 90.00, '2024-01-05': 100.00}
+);
+
+
+
+INSERT INTO rental_history (car_id, rental_dates, rental_details)
+VALUES (
+    a782f593-4297-4280-81d4-390e5af09e83,
+    ['2024-01-01', '2024-01-05'],
+    {'2024-01-01': 100.00, '2024-01-05': 120.00}
+);
+
+INSERT INTO rental_history (car_id, rental_dates, rental_details)
+VALUES (
+    e082eef2-eba0-4777-8606-9d0d073248cd,
+    ['2023-12-22', '2023-12-23'],
+    {'2023-12-22': 80.00, '2023-12-23': 90.00}
+);
+
+INSERT INTO rental_history (car_id, rental_dates, rental_details)
+VALUES (
+    fb7481e2-670f-4968-ba6f-4a46d49dfc92,
+    ['2023-12-10', '2023-12-15', '2024-01-01', '2024-01-05'],
+    {'2023-12-10': 60.00, '2023-12-15': 75.00, '2024-01-01': 60.00, '2024-01-05': 75.00}
+);
+
+INSERT INTO rental_history (car_id, rental_dates, rental_details)
+VALUES (
+    10b626d9-1fa9-4a28-bb02-9a4ab59db4f7,
+    ['2023-12-01', '2023-12-05', '2024-01-01', '2024-01-05'],
+    {'2023-12-01': 70.00, '2023-12-05': 80.00, '2024-01-01': 70.00, '2024-01-05': 80.00}
+);
+
+INSERT INTO rental_history (car_id, rental_dates, rental_details)
+VALUES (
+    6db5a98a-202e-4ac1-a1ae-83e9fc182112,
+    ['2023-12-12', '2023-12-15', '2024-01-01', '2024-01-05'],
+    {'2023-12-12': 100.00, '2023-12-15': 120.00, '2024-01-01': 100.00, '2024-01-05': 120.00}
+);
+
+INSERT INTO rental_history (car_id, rental_dates, rental_details)
+VALUES (
+    b099824e-4866-45b3-b224-4238bd23cdb9,
+    ['2023-12-10', '2023-12-15', '2024-01-01', '2024-01-05'],
+    {'2023-12-10': 60.00, '2023-12-15': 75.00, '2024-01-01': 60.00, '2024-01-05': 75.00}
+);
+
+INSERT INTO rental_history (car_id, rental_dates, rental_details)
+VALUES (
+    1671c483-4402-4566-a2d0-dbe586eb1fd5,
+    ['2023-12-10', '2023-12-15', '2024-01-01', '2024-01-05'],
+    {'2023-12-10': 60.00, '2023-12-15': 75.00, '2024-01-01': 60.00, '2024-01-05': 75.00}
+);
+
+- d)
+
+CREATE INDEX IF NOT EXISTS ind_email ON customers (email);
+CREATE INDEX IF NOT EXISTS ind_brand ON cars (brand);
+CREATE INDEX IF NOT EXISTS ind_pickup_date ON reservations (pickup_date);
+
+- e)
+
+>> Update das features dum carro especifico 
+UPDATE cars
+SET features = features + {'Parking Assist'}
+WHERE car_id = e8d1f380-258c-4113-85e9-0621494aa2fe;
+
+>> Update do address dum cliente especifico 
+UPDATE customers
+SET address = '456, Rua Ate JA, Aveiro'
+WHERE customer_id = fe42bebc-9416-44b2-98c0-2024aa222299;
+
+>> Update do status duma reserva especifica
+UPDATE reservations
+SET status = 'Reserved'
+WHERE reservation_id = 27acb15b-7f2c-42e5-86ac-3ceb634aea65;
+
+>> Update do status duma transacao especifica
+UPDATE transactions
+SET payment_status = 'Pending'
+WHERE transaction_id = 46008c92-7607-44ae-a4f3-b819fbaf7f77;
+
+>> Update do rental_dates e rental_details dum carro especifico
+UPDATE rental_history
+SET rental_dates = rental_dates + ['2024-01-10'],
+    rental_details = rental_details + {'2024-01-10': 80.00}
+WHERE car_id = e8d1f380-258c-4113-85e9-0621494aa2fe;
+
+
+>> Apagar uma feature dum carro especifico
+UPDATE cars
+SET features = features - {'Bluetooth'}
+WHERE car_id = e8d1f380-258c-4113-85e9-0621494aa2fe;
+
+>> Apagar um cliente
+DELETE FROM customers
+WHERE customer_id = 84d06caf-0863-4412-8a83-968553d88091;
+
+>> Apagar uma transacao
+DELETE FROM transactions
+WHERE transaction_id = 46008c92-7607-44ae-a4f3-b819fbaf7f77;
+
+>> Apagar uma data de reserva e custo dum carro especifico
+UPDATE rental_history
+SET rental_dates = rental_dates - ['2024-01-01'],
+    rental_details = rental_details - {'2024-01-01'}
+WHERE car_id = a0be04b4-c30f-416f-83c4-66b49ae776c9;
+
+>> Apagar uma reserva
+DELETE FROM reservations
+WHERE reservation_id = 29ccd36c-75e7-417e-87d2-89c171de5dc7;
+
+
+- f)
+
+>> q1: Obter 10 carros disponiveis no momento
+SELECT * FROM cars WHERE availability = true LIMIT 10 ALLOW FILTERING;
+
+>> q2: Obter as reservas de um cliente especifico
+SELECT * FROM reservations WHERE customer_id = c0bb3637-3779-4c11-a422-3c53041841ac ALLOW FILTERING;
+
+>> q3: Obter o total de pagamentos das reservas ja pagas
+SELECT reservation_id, total_fee FROM transactions WHERE payment_status = 'Paid' ALLOW FILTERING ;
+
+>> q4: Obter os ultimos 5 historicos de alugueres de um carro especifico
+SELECT * FROM rental_history WHERE car_id = b099824e-4866-45b3-b224-4238bd23cdb9 LIMIT 5;
+
+>> q5: Obter 10 clientes
+SELECT * FROM customers LIMIT 10;
+
+>> q6: Obter 5 carros com reserva pendente
+SELECT * FROM reservations WHERE status = 'Pending' LIMIT 5 ALLOW FILTERING ;
+
+>> q7: Obter 5 transacoes com pagamento pendente
+SELECT * FROM transactions WHERE late_fee > 0 LIMIT 5 ALLOW FILTERING ;
+
+>> q8: Obter carros que contenham GPS e Bluetooth
+SELECT * FROM cars WHERE features CONTAINS 'GPS' AND features CONTAINS 'Bluetooth' ALLOW FILTERING ;
+
+>> q9: Obter reservas que a data de retorno seja o Natal do ano de 2023
+SELECT * FROM reservations WHERE return_date = '2023-12-25' ALLOW FILTERING ;
+
+>> q10: Obter transacoes que o valor total seja superior a 100 euros
+SELECT * FROM transactions WHERE total_fee > 100 ALLOW FILTERING ;
+
+-- JSONS disponiveis no diretorio com o resultado das queries

@@ -1,0 +1,82 @@
+[
+  {
+    "video_id": "938b2942-9ffd-47eb-a241-a92db9f40de5",
+    "user_id": "b5c01858-1e56-48cc-99ba-024954d1a0c2",
+    "event_timestamp": "2023-11-23 10:43:42.136",
+    "event_id": "e9decaed-38da-4886-aa36-e1b96868f4d0",
+    "event_type": "play",
+    "video_event_time": 300
+  },
+  {
+    "video_id": "938b2942-9ffd-47eb-a241-a92db9f40de5",
+    "user_id": "b5c01858-1e56-48cc-99ba-024954d1a0c2",
+    "event_timestamp": "2023-11-23 10:43:42.156",
+    "event_id": "e1c421e3-7b72-4afd-95ad-39f814617ba9",
+    "event_type": "pause",
+    "video_event_time": 600
+  },
+  {
+    "video_id": "938b2942-9ffd-47eb-a241-a92db9f40de5",
+    "user_id": "b5c01858-1e56-48cc-99ba-024954d1a0c2",
+    "event_timestamp": "2023-11-23 10:43:42.175",
+    "event_id": "3fdd4a64-1b5f-4013-acac-9edaf2a8e3a8",
+    "event_type": "stop",
+    "video_event_time": 900
+  },
+  {
+    "video_id": "043399ac-cb39-4787-b550-83f410bb00aa",
+    "user_id": "39b6d4c8-56ee-40a5-b9ec-3dc6f717c5b9",
+    "event_timestamp": "2023-11-23 10:43:42.331",
+    "event_id": "049bce8e-b746-44cf-9c9d-69b940084531",
+    "event_type": "play",
+    "video_event_time": 300
+  },
+  {
+    "video_id": "043399ac-cb39-4787-b550-83f410bb00aa",
+    "user_id": "f8215ed3-ae77-4e35-b1bb-dfc4f60f99f8",
+    "event_timestamp": "2023-11-23 10:43:42.314",
+    "event_id": "5f18663e-449d-4940-88ac-b979d3ed58ed",
+    "event_type": "stop",
+    "video_event_time": 900
+  },
+  {
+    "video_id": "9f3d1df3-306e-46dd-822a-78b9f97362e1",
+    "user_id": "f8215ed3-ae77-4e35-b1bb-dfc4f60f99f8",
+    "event_timestamp": "2023-11-23 10:43:42.279",
+    "event_id": "80482741-9f40-45c1-958e-7f13298d3c90",
+    "event_type": "play",
+    "video_event_time": 300
+  },
+  {
+    "video_id": "9f3d1df3-306e-46dd-822a-78b9f97362e1",
+    "user_id": "f8215ed3-ae77-4e35-b1bb-dfc4f60f99f8",
+    "event_timestamp": "2023-11-23 10:43:42.296",
+    "event_id": "9df78c16-0195-46f8-baa3-0cf150e6dd8d",
+    "event_type": "pause",
+    "video_event_time": 600
+  },
+  {
+    "video_id": "8d87e4dd-a6b0-4328-a81d-fb1d64a90e47",
+    "user_id": "66205b1d-8634-4e8a-8d4a-c8736d359b6b",
+    "event_timestamp": "2023-11-23 10:43:42.211",
+    "event_id": "c623fba0-88d8-485c-9540-59c6c22e9d77",
+    "event_type": "play",
+    "video_event_time": 300
+  },
+  {
+    "video_id": "8d87e4dd-a6b0-4328-a81d-fb1d64a90e47",
+    "user_id": "66205b1d-8634-4e8a-8d4a-c8736d359b6b",
+    "event_timestamp": "2023-11-23 10:43:42.234",
+    "event_id": "de76ca65-20a7-4aba-b907-acefc888b967",
+    "event_type": "pause",
+    "video_event_time": 600
+  },
+  {
+    "video_id": "8d87e4dd-a6b0-4328-a81d-fb1d64a90e47",
+    "user_id": "d86b3621-f913-4f55-bf5f-92763dc001b7",
+    "event_timestamp": "2023-11-23 10:43:42.258",
+    "event_id": "d06fba2f-e6b8-4b17-a3ce-22b04dab8e0e",
+    "event_type": "stop",
+    "video_event_time": 900
+  }
+]

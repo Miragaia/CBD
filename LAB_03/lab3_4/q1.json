@@ -1,0 +1,92 @@
+[
+  {
+    "car_id": "e8d1f380-258c-4113-85e9-0621494aa2fe",
+    "availability": true,
+    "brand": "Fiat",
+    "features": ["Backup Camera", "GPS", "Parking Assist"],
+    "license_plate": "MNO345",
+    "model": "Punto",
+    "year": 2014
+  },
+  {
+    "car_id": "10b626d9-1fa9-4a28-bb02-9a4ab59db4f7",
+    "availability": true,
+    "brand": "BMW",
+    "features": ["Bluetooth", "GPS"],
+    "license_plate": "ABC123",
+    "model": "X5",
+    "year": 2011
+  },
+  {
+    "car_id": "6db5a98a-202e-4ac1-a1ae-83e9fc182112",
+    "availability": true,
+    "brand": "Ford",
+    "features": ["GPS", "Leather Seats", "Seat Warmer"],
+    "license_plate": "JKL012",
+    "model": "Fiesta",
+    "year": 2007
+  },
+  {
+    "car_id": "1671c483-4402-4566-a2d0-dbe586eb1fd5",
+    "availability": true,
+    "brand": "Mercedes",
+    "features": ["Bluetooth", "GPS"],
+    "license_plate": "ABC123",
+    "model": "C220",
+    "year": 2011
+  },
+  {
+    "car_id": "dd5f4e3e-f1df-435f-b19c-30f92521e50e",
+    "availability": true,
+    "brand": "Ford",
+    "features": ["GPS", "Leather Seats", "Seat Warmer"],
+    "license_plate": "JKL012",
+    "model": "Focus",
+    "year": 2007
+  },
+  {
+    "car_id": "a0be04b4-c30f-416f-83c4-66b49ae776c9",
+    "availability": true,
+    "brand": "Fiat",
+    "features": ["Backup Camera", "Bluetooth", "GPS"],
+    "license_plate": "MNO345",
+    "model": "Uno",
+    "year": 2014
+  },
+  {
+    "car_id": "98245280-5f61-46a1-b08c-ef0f966c7218",
+    "availability": true,
+    "brand": "Wolfswagen",
+    "features": ["Backup Camera", "Sunroof", "USB Port"],
+    "license_plate": "XYZ789",
+    "model": "Golf",
+    "year": 2007
+  },
+  {
+    "car_id": "ddbdfdf0-092b-40d9-8fd3-3f89cd0ab81d",
+    "availability": true,
+    "brand": "Renault",
+    "features": ["Backup Camera", "Comercial", "USB Port"],
+    "license_plate": "GHI789",
+    "model": "Megane",
+    "year": 2008
+  },
+  {
+    "car_id": "e082eef2-eba0-4777-8606-9d0d073248cd",
+    "availability": true,
+    "brand": "Renault",
+    "features": ["Backup Camera", "Comercial", "USB Port"],
+    "license_plate": "GHI789",
+    "model": "Clio",
+    "year": 2008
+  },
+  {
+    "car_id": "b89e39b3-5cf4-4891-b312-7477c8a7dbe1",
+    "availability": true,
+    "brand": "Honda",
+    "features": ["Backup Camera", "Sunroof", "USB Port"],
+    "license_plate": "XYZ789",
+    "model": "CRV",
+    "year": 2007
+  }
+]

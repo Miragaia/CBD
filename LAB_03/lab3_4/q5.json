@@ -1,0 +1,72 @@
+[
+  {
+    "customer_id": "fe42bebc-9416-44b2-98c0-2024aa222299",
+    "address": "456, Rua Ate JA, Aveiro",
+    "email": "maria@example.com",
+    "name": "Maria Pereira",
+    "phone_number": "+123456565"
+  },
+  {
+    "customer_id": "f899c6d9-3ab1-4e83-8b72-bf62dacb74e5",
+    "address": "123, Abraveses, Viseu",
+    "email": "miragaia@example.com",
+    "name": "Miguel Miragaia",
+    "phone_number": "+123456789"
+  },
+  {
+    "customer_id": "5e82037a-fad6-4008-89c1-0a1610e290a2",
+    "address": "324, Ranhados, Viseu",
+    "email": "rss@example.com",
+    "name": "Rui Santos",
+    "phone_number": "+435621789"
+  },
+  {
+    "customer_id": "1ccc80c0-67b3-4c0b-b448-d0d8790e9ffd",
+    "address": "654, Mundao, Viseu",
+    "email": "rei@example.com",
+    "name": "Pedro Rei",
+    "phone_number": "+789654321"
+  },
+  {
+    "customer_id": "55781daa-9a0d-4b0f-b03b-5f021069d101",
+    "address": "112, Fragosela, Viseu",
+    "email": "jsa@example.com",
+    "name": "Joao Silva",
+    "phone_number": "+997654321"
+  },
+  {
+    "customer_id": "c0bb3637-3779-4c11-a422-3c53041841ac",
+    "address": "222, Rio de Loba, Viseu",
+    "email": "pca@example.com",
+    "name": "Pedro Costa",
+    "phone_number": "+978654321"
+  },
+  {
+    "customer_id": "8b4c37b9-c42f-481a-af15-073a030cb952",
+    "address": "444, Marzovelos, Viseu",
+    "email": "aaa@example.com",
+    "name": "Andre Almeida",
+    "phone_number": "+123984576"
+  },
+  {
+    "customer_id": "72385658-418c-45e9-b96b-fd811c576c3c",
+    "address": "667, Fragosela, Viseu",
+    "email": "per@example.com",
+    "name": "Miguel Pereira",
+    "phone_number": "+123987465"
+  },
+  {
+    "customer_id": "d800c358-4523-4892-be9e-12660504e3c1",
+    "address": "981, Fragosela, Viseu",
+    "email": "cruz@example.com",
+    "name": "Tiago Cruz",
+    "phone_number": "+999876543"
+  },
+  {
+    "customer_id": "6e29e5c6-9832-4aa3-8257-364367d06654",
+    "address": "333, Moselos, Viseu",
+    "email": "ars@example.com",
+    "name": "Ana Rodrigues",
+    "phone_number": "+981276345"
+  }
+]

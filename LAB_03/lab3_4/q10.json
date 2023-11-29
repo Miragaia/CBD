@@ -1,0 +1,58 @@
+[
+  {
+    "transaction_id": "2e5d1c79-be7c-472f-a969-a15051114f07",
+    "late_fee": 200,
+    "payment_status": "Pending",
+    "rental_fee": 20,
+    "reservation_id": "cfc4bde2-91f4-4e69-82ef-a739d0abb201",
+    "total_fee": 220
+  },
+  {
+    "transaction_id": "e01f168e-111d-49a4-8ecd-eb1981aecd83",
+    "late_fee": 0,
+    "payment_status": "Paid",
+    "rental_fee": 250,
+    "reservation_id": "cc437133-8cc2-48fc-a9d1-0c5bd712edd8",
+    "total_fee": 250
+  },
+  {
+    "transaction_id": "0ba33296-75d0-4936-a237-2a998a90e98e",
+    "late_fee": 100,
+    "payment_status": "Pending",
+    "rental_fee": 50,
+    "reservation_id": "29ccd36c-75e7-417e-87d2-89c171de5dc7",
+    "total_fee": 150
+  },
+  {
+    "transaction_id": "46a0b3f8-b32f-422b-9a2e-0309a96eae58",
+    "late_fee": 70,
+    "payment_status": "Pending",
+    "rental_fee": 250,
+    "reservation_id": "46d16824-9ee8-48e7-9b7a-9c5a68f86fb3",
+    "total_fee": 320
+  },
+  {
+    "transaction_id": "5bd7c4e9-f63e-4c52-be86-5b5d7a84b53a",
+    "late_fee": 200,
+    "payment_status": "Pending",
+    "rental_fee": 70,
+    "reservation_id": "1f0cc50c-9f89-43c0-96e8-1f976655aeca",
+    "total_fee": 270
+  },
+  {
+    "transaction_id": "2045b6af-6bf0-49d5-8f95-6dc2da1ca3ad",
+    "late_fee": 0,
+    "payment_status": "Paid",
+    "rental_fee": 500,
+    "reservation_id": "27acb15b-7f2c-42e5-86ac-3ceb634aea65",
+    "total_fee": 500
+  },
+  {
+    "transaction_id": "06803f0d-f365-467f-a5b1-7ba17758b561",
+    "late_fee": 350,
+    "payment_status": "Pending",
+    "rental_fee": 70,
+    "reservation_id": "4dd73aec-763f-4268-8c8e-4c468e3030a4",
+    "total_fee": 420
+  }
+]

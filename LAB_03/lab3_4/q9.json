@@ -1,0 +1,10 @@
+[
+  {
+    "reservation_id": "9474c7b9-5c4c-47ce-a1a5-b1e080f68523",
+    "car_id": "b89e39b3-5cf4-4891-b312-7477c8a7dbe1",
+    "customer_id": "55781daa-9a0d-4b0f-b03b-5f021069d101",
+    "pickup_date": "2023-12-24",
+    "return_date": "2023-12-25",
+    "status": "Reserved"
+  }
+]

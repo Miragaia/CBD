@@ -1,0 +1,72 @@
+[
+    {
+      "user_id": "f023bdfa-4b88-4966-aa47-850d75cbc6ac",
+      "email": "daniel.smith@email.com",
+      "name": "Daniel Smith",
+      "reg_time": "2023-11-16 10:08:03.223",
+      "username": "daniel_smith"
+    },
+    {
+      "user_id": "b5c01858-1e56-48cc-99ba-024954d1a0c2",
+      "email": "david.white@email.com",
+      "name": "David White",
+      "reg_time": "2023-11-16 09:56:55.579",
+      "username": "david_white"
+    },
+    {
+      "user_id": "39b6d4c8-56ee-40a5-b9ec-3dc6f717c5b9",
+      "email": "robert.jones@email.com",
+      "name": "Robert Jones",
+      "reg_time": "2023-11-16 10:08:03.272",
+      "username": "robert_jones"
+    },
+    {
+      "user_id": "66205b1d-8634-4e8a-8d4a-c8736d359b6b",
+      "email": "emily.brown@email.com",
+      "name": "Emily Brown",
+      "reg_time": "2023-11-16 09:56:55.606",
+      "username": "emily_brown"
+    },
+    {
+      "user_id": "cf9f567e-26f9-4ec7-a2f5-361900708169",
+      "email": "grace.taylor@email.com",
+      "name": "Grace Taylor",
+      "reg_time": "2023-11-16 10:08:03.247",
+      "username": "grace_taylor"
+    },
+    {
+      "user_id": "fc6aa433-e89c-4da8-b940-ea58731f3f20",
+      "email": "bob.jones@email.com",
+      "name": "Bob Jones",
+      "reg_time": "2023-11-16 09:56:55.523",
+      "username": "bob_jones"
+    },
+    {
+      "user_id": "406ff87e-7e42-4547-8eda-015396a98229",
+      "email": "alice.smith@email.com",
+      "name": "Alice Smith",
+      "reg_time": "2023-11-16 09:56:55.485",
+      "username": "alice_smith"
+    },
+    {
+      "user_id": "f8215ed3-ae77-4e35-b1bb-dfc4f60f99f8",
+      "email": "susan.green@email.com",
+      "name": "Susan Green",
+      "reg_time": "2023-11-16 09:56:55.549",
+      "username": "susan_green"
+    },
+    {
+      "user_id": "d86b3621-f913-4f55-bf5f-92763dc001b7",
+      "email": "olivia.martin@email.com",
+      "name": "Olivia Martin",
+      "reg_time": "2023-11-16 10:08:03.303",
+      "username": "olivia_martin"
+    },
+    {
+      "user_id": "9f83ef45-1078-4f0e-838a-f24c87b1a271",
+      "email": "john.doe@email.com",
+      "name": "John Doe",
+      "reg_time": "2023-11-16 09:56:55.421",
+      "username": "john_doe"
+    }
+  ]

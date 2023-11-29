@@ -1,0 +1,38 @@
+[
+  {
+    "car_id": "10b626d9-1fa9-4a28-bb02-9a4ab59db4f7",
+    "availability": true,
+    "brand": "BMW",
+    "features": ["Bluetooth", "GPS"],
+    "license_plate": "ABC123",
+    "model": "X5",
+    "year": 2011
+  },
+  {
+    "car_id": "1671c483-4402-4566-a2d0-dbe586eb1fd5",
+    "availability": true,
+    "brand": "Mercedes",
+    "features": ["Bluetooth", "GPS"],
+    "license_plate": "ABC123",
+    "model": "C220",
+    "year": 2011
+  },
+  {
+    "car_id": "a0be04b4-c30f-416f-83c4-66b49ae776c9",
+    "availability": true,
+    "brand": "Fiat",
+    "features": ["Backup Camera", "Bluetooth", "GPS"],
+    "license_plate": "MNO345",
+    "model": "Uno",
+    "year": 2014
+  },
+  {
+    "car_id": "a782f593-4297-4280-81d4-390e5af09e83",
+    "availability": true,
+    "brand": "Mercedes",
+    "features": ["Bluetooth", "GPS"],
+    "license_plate": "ABC123",
+    "model": "C200",
+    "year": 2011
+  }
+]

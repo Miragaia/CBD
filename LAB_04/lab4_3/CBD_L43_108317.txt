@@ -1,0 +1,75 @@
+//NMEC: 108317
+
+a) 
+
+-> Entidades:
+
+User: real_name, svn_id, role_on_project
+Project: project_name
+Organization: organization
+
+-> Relações:
+
+WORKS_ON: Relaciona um User a um Project.
+
+Exemplo: (User)-[:WORKS_ON]->(Project)
+
+b) 
+
+LOAD CSV WITH HEADERS FROM 'file:///git_selection.csv' AS row
+MERGE (u:User {svn_id: row.svn_id, real_name: row.real_name, role_on_project: row.role_on_project})
+MERGE (p:Project {project_name: row.project_name})
+MERGE (o:Organization {organization: row.organization})
+MERGE (u)-[:WORKS_ON]->(p)
+
+
+c)
+
+#1
+
+match(u:User)
+return u as User
+
+#2
+
+match(u:User)
+return distinct u.real_name as Name
+
+#3
+
+match (u:User)-[:WORKS_ON]->(p:Project)
+return p
+
+#4
+
+match (u:User)-[:WORKS_ON]->(p:Project)
+return u.real_name as User, count(distinct p) as num_proj_colabs
+
+#5 
+
+match (u:User)-[:WORKS_ON]->(p:Project)
+return u.real_name as User, count(distinct p) as num_proj_colabs
+order by num_proj_colabs desc
+
+#6
+
+match (u:User)-[:WORKS_ON]->(p:Project)
+return p.project_name as Project, count(distinct u) as num_members
+
+#7 
+
+match (u:User)-[:WORKS_ON]->(p:Project)
+where u.role_on_project = "Committer"
+return p.project_name as Project, count(distinct u) as num_members
+
+#8
+
+match (u:User)-[:WORKS_ON]->(p:Project)<-[:WORKS_ON]-(u2:User)
+where u.svn_id = "atm" and u.svn_id <> u2.svn_id
+return u.real_name as User1, u2.real_name as User2, p.project_name as Project
+
+#9
+
+match (u:User)-[:WORKS_ON]->(p:Project)<-[:WORKS_ON]-(u2:User)
+where u.svn_id = "atm" and u.svn_id <> u2.svn_id and u2.role_on_project = "Committer" and u.role_on_project = "PMC"
+return u.real_name as UserATM, u2.real_name as Committer, p.project_name as Project

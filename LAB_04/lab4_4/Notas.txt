@@ -1,0 +1,53 @@
+Ja depois da escolha do dataSet, ao executar as queries notei que o mesmo tinha falhas quanto a logica, ou pelo menos quanto a logica explicada e a informacoes 
+que nao estavam corretas.
+
+O data set contem todas as informacoes dos marcadores nao de uma so epoca mas de todas as epocas, excepto algumas falhas.
+
+Os clubes sao os atuais dos jogadores o que nao permite ter uma relacao entre os clubes e as ligas. Isto porque se um jogador jogava na epoca 2015/2016 
+no Barcelona e na epoca 2016/2017 no PSG, ao tentarmos fazer a listagem dos melhores marcadores por clube de uma certa liga podemos ter erros quanto a logica, visto que 
+o PSG nao pertence a liga espanhola mas o neymar que joga no PSG ja representou o Barcelona ja la jogou. 
+
+Isto em nada influenciaria a logica com que uma query executava mas escolhi nao o fazer pois nao me pareceu correto fazer uma modelacao de dados com falhas quanto a logica.
+
+Ao longo do desenvolvimneto conclui que o data set limitou o que poderia ter feito e tinha diversas falhas.
+
+Na primeira modelacao que fiz obtive resultados sem sentido (para alguem que perceba da area do futebol) e por isso enconrtei estas falhas de logica.
+Com isto obtive uma modelacao de dados mais correta mas com menos relacoes e desta maneira menos possibilidades de queries.
+
+A modelacao de dados que escolhi foi a seguinte:
+
+Entidades:
+
+    Country:
+        Atributo: name (nome do país)
+
+    League:
+        Atributo: name (nome da liga)
+
+    Club:
+        Atributo: name (nome do clube)
+
+    Player:
+        Atributo: name (nome do jogador)
+
+    PlayerStats:
+        Atributos:
+            matchesPlayed (partidas jogadas)
+            mins (minutos jogados)
+            goals (numero de golos)
+            xG (golos esperados)
+            xGPerAvgMatch (golos esperados por jogo)
+
+Relações:
+
+    PLAYS_FOR:
+        Liga um jogador a um clube: (:Player)-[:PLAYS_FOR]->(:Club)
+
+    ACTED_IN:
+        Liga um jogador a uma liga: (:Player)-[:ACTED_IN]->(:League)
+
+    IN_COUNTRY:
+        Liga uma liga a um país.: (:League)-[:IN_COUNTRY]->(:Country)
+
+    HAS_STATS:
+        Liga um jogador a suas estatísticas: (:Player)-[:HAS_STATS]->(:PlayerStats)

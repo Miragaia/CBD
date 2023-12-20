@@ -1,0 +1,127 @@
+//NEMC: 108317
+
+#1
+match (n)-[:DIRECTED]->(movie)<-[:ACTED_IN]-(n)
+return n.name as atores, movie.title as titulo
+
+#2
+match (ator)-[:ACTED_IN]->(filme)
+where filme.released > 2005
+with filme, collect(ator.name) as atores
+return atores, filme.title as titulo
+
+#3
+match (node1)-[relation]->(node2)
+with node1, node2, count(relation) as relations_num
+where relations_num > 1
+return node1.name as person, node2.title as movie
+
+#4
+match (pessoa1:Person)-[:REVIEWED]->(movie)<-[:REVIEWED]-(pessoa2:Person)
+where ID(pessoa1) < ID(pessoa2) 
+return pessoa1.name as Person1, pessoa2.name as Person2, movie.title as Movie
+
+#5
+match (ator_1)-[:ACTED_IN]->(movie)<-[:ACTED_IN]-(ator_2)
+WITH ator_1, ator_2, count(movie) as movies_num
+where movies_num > 1 and ID(ator_1) < ID(ator_2) 
+return ator_1.name, ator_2.name
+
+#6
+match (ator)-[:ACTED_IN]->(movie)
+where movie.title = "Apollo 13"
+with movie.released - ator.born as age_at_release
+return avg(age_at_release) as avg_age_at_release
+
+#7
+match (ator)-[:ACTED_IN]->(movie)
+with movie, round(avg(movie.released - ator.born),2) as age
+return movie.title, age
+order by age desc
+limit 10
+
+#8
+match(ator)-[:ACTED_IN]->(movie)
+with movie, avg(movie.released - ator.born) as avg_age_at_release
+order by avg_age_at_release asc
+limit 1
+match (ator)-[:ACTED_IN]->(movie)
+return movie, ator
+
+#9
+match sh_path = shortestPath((ator1{name: "John Cusack"})-[*]-(ator2{name:"Demi Moore"}))
+return sh_path
+
+#10
+match sh_path = shortestPath((ator1{name: "Keanu Reeves"})-[*]-(ator2{name:"Tom Cruise"}))
+with ator1,ator2, sh_path, length(sh_path) as path_length
+return path_length
+order by path_length asc
+limit 1 
+
+#11
+match sh_path = shortestPath((pessoa1)-[*]-(pessoa2))
+where pessoa1.name contains "Jim" and pessoa2.name contains "Kevin"
+return pessoa1.name, pessoa2.name, length(sh_path) as sh_path_dim
+order by sh_path_dim asc
+limit 1
+
+#12
+match sh_path = shortestPath((pessoa)-[*1..2]-(ator{name: "Jim Cash"}))
+where pessoa <> ator and length(sh_path) = 2
+return  pessoa.name
+
+#13
+match sh_path = shortestPath((pessoa)-[*]-(ator{name: "Kevin Bacon"}))
+where pessoa <> ator
+return length(sh_path) as distancia, pessoa.name as nome
+order by distancia desc
+limit 1
+
+#14
+match sh_path = shortestPath((pessoa1)-[*]-(pessoa2))
+where pessoa1 <> pessoa2
+return length(sh_path) as distancia, pessoa1.name as nome1, pessoa2.name as nome2
+order by distancia desc
+limit 1
+
+#15
+match sh_path = shortestPath((pessoa1:Person)-[*]-(pessoa2:Person))
+where pessoa1 <> pessoa2
+with length(sh_path) as distancia
+return distancia, count(distancia) as num_pares
+order by distancia 
+
+#16
+match sh_path = shortestPath((pessoa1:Person)-[:ACTED_IN*]-(pessoa2:Person))
+where pessoa1 <> pessoa2
+with avg(length(sh_path)) as avg_distancia, pessoa1, pessoa2
+return avg_distancia, pessoa1.name as Pessoa1, pessoa2.name as Pessoa2
+order by avg_distancia asc
+limit 10
+
+MUDAR -----
+#17 (estou a listar todos os character do ator, por vezes tem alguns a mais do que os com o prefixo Dr.. 'e suposto apenas listar os que comecam por Dr. ou nao?) --> (so pode aparecer os papeis com "Dr.")
+match (ator:Person)-[relation:ACTED_IN]->(:Movie)
+where ANY(character in relation.roles where character starts with "Dr.")
+return ator.name as Ator, Collect(DISTINCT relation.roles) as Character
+
+#18 Indique os 5 diretores que mais filmes dirigiram em que atuaram, e o número total de filmes que cada um dirigiu e atuou.
+match (ator:Person)-[:ACTED_IN]->(filme)<-[:DIRECTED]-(diretor:Person)
+with diretor, count(distinct filme) as num_filmes
+return diretor.name as Diretor, num_filmes as Num_Filmes
+order by num_filmes desc
+limit 5
+
+#19 Indique os atores que tenham atuado em mais de 4 filmes, apresentando o nome dos atores e o numero de filmes que participaram.
+match (ator:Person)-[:ACTED_IN]->(filme:Movie)
+with ator, count(distinct filme) as num_filmes
+where num_filmes > 4
+return ator.name as Ator, num_filmes as Num_Filmes
+order by num_filmes desc
+
+#20 Apresente a lista de pessoas que tenham uma distancia inferior a 5 para o ator John Cusack, ordenada por ordem crescente de distancia.
+match sh_path = shortestPath((pessoa:Person)-[*]-(ator{name: "John Cusack"}))
+where pessoa <> ator
+return pessoa.name as nome, length(sh_path) as distancia
+order by distancia asc

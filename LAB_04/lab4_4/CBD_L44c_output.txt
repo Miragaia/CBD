@@ -1,0 +1,171 @@
+
+Query: 1. Top 5 scorers in Serie A league
+	{'TopScorer': 'Ciro Immobile', 'Goals': 36}
+	{'TopScorer': 'Cristiano Ronaldo', 'Goals': 31}
+	{'TopScorer': 'Zlatan Ibrahimovic', 'Goals': 31}
+	{'TopScorer': 'Mauro Icardi', 'Goals': 29}
+	{'TopScorer': 'Ciro Immobile', 'Goals': 29}
+
+Query: 2. Player with the best relation Goals per match
+	{'BestScorer': 'Haris  Seferovic', 'Goals': 6, 'MatchesPlayed': 2}
+	{'BestScorer': 'Lionel Messi', 'Goals': 37, 'MatchesPlayed': 32}
+	{'BestScorer': 'Morata', 'Goals': 15, 'MatchesPlayed': 14}
+
+Query: 3. Player with the highest deviation between goals and expected goals (xG)d
+	{'WorstScorer': 'Robert Lewandowski', 'Goals': 22, 'ExpectedGoals': 29.27, 'GoalDeviation': -7.27}
+
+Query: 4. Total number of players in each league
+	{'League': 'Bundesliga', 'NumberOfPlayers': 62}
+	{'League': 'Campeonato Brasileiro SÃ©rie A', 'NumberOfPlayers': 76}
+	{'League': 'Eredivisie', 'NumberOfPlayers': 34}
+	{'League': 'France Ligue 1', 'NumberOfPlayers': 1}
+	{'League': 'France Ligue 10', 'NumberOfPlayers': 3}
+	{'League': 'France Ligue 11', 'NumberOfPlayers': 3}
+	{'League': 'France Ligue 12', 'NumberOfPlayers': 3}
+	{'League': 'France Ligue 13', 'NumberOfPlayers': 3}
+	{'League': 'France Ligue 14', 'NumberOfPlayers': 3}
+	{'League': 'France Ligue 15', 'NumberOfPlayers': 3}
+	{'League': 'France Ligue 16', 'NumberOfPlayers': 3}
+	{'League': 'France Ligue 17', 'NumberOfPlayers': 3}
+	{'League': 'France Ligue 18', 'NumberOfPlayers': 3}
+	{'League': 'France Ligue 19', 'NumberOfPlayers': 3}
+	{'League': 'France Ligue 2', 'NumberOfPlayers': 3}
+	{'League': 'France Ligue 20', 'NumberOfPlayers': 3}
+	{'League': 'France Ligue 3', 'NumberOfPlayers': 3}
+	{'League': 'France Ligue 4', 'NumberOfPlayers': 3}
+	{'League': 'France Ligue 5', 'NumberOfPlayers': 3}
+	{'League': 'France Ligue 6', 'NumberOfPlayers': 3}
+	{'League': 'France Ligue 7', 'NumberOfPlayers': 3}
+	{'League': 'France Ligue 8', 'NumberOfPlayers': 3}
+	{'League': 'France Ligue 9', 'NumberOfPlayers': 3}
+	{'League': 'La Liga', 'NumberOfPlayers': 62}
+	{'League': 'MLS', 'NumberOfPlayers': 34}
+	{'League': 'Premier League', 'NumberOfPlayers': 55}
+	{'League': 'Primeira Liga', 'NumberOfPlayers': 37}
+	{'League': 'Serie A', 'NumberOfPlayers': 55}
+
+Query: 5. Top scorer in each league
+	{'League': 'La Liga', 'TopScorer': 'Lionel Messi', 'Goals': 37}
+	{'League': 'Serie A', 'TopScorer': 'Ciro Immobile', 'Goals': 36}
+	{'League': 'MLS', 'TopScorer': 'Carlos Vela', 'Goals': 36}
+	{'League': 'Bundesliga', 'TopScorer': 'Robert Lewandowski', 'Goals': 34}
+	{'League': 'France Ligue 1', 'TopScorer': 'Kylian Mbappe-Lottin', 'Goals': 33}
+	{'League': 'Premier League', 'TopScorer': 'Zlatan Ibrahimovic', 'Goals': 31}
+	{'League': 'France Ligue 6', 'TopScorer': 'Mauro Icardi', 'Goals': 29}
+	{'League': 'Campeonato Brasileiro SÃ©rie A', 'TopScorer': 'Gabriel Barbosa', 'Goals': 25}
+	{'League': 'France Ligue 2', 'TopScorer': 'Nicolas Pepe', 'Goals': 22}
+	{'League': 'France Ligue 3', 'TopScorer': 'Edinson Cavani', 'Goals': 18}
+	{'League': 'Primeira Liga', 'TopScorer': 'Pizzi ', 'Goals': 18}
+	{'League': 'France Ligue 14', 'TopScorer': 'Florian Thauvin', 'Goals': 16}
+	{'League': 'France Ligue 4', 'TopScorer': 'Florian Thauvin', 'Goals': 16}
+	{'League': 'France Ligue 5', 'TopScorer': 'Moussa Dembele', 'Goals': 16}
+	{'League': 'Eredivisie', 'TopScorer': 'Steven Berghuis', 'Goals': 15}
+	{'League': 'France Ligue 7', 'TopScorer': 'Neymar ', 'Goals': 15}
+	{'League': 'France Ligue 12', 'TopScorer': 'Andy Delort', 'Goals': 14}
+	{'League': 'France Ligue 10', 'TopScorer': 'Kevin Volland', 'Goals': 14}
+	{'League': 'France Ligue 8', 'TopScorer': 'Andy Delort', 'Goals': 14}
+	{'League': 'France Ligue 9', 'TopScorer': 'Jonathan Bamba', 'Goals': 13}
+	{'League': 'France Ligue 16', 'TopScorer': 'Jonathan Bamba', 'Goals': 13}
+	{'League': 'France Ligue 11', 'TopScorer': 'Angel Di Maria', 'Goals': 12}
+	{'League': 'France Ligue 15', 'TopScorer': "M'Baye Niang", 'Goals': 11}
+	{'League': 'France Ligue 13', 'TopScorer': 'Gaetan Laborde', 'Goals': 11}
+	{'League': 'France Ligue 20', 'TopScorer': 'Remi Oudin', 'Goals': 10}
+	{'League': 'France Ligue 19', 'TopScorer': 'Memphis Depay', 'Goals': 10}
+	{'League': 'France Ligue 18', 'TopScorer': 'Lebo Mothiba', 'Goals': 10}
+	{'League': 'France Ligue 17', 'TopScorer': 'Francois Kamano', 'Goals': 10}
+
+Query: 6. Player with highest xG in each league
+	{'League': 'La Liga', 'TopXGPlayer': 'Lionel Messi', 'ExpectedGoals': 32.54}
+	{'League': 'France Ligue 1', 'TopXGPlayer': 'Kylian Mbappe-Lottin', 'ExpectedGoals': 31.17}
+	{'League': 'Bundesliga', 'TopXGPlayer': 'Robert Lewandowski', 'ExpectedGoals': 31.05}
+	{'League': 'Serie A', 'TopXGPlayer': 'Edin Dzeko', 'ExpectedGoals': 30.6}
+	{'League': 'Premier League', 'TopXGPlayer': 'Pierre-Emerick Aubameyang', 'ExpectedGoals': 28.94}
+	{'League': 'MLS', 'TopXGPlayer': 'Carlos Vela', 'ExpectedGoals': 25.35}
+	{'League': 'Campeonato Brasileiro SÃ©rie A', 'TopXGPlayer': 'Gabriel Barbosa', 'ExpectedGoals': 24.59}
+	{'League': 'France Ligue 6', 'TopXGPlayer': 'Mauro Icardi', 'ExpectedGoals': 23.14}
+	{'League': 'France Ligue 2', 'TopXGPlayer': 'Nicolas Pepe', 'ExpectedGoals': 20.08}
+	{'League': 'Primeira Liga', 'TopXGPlayer': 'Mehdi Taremi', 'ExpectedGoals': 16.82}
+	{'League': 'France Ligue 3', 'TopXGPlayer': 'Edinson Cavani', 'ExpectedGoals': 16.73}
+	{'League': 'France Ligue 7', 'TopXGPlayer': 'Neymar ', 'ExpectedGoals': 15.87}
+	{'League': 'France Ligue 4', 'TopXGPlayer': 'Victor Osimhen', 'ExpectedGoals': 14.86}
+	{'League': 'France Ligue 5', 'TopXGPlayer': 'Moussa Dembele', 'ExpectedGoals': 14.74}
+	{'League': 'Eredivisie', 'TopXGPlayer': 'Cyriel Dessers ', 'ExpectedGoals': 14.51}
+	{'League': 'France Ligue 14', 'TopXGPlayer': 'Max Gradel', 'ExpectedGoals': 14.51}
+	{'League': 'France Ligue 11', 'TopXGPlayer': 'Memphis Depay', 'ExpectedGoals': 13.43}
+	{'League': 'France Ligue 15', 'TopXGPlayer': 'Memphis Depay', 'ExpectedGoals': 13.43}
+	{'League': 'France Ligue 19', 'TopXGPlayer': 'Memphis Depay', 'ExpectedGoals': 13.43}
+	{'League': 'France Ligue 12', 'TopXGPlayer': 'Andy Delort', 'ExpectedGoals': 13.05}
+	{'League': 'France Ligue 8', 'TopXGPlayer': 'Andy Delort', 'ExpectedGoals': 13.05}
+	{'League': 'France Ligue 10', 'TopXGPlayer': 'Kevin Volland', 'ExpectedGoals': 12.4}
+	{'League': 'France Ligue 18', 'TopXGPlayer': 'Ã\x81ngel Di Maria', 'ExpectedGoals': 9.98}
+	{'League': 'France Ligue 17', 'TopXGPlayer': 'Francois Kamano', 'ExpectedGoals': 9.09}
+	{'League': 'France Ligue 16', 'TopXGPlayer': 'Stephane Bahoken', 'ExpectedGoals': 8.56}
+	{'League': 'France Ligue 13', 'TopXGPlayer': 'Gaetan Laborde', 'ExpectedGoals': 8.53}
+	{'League': 'France Ligue 9', 'TopXGPlayer': 'Kasper Dolberg', 'ExpectedGoals': 7.77}
+	{'League': 'France Ligue 20', 'TopXGPlayer': 'Remi Oudin', 'ExpectedGoals': 7.73}
+
+Query: 7. Top scorer in each country
+	{'Country': 'Spain', 'TopScorer': 'Lionel Messi', 'Goals': 37}
+	{'Country': 'Italy', 'TopScorer': 'Ciro Immobile', 'Goals': 36}
+	{'Country': 'USA', 'TopScorer': 'Carlos Vela', 'Goals': 36}
+	{'Country': 'Germany', 'TopScorer': 'Robert Lewandowski', 'Goals': 34}
+	{'Country': 'France', 'TopScorer': 'Kylian Mbappe-Lottin', 'Goals': 33}
+	{'Country': 'England', 'TopScorer': 'Zlatan Ibrahimovic', 'Goals': 31}
+	{'Country': 'Brazil', 'TopScorer': 'Gabriel Barbosa', 'Goals': 25}
+	{'Country': 'Portugal ', 'TopScorer': 'Pizzi ', 'Goals': 18}
+	{'Country': ' Netherlands', 'TopScorer': 'Steven Berghuis', 'Goals': 15}
+
+Query: 8. Total minutes played in each league
+	{'League': 'Bundesliga', 'TotalMinutesPlayed': 207680}
+	{'League': 'Campeonato Brasileiro SÃ©rie A', 'TotalMinutesPlayed': 228378}
+	{'League': 'Eredivisie', 'TotalMinutesPlayed': 55261}
+	{'League': 'France Ligue 1', 'TotalMinutesPlayed': 4709}
+	{'League': 'France Ligue 10', 'TotalMinutesPlayed': 13679}
+	{'League': 'France Ligue 11', 'TotalMinutesPlayed': 11485}
+	{'League': 'France Ligue 12', 'TotalMinutesPlayed': 11193}
+	{'League': 'France Ligue 13', 'TotalMinutesPlayed': 6075}
+	{'League': 'France Ligue 14', 'TotalMinutesPlayed': 8400}
+	{'League': 'France Ligue 15', 'TotalMinutesPlayed': 9519}
+	{'League': 'France Ligue 16', 'TotalMinutesPlayed': 9466}
+	{'League': 'France Ligue 17', 'TotalMinutesPlayed': 7194}
+	{'League': 'France Ligue 18', 'TotalMinutesPlayed': 5250}
+	{'League': 'France Ligue 19', 'TotalMinutesPlayed': 8720}
+	{'League': 'France Ligue 2', 'TotalMinutesPlayed': 11336}
+	{'League': 'France Ligue 20', 'TotalMinutesPlayed': 5341}
+	{'League': 'France Ligue 3', 'TotalMinutesPlayed': 12833}
+	{'League': 'France Ligue 4', 'TotalMinutesPlayed': 6913}
+	{'League': 'France Ligue 5', 'TotalMinutesPlayed': 7338}
+	{'League': 'France Ligue 6', 'TotalMinutesPlayed': 16437}
+	{'League': 'France Ligue 7', 'TotalMinutesPlayed': 9092}
+	{'League': 'France Ligue 8', 'TotalMinutesPlayed': 9415}
+	{'League': 'France Ligue 9', 'TotalMinutesPlayed': 7067}
+	{'League': 'La Liga', 'TotalMinutesPlayed': 241689}
+	{'League': 'MLS', 'TotalMinutesPlayed': 88895}
+	{'League': 'Premier League', 'TotalMinutesPlayed': 215495}
+	{'League': 'Primeira Liga', 'TotalMinutesPlayed': 63300}
+	{'League': 'Serie A', 'TotalMinutesPlayed': 260067}
+
+Query: 9. Top 5 clubs with the highest number of goals scored
+	{'Club': '(BAR)', 'TotalGoals': 224}
+	{'Club': '(PSG)', 'TotalGoals': 213}
+	{'Club': '(NAP)', 'TotalGoals': 182}
+	{'Club': '(TOT)', 'TotalGoals': 169}
+	{'Club': '(BAY)', 'TotalGoals': 168}
+
+Query: 10. Total number of players in each country
+	{'Country': 'Brazil', 'TotalPlayers': 76}
+	{'Country': 'Spain', 'TotalPlayers': 62}
+	{'Country': 'Germany', 'TotalPlayers': 62}
+	{'Country': 'Italy', 'TotalPlayers': 55}
+	{'Country': 'England', 'TotalPlayers': 55}
+	{'Country': 'France', 'TotalPlayers': 47}
+	{'Country': 'Portugal ', 'TotalPlayers': 37}
+	{'Country': 'USA', 'TotalPlayers': 34}
+	{'Country': ' Netherlands', 'TotalPlayers': 34}
+
+Query: 11. Top 5 leagues with the highest xG
+	{'League': 'Serie A', 'TotalxG': 1334.4299999999998}
+	{'League': 'La Liga', 'TotalxG': 1326.66}
+	{'League': 'Premier League', 'TotalxG': 1131.6700000000003}
+	{'League': 'Bundesliga', 'TotalxG': 1068.9900000000005}
+	{'League': 'Campeonato Brasileiro SÃ©rie A', 'TotalxG': 998.2}
